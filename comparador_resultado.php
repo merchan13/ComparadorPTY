@@ -32,95 +32,116 @@
                 <div class="comparator-product-image">
                     <img src="resources/images/credit_card.png" alt="" />
                 </div>
-                <div class="comparator-result-table">
-                    <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>Banco</th>
-                            <th>Producto</th>
-                            <th>Marca</th>
-                            <th>Tasa</th>
-                            <th>Cargos X Mes</th>
-                            <th>Beneficios</th>
-                            <th>Mas Info</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <!--Banco-->
-                            <td><img src="resources/images/banesco-icon.png" alt="" /></td>
-                            <!--Producto-->
-                            <td>Visa Platinum</td>
-                            <!--Marca-->
-                            <td><img src="resources/images/visa-icon.gif" alt="" /></td>
-                            <!--Tasa-->
-                            <td>27,4%</td>
-                            <!--Cargos X Mes-->
-                            <td>$400.00</td>
-                            <!--Beneficios-->
-                            <td>
-                                <ul>
-                                    <li>Millas</li>
-                                    <li>Puntos</li>
-                                    <li>Descuentos</li>
-                                </ul>
-                            </td>
-                            <!--Mas Info-->
-                            <td>
-                                <p>+50799999999</p>
-                                <a href="#"><button type="button" name="sitio">Ir a sitio</button></a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <!--Banco-->
-                            <td><img src="resources/images/banco_general-icon.png" alt="" /></td>
-                            <!--Producto-->
-                            <td>MasterCard Premium</td>
-                            <!--Marca-->
-                            <td><img src="resources/images/mastercard-icon.gif" alt="" /></td>
-                            <!--Tasa-->
-                            <td>30,5%</td>
-                            <!--Cargos X Mes-->
-                            <td>$600.00</td>
-                            <!--Beneficios-->
-                            <td>
-                                <ul>
-                                    <li>Millas</li>
-                                    <li>Descuentos</li>
-                                </ul>
-                            </td>
-                            <!--Mas Info-->
-                            <td>
-                                <p>+50799999999</p>
-                                <a href="#"><button type="button" name="sitio">Ir a sitio</button></a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <!--Banco-->
-                            <td><img src="resources/images/banesco-icon.png" alt="" /></td>
-                            <!--Producto-->
-                            <td>Visa Pópular</td>
-                            <!--Marca-->
-                            <td><img src="resources/images/visa-icon.gif" alt="" /></td>
-                            <!--Tasa-->
-                            <td>25,2</td>
-                            <!--Cargos X Mes-->
-                            <td>$420.00</td>
-                            <!--Beneficios-->
-                            <td>
-                                <ul>
-                                    <li>Puntos</li>
-                                </ul>
-                            </td>
-                            <!--Mas Info-->
-                            <td>
-                                <p>+50799999999</p>
-                                <a href="#"><button type="button" name="sitio">Ir a sitio</button></a>
-                            </td>
-                          </tr>
-                        </tbody>
-                    </table>
-                </div>
+				<form class="" action="comparador_formulario.php" method="post">
+	                <div class="comparator-result-table">
+	                    <table class="table table-hover">
+	                        <thead>
+	                          <tr>
+	                            <th>Banco</th>
+	                            <th>Producto</th>
+	                            <th>Marca</th>
+	                            <th>Tasa</th>
+	                            <th>Cargos X Mes</th>
+	                            <th>Beneficios</th>
+	                            <th>Mas Info</th>
+								<th>Solicitar</th>
+	                          </tr>
+	                        </thead>
+	                        <tbody>
+	                          <tr>
+	                            <!--Banco-->
+	                            <td><img src="resources/images/banesco-icon.png" alt="" /></td>
+	                            <!--Producto-->
+	                            <td>Visa Platinum</td>
+	                            <!--Marca-->
+	                            <td><img src="resources/images/visa-icon.gif" alt="" /></td>
+	                            <!--Tasa-->
+	                            <td>27,4%</td>
+	                            <!--Cargos X Mes-->
+	                            <td>$400.00</td>
+	                            <!--Beneficios-->
+	                            <td>
+	                                <ul>
+	                                    <li>Millas</li>
+	                                    <li>Puntos</li>
+	                                    <li>Descuentos</li>
+	                                </ul>
+	                            </td>
+	                            <!--Mas Info-->
+	                            <td>
+	                                <p>+50799999999</p>
+	                                <a href="#"><button type="button" name="sitio">Ir a sitio</button></a>
+	                            </td>
+								<td>
+									<div class="checkbox">
+	  									<input type="checkbox" value="">
+									</div>
+								</td>
+	                          </tr>
+	                          <tr>
+	                            <!--Banco-->
+	                            <td><img src="resources/images/banco_general-icon.png" alt="" /></td>
+	                            <!--Producto-->
+	                            <td>MasterCard Premium</td>
+	                            <!--Marca-->
+	                            <td><img src="resources/images/mastercard-icon.gif" alt="" /></td>
+	                            <!--Tasa-->
+	                            <td>30,5%</td>
+	                            <!--Cargos X Mes-->
+	                            <td>$600.00</td>
+	                            <!--Beneficios-->
+	                            <td>
+	                                <ul>
+	                                    <li>Millas</li>
+	                                    <li>Descuentos</li>
+	                                </ul>
+	                            </td>
+	                            <!--Mas Info-->
+	                            <td>
+	                                <p>+50799999999</p>
+	                                <a href="#"><button type="button" name="sitio">Ir a sitio</button></a>
+	                            </td>
+								<td>
+									<div class="checkbox">
+	  									<input type="checkbox" value="">
+									</div>
+								</td>
+	                          </tr>
+	                          <tr>
+	                            <!--Banco-->
+	                            <td><img src="resources/images/banesco-icon.png" alt="" /></td>
+	                            <!--Producto-->
+	                            <td>Visa Pópular</td>
+	                            <!--Marca-->
+	                            <td><img src="resources/images/visa-icon.gif" alt="" /></td>
+	                            <!--Tasa-->
+	                            <td>25,2</td>
+	                            <!--Cargos X Mes-->
+	                            <td>$420.00</td>
+	                            <!--Beneficios-->
+	                            <td>
+	                                <ul>
+	                                    <li>Puntos</li>
+	                                </ul>
+	                            </td>
+	                            <!--Mas Info-->
+	                            <td>
+	                                <p>+50799999999</p>
+	                                <a href="#"><button type="button" name="sitio">Ir a sitio</button></a>
+	                            </td>
+								<td>
+									<div class="checkbox">
+	  									<input type="checkbox" value="">
+									</div>
+								</td>
+	                          </tr>
+	                        </tbody>
+	                    </table>
+	                </div>
+
+					<button type="submit" class="btn btn-info btn-fill pull-right"
+						style="width: 120px; margin-right: 1%;">Solicitar</button>
+				</form>
 			</div>
 
 			<footer>

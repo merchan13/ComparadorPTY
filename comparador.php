@@ -12,6 +12,7 @@
 		<!--/Styles-->
 
 		<!--JavaScript-->
+		<script type="text/javascript" src="resources/js/range_value.js"></script>
 		<!--/JavaScript-->
 
 	</head>
@@ -37,18 +38,24 @@
 
                         <!--Income-->
                         <div class="form-group">
-                          <label class="control-label col-sm-2" for="income">Salario</label>
-                          <div class="col-sm-3">
-                            <input type="range"  id="income" min ="800" max="100000" step ="100" value ="800">
+                          <label class="control-label col-sm-2" for="income" style="padding-top: 0;">Salario</label>
+                          <div class="col-sm-5" style="display: inline;">
+                            <input type="range"  id="income" min =600 max="50000" step ="100" value ="800"
+								onchange="prueba.value = income.value" oninput="outputUpdate(value)"
+								style="display: inline">
                           </div>
-
+						  <label for="income-number" style="display: inline;">
+							  $
+							  <output for="income" id="volume" style="display: inline">600</output>
+						  </label>
                         </div>
 
                         <!--Email-->
                         <div class="form-group">
                           <label class="control-label col-sm-2" for="email">Email</label>
                           <div class="col-sm-3">
-                            <input type="email" class="form-control" id="income" placeholder="Ingrese correo electrónico">
+                            <input type="email" class="form-control" id="income"
+								placeholder="Ingrese correo electrónico" disabled="true">
                           </div>
                         </div>
 

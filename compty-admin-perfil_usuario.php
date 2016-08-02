@@ -32,13 +32,6 @@
 <div class="wrapper">
     <div class="sidebar" data-color="banesco-blue" data-image="resources/assets/img/sidebar-4.jpg">
 
-    <!--
-
-        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
-        Tip 2: you can also add an image using data-image tag
-
-    -->
-
     	<div class="sidebar-wrapper">
             <div class="logo">
 				<img src="resources/images/banesco-icon.png" alt="" />
@@ -134,9 +127,19 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
+												<label>Correo de Contacto</label>
+												<input type="text" class="form-control"
+													placeholder="Correo de contacto del banco para los formularios"
+													value="banescoatencion@banesco.com">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
 												<br>
 												<button type="submit" class="btn btn-info btn-fill"
-													style="margin-top: 1.57%; width: 200px;">
+													style="width: 200px; margin-left:70%; margin-top: -10%;">
 													Guardar
 												</button>
 											</div>

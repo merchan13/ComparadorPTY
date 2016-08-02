@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>ComparadorPty</title>
+		<title>ComparadorPty - Resultado</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="vendors/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -28,31 +28,10 @@
 				</ul>
 			</header>
 
-			<div class="products">
-					<div class="title">
-							<h1>Elija un producto para comparar</h1>
-					</div>
-
-					<div class="product-images">
-						<div class="credit-cards">
-							<a href="comparador.php?tipo-producto='tdc'">
-								<img src="resources/images/credit_card.png" alt="" />
-								<p><strong>Tarjetas de Crédito</strong></p>
-							</a>
-						</div>
-
-						<div class="savings">
-
-						</div>
-
-						<div class="credit">
-
-						</div>
-
-						<div class="insurance">
-
-						</div>
-					</div>
+			<div class="comparator-result">
+                <div class="comparator-product-image">
+                    <img src="resources/images/credit_card.png" alt="" />
+                </div>
 			</div>
 
 			<footer>
