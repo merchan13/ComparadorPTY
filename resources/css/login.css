@@ -11,6 +11,14 @@
     margin-top: 180px;
     margin-bottom: 100px;
 }
+
+.alert{
+    width: 40%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: -13%;
+}
+
 .login {
   top: 50%;
   width: 250px;

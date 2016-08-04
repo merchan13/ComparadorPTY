@@ -14,7 +14,10 @@
 		<!--/Styles-->
 
 		<!--JavaScript-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+		<script src="resources/js/login.js" type="text/javascript"></script>
 		<!--/JavaScript-->
 	</head>
 	<body>
@@ -27,18 +30,61 @@
                 <div class="admin-titulo">
                     <h1>ComparadorPTY - Administración</h1>
                 </div>
+
+				<?php
+					session_start();
+
+					if (isset($_SESSION['unsuccess'])){
+						if ($_SESSION['unsuccess'] == TRUE){
+
+							if ($_SESSION['intento'] > 2){
+								echo'
+								<div class="login-alert-error">
+									<div  class="alert alert-danger fade in">
+										<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+										<strong>Error!</strong>
+										 3 INTENTOS! BLOQUEAR!
+									</div>
+								</div>
+								';
+							} else{
+								$_SESSION['intento'] = $_SESSION['intento']+1;
+								echo'
+								<div class="login-alert-error">
+									<div  class="alert alert-danger fade in">
+										<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+										<strong>Error!</strong>
+										 Usuario o Password incorrecta, por favor intente de nuevo.
+										 Recuerde que usted dispone de 3 intentos para ingresar.
+									</div>
+								</div>
+								';
+							}
+						}
+					} else {
+						$_SESSION['intento'] = 1;
+					}
+				?>
                 <div class="admin-form">
                     <form class="login" action="compty-admin-verificar_login.php" method="POST">
                         <fieldset>
                             <legend class="legend">Login</legend>
 
                             <div class="input">
-                            	<input type="text" name="username" placeholder="Usuario" required />
+                            	<input type="text" id="username" name="username" placeholder="Usuario"
+								oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)"
+								oninvalid="setCustomValidity('Debe contener únicamente caracteres alfabéticos, no puede contener números ni caracteres especiales.')"
+								pattern="^(?=.*[a-zA-Z]{1,})(?=.*[\d]{0,})[a-zA-Z ]{1,20}(?!.*[<>'/;`%])$"
+								maxlength="15" required />
                               	<span><i class="fa fa-user"></i></span>
                             </div>
 
                             <div class="input">
-                            	<input type="password" name="password" placeholder="Password" required />
+                            	<input type="password" id="password" name="password" placeholder="Password"
+									oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)"
+	                            	oninvalid="setCustomValidity('Debe contener mínimo 7 caracteres, al menos 1 caracter numérico y una letra en mayúscula')"
+	                            	pattern="^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{6,})\S$"
+	                            	maxlength="15" required />
                               	<span><i class="fa fa-lock"></i></span>
                             </div>
 
