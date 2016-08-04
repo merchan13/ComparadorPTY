@@ -39,19 +39,18 @@
                         <!--Income-->
                         <div class="form-group">
                           <label class="control-label col-sm-2" for="income" style="padding-top: 0;">Salario</label>
-                          <div class="col-sm-5" style="display: inline;">
-                            <input type="range"  id="income" min =600 max="50000" step ="100" value ="800"
-								onchange="prueba.value = income.value" oninput="outputUpdate(value)"
-								style="display: inline">
+                          <div class="col-sm-5">
+                            <input type="range"  id="income" min =600 max="20000" step ="100" value ="800"
+								onchange="prueba.value = income.value" oninput="outputUpdate(value)">
                           </div>
-						  <label for="income-number" style="display: inline;">
+						  <label for="income-number" style="margin-left: -380px;">
 							  $
 							  <output for="income" id="volume" style="display: inline">600</output>
 						  </label>
                         </div>
 
                         <!--Email-->
-                        <div class="form-group">
+                        <div class="form-group" style="display: none">
                           <label class="control-label col-sm-2" for="email">Email</label>
                           <div class="col-sm-3">
                             <input type="email" class="form-control" id="income"
@@ -60,7 +59,7 @@
                         </div>
 
                         <!--Remember Me-->
-                        <div class="form-group">
+                        <div class="form-group" style="display: none">
                           <div class="col-sm-offset-2 col-sm-3">
                             <div class="checkbox">
                               <label><input type="checkbox">Recordarme</label>
@@ -70,7 +69,7 @@
 
                         <!--Submit Button-->
                         <div class="form-group">
-                          <div class="col-sm-offset-2 col-sm-3">
+                          <div class="col-sm-offset-2 col-sm-5">
                             <button type="submit" class="btn btn-default">Comparar</button>
                           </div>
                         </div>
