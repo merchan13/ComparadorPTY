@@ -29,22 +29,31 @@
 </head>
 <body>
 
+<?php
+	session_start();
+	if(!$_SESSION['logged']){
+    	header("Location: compty-admin.php");
+    	exit;
+	}
+
+	$usuario = $_SESSION['user'];
+	$password = $_SESSION['password'];
+	$id = $_SESSION['id'];
+	$logo = $_SESSION['logo'];
+ ?>
+
 <div class="wrapper">
-    <div class="sidebar" data-color="banesco-blue" data-image="resources/assets/img/sidebar-4.jpg">
-
-    <!--
-
-        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
-        Tip 2: you can also add an image using data-image tag
-
-    -->
+    <div class="sidebar" data-color="banesco-blue" data-image="resources/assets/img/sidebar-7.png">
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-				<img src="resources/images/banesco-icon.png" alt="" />
-                <a href="compty-admin-perfil_usuario.php" class="simple-text">
-                    Banesco
-                </a>
+				<?php
+					echo '
+						<img src="'.$logo.'" alt="" />
+						<a href="compty-admin-perfil_usuario.php?id='.$id.'&password='.$password.'" class="simple-text">
+						'.$usuario.'
+						</a>';
+				?>
             </div>
 
             <ul class="nav">
@@ -114,7 +123,7 @@
 										<th>Acciones</th>
                                     </thead>
                                     <tbody>
-										<?php getInfoProductosUsuario(1); //Hacer que tome el valor!?>
+										<?php getInfoProductosUsuario($id); //Hacer que tome el valor!?>
                                     </tbody>
                                 </table>
 

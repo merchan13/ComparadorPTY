@@ -28,21 +28,21 @@
                     <h1>ComparadorPTY - Administración</h1>
                 </div>
                 <div class="admin-form">
-                    <form class="login" action="compty-admin-user_dashboard.php">
+                    <form class="login" action="compty-admin-verificar_login.php" method="POST">
                         <fieldset>
                             <legend class="legend">Login</legend>
 
                             <div class="input">
-                            	<input type="text" placeholder="Usuario" required />
-                              <span><i class="fa fa-user"></i></span>
+                            	<input type="text" name="username" placeholder="Usuario" required />
+                              	<span><i class="fa fa-user"></i></span>
                             </div>
 
                             <div class="input">
-                            	<input type="password" placeholder="Password" required />
-                              <span><i class="fa fa-lock"></i></span>
+                            	<input type="password" name="password" placeholder="Password" required />
+                              	<span><i class="fa fa-lock"></i></span>
                             </div>
 
-                            <button type="submit" class="submit"><i class="fa fa-long-arrow-right"></i></button>
+                            <button type="submit" name="submit" class="submit"><i class="fa fa-long-arrow-right"></i></button>
                         </fieldset>
                     </form>
                 </div>

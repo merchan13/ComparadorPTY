@@ -111,8 +111,8 @@
                                             <div class="form-group">
                                                 <label for="tipo-producto">Producto:</label>
                                                 <select class="form-control" id="tipo-producto">
+                                                    <option>-Seleccione un tipo de producto-</option>
                                                     <option>Tarjeta de Crédito</option>
-                                                    <option></option>
                                                     <option></option>
                                                     <option></option>
                                                 </select>
@@ -179,19 +179,19 @@
                                                 <ul>
                                                     <li>
                                                         <label for="">Millas</label>
-                                                        <input type="radio" name="name" value="">
+                                                        <input type="checkbox" name="name" value="">
                                                     </li>
                                                     <li>
                                                         <label for="">Puntos</label>
-                                                        <input type="radio" name="name" value="">
+                                                        <input type="checkbox" name="name" value="">
                                                     </li>
                                                     <li>
                                                         <label for="">Descuento</label>
-                                                        <input type="radio" name="name" value="">
+                                                        <input type="checkbox" name="name" value="">
                                                     </li>
                                                     <li>
                                                         <label for="">Reembolso</label>
-                                                        <input type="radio" name="name" value="">
+                                                        <input type="checkbox" name="name" value="">
                                                     </li>
                                                 </ul>
                                             </div>
