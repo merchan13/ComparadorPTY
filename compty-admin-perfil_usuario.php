@@ -34,6 +34,8 @@
 	if(!$_SESSION['logged']){
 		header("Location: compty-admin.php");
 		exit;
+	} else{
+		$_SESSION['id'] = $_GET["id"];
 	}
 ?>
 
@@ -44,6 +46,7 @@
     <div class="main-panel">
 
 		<?php include("compty-admin-navbar.php"); ?>
+		<?php include("compty-admin-consultar_usuario.php"); ?>
 
 		<div class="content">
             <div class="container-fluid">
@@ -52,41 +55,54 @@
                         <div class="card">
                             <div class="content" style="">
 								<form action="compty-admin-user_dashboard.php">
+
+									<!--LOGO-->
 									<div class="imagen-perfil" style="margin-left: 33%; margin-bottom: 5%;">
-										<img src="resources/images/banesco-icon.png" alt=""
+										<img src="<?php echo $imagenUrl; ?>" alt=""
 											style="max-width:200px; max-height: 200px;"/>
+
 									</div>
 									<div class="row">
+
+										<!--NOMBRE-->
 										<div class="col-md-6">
 											<div class="form-group" style="">
 												<label>Nombre del Banco</label>
 												<input type="text" class="form-control" placeholder="Nombre del producto"
-													value="Banesco" disabled="TRUE">
+													value="<?php echo $nombre; ?>"
+													disabled="TRUE">
 											</div>
 										</div>
+
+										<!--TELÉFONO-->
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Teléfono de Contacto</label>
 												<input type="text" class="form-control"
-													placeholder="Teléfono de contacto del Banco" value="+507-99999999">
+													placeholder="Teléfono de contacto del Banco"
+													value="<?php echo $telefono; ?>">
 											</div>
 										</div>
 									</div>
 									<div class="row">
+
+										<!--PÁGINA WEB-->
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Página de Contacto</label>
 												<input type="text" class="form-control"
 													placeholder="Página web de contacto del Banco"
-													value="https://banesco.com.pa">
+													value="<?php echo $pagina; ?>">
 											</div>
 										</div>
+
+										<!--CORREO-->
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Correo de Contacto</label>
 												<input type="text" class="form-control"
 													placeholder="Correo de contacto del banco para los formularios"
-													value="banescoatencion@banesco.com">
+													value="<?php echo $correo; ?>">
 											</div>
 										</div>
 									</div>
@@ -156,6 +172,5 @@
 
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="resources/assets/js/demo.js"></script>
-
 
 </html>

@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	
+
 	$usuario = $_SESSION['user'];
 	$password = $_SESSION['password'];
 	$id = $_SESSION['id'];
@@ -22,22 +22,31 @@
 
         <ul class="nav">
             <li class="active">
-                <a href="compty-admin-user_dashboard.php">
-                    <i class="pe-7s-diamond"></i>
-                    <p>Productos</p>
-                </a>
+				<?php
+	                echo '
+						<a href="compty-admin-user_dashboard.php?id='.$id.'&password='.$password.'">
+							<i class="pe-7s-diamond"></i>
+							<p>Productos</p>
+						</a>';
+	            ?>
             </li>
             <li class="active">
-                <a href="compty-admin-agregar_producto.php">
-                    <i class="pe-7s-plus"></i>
-                    <p>Agregar Nuevo</p>
-                </a>
+				<?php
+	                echo '
+						<a href="compty-admin-agregar_producto.php?id='.$id.'&password='.$password.'">
+							<i class="pe-7s-plus"></i>
+							<p>Agregar Nuevo</p>
+						</a>';
+	            ?>
             </li>
             <li class="active">
-                <a href="compty-admin-perfil_usuario.php">
-                    <i class="pe-7s-id"></i>
-                    <p>Perfil</p>
-                </a>
+				<?php
+	                echo '
+						<a href="compty-admin-perfil_usuario.php?id='.$id.'&password='.$password.'">
+							<i class="pe-7s-id"></i>
+							<p>Perfil</p>
+						</a>';
+	            ?>
             </li>
 
         </ul>

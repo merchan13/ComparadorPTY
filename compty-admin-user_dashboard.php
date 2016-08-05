@@ -216,8 +216,8 @@
 					alt="" class="imagen-producto" />
 			</td>
 			<td><img src="'.$marca[1].'" alt="" /></td>
-			<td>'.$tasaInteres.'</td>
-			<td>'.$cargosMes.'</td>
+			<td>'.$tasaInteres.'%</td>
+			<td>$'.$cargosMes.'</td>
 			<td>
 				<ul>';
 					foreach ($beneficios as &$beneficio) {
