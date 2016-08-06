@@ -26,6 +26,12 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="resources/assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
+	<!--JavaScript-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="resources/js/modificar_perfil.js" type="text/javascript"></script>
+	<!--/JavaScript-->
+
 </head>
 <body>
 
@@ -36,6 +42,7 @@
 		exit;
 	} else{
 		$_SESSION['id'] = $_GET["id"];
+		$_SESSION['password'] = $_GET["password"];
 	}
 ?>
 
@@ -54,13 +61,13 @@
 					<div class="col-md-8">
                         <div class="card">
                             <div class="content" style="">
-								<form action="compty-admin-user_dashboard.php">
+								<form action="compty-admin-modificar_usuario.php" method="post">
 
 									<!--LOGO-->
 									<div class="imagen-perfil" style="margin-left: 33%; margin-bottom: 5%;">
 										<img src="<?php echo $imagenUrl; ?>" alt=""
 											style="max-width:200px; max-height: 200px;"/>
-
+										<input type="file" name="imagen-perfil" value="">
 									</div>
 									<div class="row">
 
@@ -70,7 +77,7 @@
 												<label>Nombre del Banco</label>
 												<input type="text" class="form-control" placeholder="Nombre del producto"
 													value="<?php echo $nombre; ?>"
-													disabled="TRUE">
+													disabled="TRUE" name="nombre-perfil">
 											</div>
 										</div>
 
@@ -80,7 +87,7 @@
 												<label>Teléfono de Contacto</label>
 												<input type="text" class="form-control"
 													placeholder="Teléfono de contacto del Banco"
-													value="<?php echo $telefono; ?>">
+													value="<?php echo $telefono; ?>" name="telefono-perfil">
 											</div>
 										</div>
 									</div>
@@ -92,7 +99,7 @@
 												<label>Página de Contacto</label>
 												<input type="text" class="form-control"
 													placeholder="Página web de contacto del Banco"
-													value="<?php echo $pagina; ?>">
+													value="<?php echo $pagina; ?>" name="paginaw-perfil">
 											</div>
 										</div>
 
@@ -102,7 +109,7 @@
 												<label>Correo de Contacto</label>
 												<input type="text" class="form-control"
 													placeholder="Correo de contacto del banco para los formularios"
-													value="<?php echo $correo; ?>">
+													value="<?php echo $correo; ?>" name="correo-perfil">
 											</div>
 										</div>
 									</div>

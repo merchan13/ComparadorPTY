@@ -22,7 +22,7 @@
         $_SESSION['id'] = $row['usuario_admin_id'];
         $_SESSION['logo'] = $row['usuario_admin_imagenUrl'];
         $_SESSION['logged'] = TRUE;
-        header("Location: compty-admin-user_dashboard.php"); // Modify to go to the page you would like
+        header("Location: compty-admin-user_dashboard.php");
         $_SESSION['unsuccess'] = false;
         $_SESSION['intento'] = 1;
         exit;

@@ -12,8 +12,11 @@
         include("conexion.php");
 
         $id = $_SESSION['id'];
+        $password = $_SESSION['password'];
 
-        $sql = "SELECT * FROM comparador_usuario_admin WHERE usuario_admin_id = '$id'";
+        $sql = "SELECT * FROM comparador_usuario_admin
+            WHERE usuario_admin_id = '$id' AND usuario_admin_password = '$password'";
+            
 		$result = mysqli_query($mysqli, $sql);
 
 		$row = mysqli_fetch_array($result);
