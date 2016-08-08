@@ -1,5 +1,4 @@
 <?php
-
     session_start();
 
     if(!$_SESSION['logged']){
@@ -16,7 +15,7 @@
 
         $sql = "SELECT * FROM comparador_usuario_admin
             WHERE usuario_admin_id = '$id' AND usuario_admin_password = '$password'";
-            
+
 		$result = mysqli_query($mysqli, $sql);
 
 		$row = mysqli_fetch_array($result);

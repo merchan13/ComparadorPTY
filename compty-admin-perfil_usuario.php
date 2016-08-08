@@ -10,10 +10,10 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-
     <!-- Bootstrap core CSS     -->
     <link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="vendors/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'>
 
     <!-- Animation library for notifications   -->
     <link href="resources/assets/css/animate.min.css" rel="stylesheet"/>
@@ -61,7 +61,35 @@
 					<div class="col-md-8">
                         <div class="card">
                             <div class="content" style="">
-								<form action="compty-admin-modificar_usuario.php" method="post">
+								<form action="compty-admin-modificar_usuario.php" method="post"
+									enctype="multipart/form-data">
+
+									<?php
+										if (isset($_GET['update'])){
+											if ($_GET['update'] == 666){
+
+												echo'
+												<div class="login-alert-error">
+													<div  class="alert alert-success fade in">
+														<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+														<strong>Éxito!</strong>
+														 Perfil modificado exitosamente!
+													</div>
+												</div>
+												';
+											} else if ($_GET['update'] == 999) {
+												echo'
+												<div class="login-alert-error">
+													<div  class="alert alert-danger fade in">
+														<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+														<strong>Error!</strong>
+														 Ocurrió un error en el proceso, por favor intente de nuevo.
+													</div>
+												</div>
+												';
+											}
+										}
+									?>
 
 									<!--LOGO-->
 									<div class="imagen-perfil" style="margin-left: 33%; margin-bottom: 5%;">
@@ -85,9 +113,13 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Teléfono de Contacto</label>
-												<input type="text" class="form-control"
+												<input type="text" class="form-control" id="telefono-perfil"
 													placeholder="Teléfono de contacto del Banco"
-													value="<?php echo $telefono; ?>" name="telefono-perfil">
+													value="<?php echo $telefono; ?>" name="telefono-perfil"
+													oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)"
+													oninvalid="setCustomValidity('Debe contener únicamente caracteres numéricos, no puede contener letras. \nEj: +507 111-1111.')"
+													pattern="^[+ -.()0-9]+$"
+													maxlength="14" required>
 											</div>
 										</div>
 									</div>
@@ -97,9 +129,13 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Página de Contacto</label>
-												<input type="text" class="form-control"
+												<input type="text" class="form-control" id="paginaw-perfil"
 													placeholder="Página web de contacto del Banco"
-													value="<?php echo $pagina; ?>" name="paginaw-perfil">
+													value="<?php echo $pagina; ?>" name="paginaw-perfil"
+													oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)"
+													oninvalid="setCustomValidity('Debe introducir una dirección de portal web válido.\nEj: https://tupaginaweb.com')"
+													pattern="^(http\:\/\/|https\:\/\/)?([a-z0-9][a-z0-9\-]*\.)+[a-z0-9][a-z0-9\-]*(\/[a-z0-9][a-z0-9._\-]*)*$"
+													maxlength="80" required>
 											</div>
 										</div>
 
@@ -107,9 +143,13 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Correo de Contacto</label>
-												<input type="text" class="form-control"
+												<input type="text" class="form-control" id="correo-perfil"
 													placeholder="Correo de contacto del banco para los formularios"
-													value="<?php echo $correo; ?>" name="correo-perfil">
+													value="<?php echo $correo; ?>" name="correo-perfil"
+													oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)"
+													oninvalid="setCustomValidity('Debe introducir un correo válido.\nEj: ejemplo@dominio.com')"
+													pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$"
+													maxlength="30" required>
 											</div>
 										</div>
 									</div>
