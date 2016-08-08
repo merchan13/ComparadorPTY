@@ -10,21 +10,23 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-
     <!-- Bootstrap core CSS     -->
     <link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="vendors/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="resources/css/dashboard.css" rel="stylesheet">
 
     <!-- Animation library for notifications   -->
     <link href="resources/assets/css/animate.min.css" rel="stylesheet"/>
 
-    <!--  Light Bootstrap Table core CSS    -->
+    <!--  Light Bootstrap Table core CSS -->
     <link href="resources/assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="resources/assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+
 
 </head>
 <body>
@@ -45,6 +47,32 @@
 
 		<?php include("compty-admin-navbar.php"); ?>
 
+		<!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+		    	<!-- Modal content-->
+		    	<div class="modal-content">
+		      		<div class="modal-header">
+		        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		        		<h4 class="modal-title">Modal Header</h4>
+		      		</div>
+		      		<div class="modal-body" name="modal-body">
+				  		<p>some content
+							<?php
+								include ("compty-admin-producto_mas_info");
+							?>
+						</p>
+          				<input type="text" name="id-producto" id="id-producto" value=""/>
+		      		</div>
+		      		<div class="modal-footer">
+		        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      		</div>
+		    	</div>
+		  	</div>
+		</div>
+
+
 		<div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -62,13 +90,13 @@
                                     	<th>Tasa</th>
                                     	<th>Cargos X Mes</th>
                                     	<th>Beneficios</th>
+										<th>Mas Información</th>
 										<th>Acciones</th>
                                     </thead>
                                     <tbody>
 										<?php getInfoProductosUsuario($id); //Hacer que tome el valor!?>
                                     </tbody>
                                 </table>
-
                             </div>
                         </div>
                     </div>
@@ -97,8 +125,13 @@
     </div>
 </div>
 
-
 </body>
+
+	<!--JavaScript-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="resources/js/dashboard.js" type="text/javascript"></script>
+	<!--/JavaScript-->
 
     <!--   Core JS Files   -->
     <script src="resources/assets/js/jquery-1.10.2.js" type="text/javascript"></script>
@@ -121,7 +154,6 @@
 
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="resources/assets/js/demo.js"></script>
-
 
 </html>
 
@@ -160,7 +192,7 @@
 			$beneficios = getBeneficiosProducto($id);
 
 			//Imprimir tabla
-			printInformacionProducto($nombre,$descripcion,$ingresoMin,$tasaInteres,$cargosMes,$seguroVida,$tasaMora,
+			printInformacionProducto($id,$nombre,$descripcion,$ingresoMin,$tasaInteres,$cargosMes,$seguroVida,$tasaMora,
 			$imagenUrl,$marca,$beneficios);
 		}
 
@@ -206,7 +238,7 @@
 
 	//Imprimir HTML
 	//Recibe toda la informacion de la tarjeta
-	function printInformacionProducto($nombre,$descripcion,$ingresoMin,$tasaInteres,$cargosMes,$seguroVida,$tasaMora,
+	function printInformacionProducto($id,$nombre,$descripcion,$ingresoMin,$tasaInteres,$cargosMes,$seguroVida,$tasaMora,
 	$imagenUrl,$marca,$beneficios){
 		echo'
 		<tr>
@@ -227,14 +259,21 @@
 				</ul>
 			</td>
 			<td>
+				<button type="button" title="Más Info" id="prueba" data-toggle="modal" data-target="#myModal"
+					data-id="'.$id.'"
+					class="btn btn-info btn-block btn-fill open-Info">
+					Ver más
+				</button>
+			</td>
+			<td>
 				<ul class="actions">
 					<li><a title="Modificar"
-						class="btn btn-primary glyphicon glyphicon-pencil"
+						class="btn btn-primary btn-fill glyphicon glyphicon-pencil"
 						style=""
 						href="#"></a>
 					</li>
 					<li><a title="Eliminar"
-						class="btn btn-danger glyphicon glyphicon-remove"
+						class="btn btn-danger btn-fill glyphicon glyphicon-trash"
 						style=""
 						href="#"></a>
 					</li>

@@ -1,0 +1,8 @@
+.modal-backdrop {
+    position: static;
+}
+
+.modal-dialog{
+    width: 70%;
+    margin-left: 25%;
+}
