@@ -55,15 +55,10 @@
 		    	<div class="modal-content">
 		      		<div class="modal-header">
 		        		<button type="button" class="close" data-dismiss="modal">&times;</button>
-		        		<h4 class="modal-title">Modal Header</h4>
+		        		<h4 class="modal-title">Tarjeta de Crédito</h4>
 		      		</div>
 		      		<div class="modal-body" name="modal-body">
-				  		<p>some content
-							<?php
-								include ("compty-admin-producto_mas_info");
-							?>
-						</p>
-          				<input type="text" name="id-producto" id="id-producto" value=""/>
+						
 		      		</div>
 		      		<div class="modal-footer">
 		        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

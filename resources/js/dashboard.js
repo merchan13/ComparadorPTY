@@ -9,7 +9,6 @@ $(document).on("click", ".open-Info", function () {
         data: { varname: Id},
         success:function(response){
            $('.modal-body').html(response);
-           $(".modal-body #id-producto").val( 'pene' );
         }
     });
 });
