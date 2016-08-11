@@ -238,7 +238,7 @@
                 <div class="form-group">
                     <label>Ingreso Mínimo</label>
                     <input type="text" class="form-control" id="ingmin-tdc"
-                        placeholder="Página web de contacto del Banco"
+                        placeholder="Ingreso mínimo o salario mínimo"
                         value="'.$ingresoMin.'" name="ingmin-tdc"
                         oninput="setCustomValidity(\'\')" onblur="onBlurDeInputs(this.id)"
                         oninvalid="setCustomValidity(\'Debe introducir una dirección de portal web válido.\nEj: https://tupaginaweb.com\')"
@@ -252,7 +252,7 @@
                 <div class="form-group">
                     <label>Cargos Mensuales</label>
                     <input type="text" class="form-control" id="cargmens-tdc"
-                        placeholder="Correo de contacto del banco para los formularios"
+                        placeholder="Cargos mensuales cobrados"
                         value="'.$cargosMes.'" name="cargmens-tdc"
                         oninput="setCustomValidity(\'\')" onblur="onBlurDeInputs(this.id)"
                         oninvalid="setCustomValidity(\'Debe introducir un correo válido.\nEj: ejemplo@dominio.com\')"

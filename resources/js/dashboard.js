@@ -36,7 +36,8 @@ $(document).on("click", ".open-Eliminar", function () {
         url:'compty-admin-producto_eliminar.php',
         data: { varname: Id},
         success:function(response){
-           $('.eliminar-modal').html(response);
+            $('.form-eliminar').empty();
+            $('.form-eliminar').html(response);
         }
     });
 });

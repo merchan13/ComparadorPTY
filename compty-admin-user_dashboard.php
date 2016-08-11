@@ -47,7 +47,7 @@
 
 		<?php include("compty-admin-navbar.php"); ?>
 
-		<!-- Modal Mas Info-->
+		<!-- Modal MAS INFO-->
 		<div id="infoModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 
@@ -67,7 +67,7 @@
 		  	</div>
 		</div>
 
-		<!-- Modal Modificar-->
+		<!-- Modal MODIFICARr-->
 		<div id="modifModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 
@@ -103,7 +103,7 @@
 		  	</div>
 		</div>
 
-		<!-- Modal Eliminar-->
+		<!-- Modal ELIMINAR-->
 		<div id="elimModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 
@@ -115,6 +115,22 @@
 		      		</div>
 		      		<div class="modal-body eliminar-modal" name="modal-body eliminarmodal">
 						<!-- compty-admin-producto_eliminar.php -->
+						<div class="content">
+				            <div class="container-fluid">
+				                <div class="row">
+									<div class="col-md-14">
+				                        <div class="card">
+				                            <div class="content" style="">
+												<form action="compty-admin-producto_eliminar.php" method="post"
+													enctype="multipart/form-data" class="form-eliminar">
+
+												</form>
+				                            </div>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
 		      		</div>
 		      		<div class="modal-footer">
 		        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
