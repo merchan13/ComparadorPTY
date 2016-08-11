@@ -2,6 +2,7 @@
     session_start();
     include ("conexion.php");
 
+    //REVISAR!
     $id = $_SESSION['id'];
     $password = $_SESSION['password'];
 
@@ -17,18 +18,25 @@
       //Filtrar el nombre
       //$imagenUrl = preg_replace("#[^a-z0-9.]#i", "", $imagenUrl);
 
-      if(!$imagenTemp){
-        echo("You need to select a file to upload");
-      }else {
+      if($imagenTemp){
         move_uploaded_file($imagenTemp, "resources/images/$imagenUrl");
+
+        $sql = "UPDATE comparador_usuario_admin
+                SET usuario_admin_imagenUrl = 'resources/images/$imagenUrl'
+                WHERE usuario_admin_id = $id;";
+
+        if ($stmt = mysqli_prepare($mysqli, $sql)) {
+            mysqli_stmt_execute($stmt);
+            $error_sql = mysqli_stmt_error($stmt);
+            mysqli_stmt_close($stmt);
+        }
       }
     }
 
     $sql = "UPDATE comparador_usuario_admin
             SET usuario_admin_telefono = '$telefono',
              usuario_admin_pagina = '$pagina',
-             usuario_admin_correo = '$correo',
-             usuario_admin_imagenUrl = 'resources/images/$imagenUrl'
+             usuario_admin_correo = '$correo'
             WHERE usuario_admin_id = $id;";
 
     if ($stmt = mysqli_prepare($mysqli, $sql)) {

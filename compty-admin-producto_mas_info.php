@@ -28,104 +28,11 @@
         $marca = getMarcaProducto($marca_id);
         //[...] beneficio1, beneficio2, ...
         $beneficios = getBeneficiosProducto($id);
+        $requisitos = getRequisitosProducto($id);
         $banco = $_SESSION["user"];
 
-        echo '
-        <div class="info-img">
-            <img src="'.$imagenUrl.'" alt="" />
-        </div>
-        <div class="info-descripcion">
-            <h3><strong>'.$nombre.'</strong></h2>
-            <p>
-                '.$descripcion.'
-            </p>
-            <hr>
-        </div>
-        <div class="info-secundaria">
-            <div class="info-fila1">
-                <div class="info-fila1-elemento">
-                    <strong>Institución Bancaria:</strong>
-                    <p>
-                        '.$banco.'
-                    </p>
-                </div>
-                <div class="info-fila1-elemento">
-                    <strong>Marca:</strong>
-                    <img src="'.$marca[1].'" alt="" />
-                </div>
-                <div class="info-fila1-elemento">
-                    <strong>Ingreso Mínimo:</strong>
-                    <p>
-                        $'.$ingresoMin.'
-                    </p>
-                </div>
-                <div class="info-fila1-elemento">
-                    <strong>Beneficios:</strong>
-                    <ul>';
-                        foreach ($beneficios as $beneficio) {
-                            echo '<li>'.$beneficio.'</li>';
-                        }
-
-        echo '
-                    </ul>
-                </div>
-                <hr>
-            </div>
-            <div class="info-fila2">
-                <div class="info-fila2-elemento">
-                    <strong>Tasa de Interés:</strong>
-                    <p>
-                        '.$tasaInteres.'%
-                    </p>
-                </div>
-                <div class="info-fila2-elemento">
-                    <strong>Cargos Mensuales:</strong>
-                    <p>
-                        $'.$cargosMes.'
-                    </p>
-                </div>
-                <div class="info-fila2-elemento">
-                    <strong>Seguro de Vida:</strong>
-                    <p>
-                        '.$seguroVida.'%
-                    </p>
-                </div>
-                <div class="info-fila2-elemento">
-                    <strong>Tasa de Mora:</strong>
-                    <p>
-                        '.$tasaMora.'%
-                    </p>
-                </div>
-            </div>
-            <div class="info-requisitos">
-                <hr>
-                <h5><strong>Requisitos:</strong></h5>
-                <ul>
-                    <li>
-                        <p>
-                        Solicitud de vinculación y contratación de productos persona natural.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                        Fotocopia del documento identidad ampliado al 150%.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                        Fotocopia del certificado de ingresos y retenciones y/o Declaración de renta.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                        Certificado laboral original con vigencia no mayor a 45 días, indicando cargo,
-                        salario, tiempo de servicio y tipo de contrato.
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        ';
+        imprimirMasInfo($nombre,$descripcion,$ingresoMin,$tasaInteres,$cargosMes,$seguroVida,$tasaMora,$imagenUrl,
+            $marca,$beneficios,$requisitos,$banco);
     }
 
         //Marca de la TDC
@@ -161,4 +68,123 @@
             return $beneficios;
         }
 
+        function getRequisitosProducto($producto_id){
+
+            include ("conexion.php");
+            $sql = "SELECT *
+                FROM comparador_requisito_tdc
+                WHERE producto_tdc_id = '$producto_id'";
+            $result = mysqli_query($mysqli, $sql);
+
+            $requisitos = array();
+
+            while($row = mysqli_fetch_array($result))
+            {
+                $requisitos[] = $row["requisito_tdc_descripcion"];
+            }
+
+            return $requisitos;
+        }
+
+        //Imprimir en la ventana modal toda la info del producto
+        //Recibe la informacion pertinente del producto.
+        function imprimirMasInfo($nombre,$descripcion,$ingresoMin,$tasaInteres,$cargosMes,$seguroVida,$tasaMora,
+            $imagenUrl,$marca,$beneficios,$requisitos,$banco){
+            echo '
+            <div class="info-img">
+                <img src="'.$imagenUrl.'" alt="" />
+            </div>
+            <div class="info-descripcion">
+                <h3><strong>'.$nombre.'</strong></h2>
+                <p>
+                    '.$descripcion.'
+                </p>
+                <hr>
+            </div>
+            <div class="info-secundaria">
+                <div class="info-fila1">
+                    <div class="info-fila1-elemento">
+                        <strong>Institución Bancaria:</strong>
+                        <p>
+                            '.$banco.'
+                        </p>
+                    </div>
+                    <div class="info-fila1-elemento">
+                        <strong>Marca:</strong>
+                        <img src="'.$marca[1].'" alt="" />
+                    </div>
+                    <div class="info-fila1-elemento">
+                        <strong>Ingreso Mínimo:</strong>
+                        <p>
+                            $'.$ingresoMin.'
+                        </p>
+                    </div>
+                    <div class="info-fila1-elemento">
+                        <strong>Beneficios:</strong>
+                        <ul>';
+                            foreach ($beneficios as $beneficio) {
+                                echo '<li>'.$beneficio.'</li>';
+                            }
+
+            echo '
+                        </ul>
+                    </div>
+                    <hr>
+                </div>
+                <div class="info-fila2">
+                    <div class="info-fila2-elemento">
+                        <strong>Tasa de Interés:</strong>
+                        <p>
+                            '.$tasaInteres.'%
+                        </p>
+                    </div>
+                    <div class="info-fila2-elemento">
+                        <strong>Cargos Mensuales:</strong>
+                        <p>
+                            $'.$cargosMes.'
+                        </p>
+                    </div>
+                    <div class="info-fila2-elemento">
+                        <strong>Seguro de Vida:</strong>
+                        <p>
+                            '.$seguroVida.'%
+                        </p>
+                    </div>
+                    <div class="info-fila2-elemento">
+                        <strong>Tasa de Mora:</strong>
+                        <p>
+                            '.$tasaMora.'%
+                        </p>
+                    </div>
+                </div>
+                <div class="info-requisitos">
+                    <hr>
+                    <h5><strong>Requisitos:</strong></h5>
+                    <ul>
+                        <li>
+                            <p>
+                            Solicitud de vinculación y contratación de productos persona natural.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                            Fotocopia del documento identidad ampliado al 150%.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                            Fotocopia del certificado de ingresos y retenciones y/o Declaración de renta.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                            Certificado laboral original con vigencia no mayor a 45 días, indicando cargo,
+                            salario, tiempo de servicio y tipo de contrato.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            ';
+        }
 ?>

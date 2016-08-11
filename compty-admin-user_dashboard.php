@@ -47,8 +47,8 @@
 
 		<?php include("compty-admin-navbar.php"); ?>
 
-		<!-- Modal -->
-		<div id="myModal" class="modal fade" role="dialog">
+		<!-- Modal Mas Info-->
+		<div id="infoModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 
 		    	<!-- Modal content-->
@@ -57,8 +57,8 @@
 		        		<button type="button" class="close" data-dismiss="modal">&times;</button>
 		        		<h4 class="modal-title">Tarjeta de Crédito</h4>
 		      		</div>
-		      		<div class="modal-body" name="modal-body">
-						
+		      		<div class="modal-body info-modal" name="modal-body info">
+						<!-- compty-admin-producto_mas_info.php -->
 		      		</div>
 		      		<div class="modal-footer">
 		        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -67,6 +67,61 @@
 		  	</div>
 		</div>
 
+		<!-- Modal Modificar-->
+		<div id="modifModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+		    	<!-- Modal content-->
+		    	<div class="modal-content">
+		      		<div class="modal-header">
+		        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		        		<h4 class="modal-title">Modificar Tarjeta de Crédito</h4>
+		      		</div>
+		      		<div class="modal-body modificar-modal" name="modal-body modificar">
+						<!-- compty-admin-producto_modificar.php -->
+						<div class="content">
+				            <div class="container-fluid">
+				                <div class="row">
+									<div class="col-md-14">
+				                        <div class="card">
+				                            <div class="content" style="">
+												<form action="compty-admin-producto_modificar.php" method="post"
+													enctype="multipart/form-data" class="form-modif">
+
+												</form>
+				                            </div>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+		      		</div>
+		      		<div class="modal-footer">
+		        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      		</div>
+		    	</div>
+		  	</div>
+		</div>
+
+		<!-- Modal Eliminar-->
+		<div id="elimModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+		    	<!-- Modal content-->
+		    	<div class="modal-content">
+		      		<div class="modal-header">
+		        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		        		<h4 class="modal-title">Eliminar Tarjeta de Crédito</h4>
+		      		</div>
+		      		<div class="modal-body eliminar-modal" name="modal-body eliminarmodal">
+						<!-- compty-admin-producto_eliminar.php -->
+		      		</div>
+		      		<div class="modal-footer">
+		        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      		</div>
+		    	</div>
+		  	</div>
+		</div>
 
 		<div class="content">
             <div class="container-fluid">
@@ -254,7 +309,7 @@
 				</ul>
 			</td>
 			<td>
-				<button type="button" title="Más Info" id="prueba" data-toggle="modal" data-target="#myModal"
+				<button type="button" title="Más Info" id="prueba" data-toggle="modal" data-target="#infoModal"
 					data-id="'.$id.'"
 					class="btn btn-info btn-block btn-fill open-Info">
 					Ver más
@@ -262,15 +317,19 @@
 			</td>
 			<td>
 				<ul class="actions">
-					<li><a title="Modificar"
-						class="btn btn-primary btn-fill glyphicon glyphicon-pencil"
-						style=""
-						href="#"></a>
+					<li>
+						<a href="#">
+							<button type="button" title="Más Info" id="prueba" data-toggle="modal" data-target="#modifModal"
+								title="Modificar" class="btn btn-primary btn-fill glyphicon glyphicon-pencil open-Modif"
+								data-id="'.$id.'"></button>
+						</a>
 					</li>
-					<li><a title="Eliminar"
-						class="btn btn-danger btn-fill glyphicon glyphicon-trash"
-						style=""
-						href="#"></a>
+					<li>
+						<a href="#">
+							<button type="button" title="Más Info" id="prueba" data-toggle="modal" data-target="#elimModal"
+								title="Eliminar" class="btn btn-danger btn-fill glyphicon glyphicon-trash open-Eliminar"
+								data-id="'.$id.'"></button>
+						</a>
 					</li>
 				</ul>
 			</td>

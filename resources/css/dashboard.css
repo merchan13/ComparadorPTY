@@ -6,3 +6,23 @@
     width: 70%;
     margin-left: 25%;
 }
+
+ul {
+    list-style: none;
+}
+
+ul > li > img.tdc-icon {
+    max-width: 70px;
+	max-height: 60px;
+	border-radius: 100px 100px 100px 100px;
+}
+
+input.requisito {
+    margin-top: 3%;
+    max-width: 80%;
+    display: inline;
+}
+
+input.range-pct{
+    max-width: 85%;
+}

@@ -50,11 +50,11 @@
                         </div>
 
                         <!--Email-->
-                        <div class="form-group" style="display: none">
+                        <div class="form-group">
                           <label class="control-label col-sm-2" for="email">Email</label>
                           <div class="col-sm-3">
                             <input type="email" class="form-control" id="income"
-								placeholder="Ingrese correo electrónico" disabled="true">
+								placeholder="Ingrese correo electrónico">
                           </div>
                         </div>
 
