@@ -160,28 +160,19 @@
                 <div class="info-requisitos">
                     <hr>
                     <h5><strong>Requisitos:</strong></h5>
-                    <ul>
+                    <ul>';
+
+                    foreach ($requisitos as $requisito) {
+                        echo '
                         <li>
                             <p>
-                            Solicitud de vinculación y contratación de productos persona natural.
+                            '.$requisito.'.
                             </p>
                         </li>
-                        <li>
-                            <p>
-                            Fotocopia del documento identidad ampliado al 150%.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                            Fotocopia del certificado de ingresos y retenciones y/o Declaración de renta.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                            Certificado laboral original con vigencia no mayor a 45 días, indicando cargo,
-                            salario, tiempo de servicio y tipo de contrato.
-                            </p>
-                        </li>
+                        ';
+                    }
+
+                    echo'
                     </ul>
                 </div>
             </div>

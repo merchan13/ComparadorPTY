@@ -2,7 +2,6 @@
     session_start();
     include ("conexion.php");
 
-    //REVISAR!
     $id = $_SESSION['id'];
     $password = $_SESSION['password'];
 
@@ -14,9 +13,6 @@
       $imagenUrl = $_FILES['imagen-perfil']['name'];
       $imagenTemp = $_FILES['imagen-perfil']['tmp_name'];
       $imageType = $_FILES['imagen-perfil']['type'];
-
-      //Filtrar el nombre
-      //$imagenUrl = preg_replace("#[^a-z0-9.]#i", "", $imagenUrl);
 
       if($imagenTemp){
         move_uploaded_file($imagenTemp, "resources/images/$imagenUrl");

@@ -1,11 +1,12 @@
 <?php
 
     session_start();
+    //REVISAR!
     $idUser = $_SESSION['id'];
     $password = $_SESSION['password'];
 
     // * * *
-    //Obtener datos
+    //Obtener datos y mandar a imprimir
     // * * *
     if (isset($_POST["varname"])){
 
@@ -20,6 +21,7 @@
 
         //Atributos
         $id = $row["producto_tdc_id"];
+        $usuario = $row["usuario_admin_id"];
         $nombre = $row["producto_tdc_nombre"];
         $descripcion = $row["producto_tdc_descripcion"];
         $ingresoMin = $row["producto_tdc_ingresoMin"];
@@ -37,12 +39,14 @@
         $beneficios = getBeneficiosProducto($id);
         $requisitos = getRequisitosProducto($id);
 
-        imprimirModificar($id, $nombre, $descripcion, $ingresoMin, $tasaInteres, $cargosMes, $seguroVida, $tasaMora,
+        imprimirModificar($id, $usuario, $nombre, $descripcion, $ingresoMin, $tasaInteres, $cargosMes, $seguroVida, $tasaMora,
             $imagenUrl, $marca, $beneficios, $requisitos);
     }
 
+    //
     //Marca de la TDC
     //Recibe el id de la marca.
+    //
     function getMarcaProducto($marca_id){
 
         include ("conexion.php");
@@ -53,8 +57,10 @@
         return array($row["marca_tdc_nombre"], $row["marca_tdc_imagenUrl"]);
     }
 
+    //
     //Beneficios de la TDC
     //Recibe el id del producto.
+    //
     function getBeneficiosProducto($producto_id){
 
         include ("conexion.php");
@@ -73,8 +79,10 @@
         return $beneficios;
     }
 
+    //
     //Requisitos de la TDC
     //Recibe el id del producto.
+    //
     function getRequisitosProducto($producto_id){
 
         include ("conexion.php");
@@ -93,13 +101,14 @@
         return $requisitos;
     }
 
-    //* * *
+    //
     //Imprimir ventana modal
-    //* * *
-    function imprimirModificar($id, $nombre,$descripcion,$ingresoMin,$tasaInteres,$cargosMes,$seguroVida,$tasaMora,$imagenUrl,
-        $marca,$beneficios,$requisitos){
+    //
+    function imprimirModificar($id, $usuario, $nombre,$descripcion,$ingresoMin,$tasaInteres,$cargosMes,$seguroVida,
+        $tasaMora,$imagenUrl,$marca,$beneficios,$requisitos){
         echo '
         <input type="hidden" name="lospollitosdicen" value="'.$id.'">
+        <input type="hidden" name="piopiopio" value="'.$usuario.'">
 
         <!--IMAGEN-->
         <div class="imagen-perfil" style="margin-left: 33%; margin-bottom: 5%;">
@@ -297,47 +306,39 @@
         <div class="row">
             <!--REQUISITOS-->
             <div class="col-md-10" >
-                <div class="form-group">
+                <div class="form-group" id="form-requisitos">
                     <label>Requisitos</label>
+                    <a href="#">
+                        <button type="button" title="Agregar"
+                            class="btn btn-primary btn-fill glyphicon glyphicon-plus agregar-mas-req">
+                        </button>
+                    </a>
                     ';
 
                     $nroRequisitos = count($requisitos);
 
                     for ($i = 0; $i<$nroRequisitos; $i++) {
                         echo '
-                        <div class="requisito">
+                        <div class="contenedor-requisito" id="contenedor'.$i.'">
                             <input type="text" class="form-control requisito" id="requisito'.$i.'"
-                                placeholder="Página web de contacto del Banco"
+                                placeholder="Requisito para la solicitud del producto"
                                 value="'.$requisitos[$i].'" name="requisito[]"
                                 oninput="setCustomValidity(\'\')" onblur="onBlurDeInputs(this.id)"
                                 oninvalid="setCustomValidity(\'Debe introducir una dirección de portal web válido.\nEj: https://tupaginaweb.com\')"
 
-                                maxlength="80" required>
+                                maxlength="300" required>
                             <a href="#" style="display:inline">
-                                <button type="button" title="Más Info"
-                                    title="Eliminar" class="btn btn-danger btn-fill glyphicon glyphicon-trash"
+                                <button type="button" title="Eliminar"
+                                    class="btn btn-danger btn-fill glyphicon glyphicon-trash borrar-req"
                                     data-id="'.$i.'" style="display:inline">
                                 </button>
                             </a>
-                        ';
-                        if ($i == ($nroRequisitos-1)){
-                            echo'
-                            <a href="#">
-                                <button type="button" title="Más Info"
-                                    title="Agregar" class="btn btn-primary btn-fill glyphicon glyphicon-plus"
-                                    data-id="'.$i.'">
-                                </button>
-                            </a>
-                            ';
-                        }
-                        echo'
                         </div>
                         ';
                     }
 
                     echo'
                     </div>
-
                 </div>
             </div>
         </div>
@@ -358,10 +359,13 @@
         ';
     }
 
+    //
     //Si hubo una modificacion, insertar en BD
+    //
     if (isset($_POST["nombre-tdc"])){
         modificar_producto(
             $_POST["lospollitosdicen"],
+            $_POST["piopiopio"],
             $_FILES['imagen-tdc']['name'],
             $_FILES['imagen-tdc']['tmp_name'],
             $_FILES['imagen-tdc']['type'],
@@ -381,8 +385,8 @@
     //* * *
     //Insertar en BD las modificaciones.
     //* * *
-    function modificar_producto($id, $imagenUrl, $imagenTemp, $imageType, $nombre, $descripcion, $marca, $beneficios,
-        $ingresoMin, $cargosMes, $tasaInteres, $tasaMora, $seguroVida, $requisitos){
+    function modificar_producto($id, $usuario, $imagenUrl, $imagenTemp, $imageType, $nombre, $descripcion, $marca,
+        $beneficios, $ingresoMin, $cargosMes, $tasaInteres, $tasaMora, $seguroVida, $requisitos){
 
         include ("conexion.php");
 
@@ -417,10 +421,17 @@
             $error_sql = mysqli_stmt_error($stmt);
             mysqli_stmt_close($stmt);
 
-            // !!!!
-            //Para update de requisitos y beneficios, BORRAR todo registro asociado al id del producto tanto
-            // en la NN como en la entidad debil y registrarlos de nuevo.
-            // !!!!
+            //Eliminar beneficios
+            eliminarBeneficios($id);
+
+            //Agregar beneficios
+            agregarBeneficios($id, $usuario, $beneficios);
+
+            //Eliminar requisitos
+            eliminarRequisitos($id);
+
+            //Agregar requisitos
+            agregarRequisitos($id, $usuario, $requisitos);
 
             header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&update=666");
             exit;
@@ -431,4 +442,94 @@
 
     }
 
+    //
+    // Eliminar beneficios de un producto.
+    //
+    function eliminarBeneficios($id){
+        include ("conexion.php");
+        $sql = "SELECT * FROM comparador_producto_beneficio WHERE producto_tdc_id = $id";
+        $result = mysqli_query($mysqli, $sql);
+
+        while($row = mysqli_fetch_array($result))
+        {
+            $idBeneficio = $row["beneficio_tdc_id"];
+            $sql2 = "DELETE FROM comparador_producto_beneficio
+                    WHERE producto_tdc_id = $id
+                    AND beneficio_tdc_id = $idBeneficio";
+
+            $sql3 = "DELETE FROM comparador_beneficio_tdc WHERE beneficio_tdc_id = $idBeneficio";
+
+            //Eliminar NN
+            if ($stmt = mysqli_prepare($mysqli, $sql2)) {
+              mysqli_stmt_execute($stmt);
+              $error_sql = mysqli_stmt_error($stmt);
+              mysqli_stmt_close($stmt);
+            }
+
+            //Eliminar en tabla Beneficio
+            if ($stmt = mysqli_prepare($mysqli, $sql3)) {
+              mysqli_stmt_execute($stmt);
+              $error_sql = mysqli_stmt_error($stmt);
+              mysqli_stmt_close($stmt);
+            }
+
+        }
+    }
+
+    //
+    // Agregar beneficios a un producto.
+    //
+    function agregarBeneficios($id, $usuario, $beneficios){
+        include('conexion.php');
+        foreach ($beneficios as $beneficio) {
+
+            $sql = "SELECT * FROM comparador_beneficio_tdc WHERE beneficio_tdc_nombre = '$beneficio'";
+            $result = mysqli_query($mysqli, $sql);
+            $row = mysqli_fetch_array($result);
+
+            $idBeneficio = $row["beneficio_tdc_id"];
+
+            $sql2 = "INSERT INTO comparador_producto_beneficio (producto_tdc_id, usuario_admin_id, beneficio_tdc_id)
+                    VALUES ($id, $usuario, $idBeneficio)";
+
+            //Insertar en NN
+            if ($stmt = mysqli_prepare($mysqli, $sql2)) {
+              mysqli_stmt_execute($stmt);
+              $error_sql = mysqli_stmt_error($stmt);
+              mysqli_stmt_close($stmt);
+            }
+        }
+    }
+
+    //
+    // Eliminar beneficios de un producto.
+    //
+    function eliminarRequisitos($id){
+        include("conexion.php");
+        $sql = "DELETE FROM comparador_requisito_tdc
+                WHERE producto_tdc_id = $id";
+
+        if ($stmt = mysqli_prepare($mysqli, $sql)) {
+            mysqli_stmt_execute($stmt);
+            $error_sql = mysqli_stmt_error($stmt);
+            mysqli_stmt_close($stmt);
+        }
+    }
+
+    //
+    // Agregar requisitos a un producto.
+    //
+    function agregarRequisitos($id, $usuario, $requisitos){
+        include("conexion.php");
+        foreach ($requisitos as $requisito) {
+            $sql = "INSERT INTO comparador_requisito_tdc (requisito_tdc_descripcion, producto_tdc_id, usuario_admin_id)
+                    VALUES ('$requisito', $id, $usuario)";
+
+            if ($stmt = mysqli_prepare($mysqli, $sql)) {
+                mysqli_stmt_execute($stmt);
+                $error_sql = mysqli_stmt_error($stmt);
+                mysqli_stmt_close($stmt);
+            }
+        }
+    }
  ?>
