@@ -50,19 +50,37 @@
         $usuario = $_POST["piopiopio"];
 
         include("conexion.php");
-        //Tiene delete on cascade... PILAS!
+        //Delete de la tabla Producto
         $sql = "DELETE FROM comparador_producto_tdc WHERE producto_tdc_id = $id";
 
-        if ($stmt = mysqli_prepare($mysqli, $sql)) {
+        //Delete de la tabla NN de Beneficios
+        $sql2 = "DELETE FROM comparador_producto_beneficio WHERE producto_tdc_id = $id";
+
+        //Delete de la tabla de Requisito
+        $sql3 = "DELETE FROM comparador_requisito_tdc WHERE producto_tdc_id = $id";
+
+        if ($stmt = mysqli_prepare($mysqli, $sql2)) {
             mysqli_stmt_execute($stmt);
             $error_sql = mysqli_stmt_error($stmt);
             mysqli_stmt_close($stmt);
 
-            header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&delete=666");
-            exit;
-        } else {
-            header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&delete=999");
-            exit;
+            if ($stmt = mysqli_prepare($mysqli, $sql3)) {
+                mysqli_stmt_execute($stmt);
+                $error_sql = mysqli_stmt_error($stmt);
+                mysqli_stmt_close($stmt);
+
+                if ($stmt = mysqli_prepare($mysqli, $sql)) {
+                    mysqli_stmt_execute($stmt);
+                    $error_sql = mysqli_stmt_error($stmt);
+                    mysqli_stmt_close($stmt);
+
+                    header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&delete=666");
+                    exit;
+                } else {
+                    header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&delete=999");
+                    exit;
+                }
+            }
         }
     }
 
