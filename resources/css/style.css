@@ -43,7 +43,7 @@ header ul li{
 header ul li a img{
 	max-width: 27px;
 	max-height: 27px;
-	border-radius: 100px 100px 100px 100px;
+	border-radius: 7px 7px 7px 15px;
 }
 a {
 	color: #428BCA;

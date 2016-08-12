@@ -140,7 +140,7 @@
                     <label>Descripción</label>
                     <textarea rows="10" cols="400" type="text" class="form-control"
                         style="resize: none;"
-                        id="descripcion-tdc" placeholder="Página web de contacto del Banco"
+                        id="descripcion-tdc" placeholder="Descripcion del producto"
                         name="descripcion-tdc" oninput="setCustomValidity(\'\')" onblur="onBlurDeInputs(this.id)"
                         oninvalid="setCustomValidity(\'Debe introducir una dirección de portal web válido.\nEj: https://tupaginaweb.com\')"
 
