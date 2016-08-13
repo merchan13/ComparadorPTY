@@ -21,8 +21,10 @@
         echo '
             <input type="hidden" name="lospollitosdicen" value="'.$id.'">
             <input type="hidden" name="piopiopio" value="'.$usuario.'">
-            <p>
-                Está seguro que quiere eliminar '.$nombre.'?<br>Una vez confirmada ésta acción no se puede deshacer.
+            <p style="text-align:center">
+                Está seguro que quiere eliminar <strong>'.$nombre.'</strong>?
+                <br><br>
+                Una vez confirmada ésta acción no se puede deshacer.
             <p>
             <div class="clearfix"></div>
 
@@ -31,7 +33,7 @@
                     <div class="form-group">
                         <br>
                         <button type="submit" class="btn btn-danger btn-fill"
-                            style="width: 300px; height: 50px; margin-left:70%;">
+                            style="width: 300px; height: 50px; margin-left:67%;">
                             ELIMINAR
                         </button>
                     </div>

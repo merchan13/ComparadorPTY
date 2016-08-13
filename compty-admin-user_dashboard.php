@@ -315,12 +315,28 @@
 			</td>
 			<td><img src="'.$marca[1].'" alt="" /></td>
 			<td>'.$tasaInteres.'%</td>
-			<td>$'.$cargosMes.'</td>
+			<td><i class="fa fa-usd" aria-hidden="true"></i>'.$cargosMes.'</td>
 			<td>
 				<ul>';
-					foreach ($beneficios as &$beneficio) {
-						echo '<li>'.$beneficio.'</li>';
+				foreach ($beneficios as &$beneficio) {
+					switch ($beneficio) {
+						case 'Millas':
+							echo '<li>'.$beneficio.'<i class="fa fa-plane" aria-hidden="true"></i></li>';
+							break;
+						case 'Puntos':
+							echo '<li>'.$beneficio.'<i class="fa fa-plus-circle" aria-hidden="true"></i></li>';
+							break;
+						case 'Descuentos':
+							echo '<li>'.$beneficio.'<i class="fa fa-tags" aria-hidden="true"></i></li>';
+							break;
+						case 'Reembolsos':
+							echo '<li>'.$beneficio.'<i class="fa fa-money" aria-hidden="true"></i></li>';
+							break;
+						default:
+							echo '<li>'.$beneficio.'<i class="fa fa-code" aria-hidden="true"></i></li>';
+							break;
 					}
+				}
 		echo'
 				</ul>
 			</td>

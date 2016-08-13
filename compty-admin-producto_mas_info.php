@@ -122,9 +122,25 @@
                     <div class="info-fila1-elemento">
                         <strong>Beneficios:</strong>
                         <ul>';
-                            foreach ($beneficios as $beneficio) {
-                                echo '<li>'.$beneficio.'</li>';
+                        foreach ($beneficios as &$beneficio) {
+                            switch ($beneficio) {
+                                case 'Millas':
+                                    echo '<li>'.$beneficio.'<i class="fa fa-plane" aria-hidden="true"></i></li>';
+                                    break;
+                                case 'Puntos':
+                                    echo '<li>'.$beneficio.'<i class="fa fa-plus-circle" aria-hidden="true"></i></li>';
+                                    break;
+                                case 'Descuentos':
+                                    echo '<li>'.$beneficio.'<i class="fa fa-tags" aria-hidden="true"></i></li>';
+                                    break;
+                                case 'Reembolsos':
+                                    echo '<li>'.$beneficio.'<i class="fa fa-money" aria-hidden="true"></i></li>';
+                                    break;
+                                default:
+                                    echo '<li>'.$beneficio.'<i class="fa fa-code" aria-hidden="true"></i></li>';
+                                    break;
                             }
+                        }
 
             echo '
                         </ul>

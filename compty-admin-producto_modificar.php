@@ -188,7 +188,7 @@
                     <label>Beneficios</label>
                     <ul>
                         <li>
-                            Millas
+                            Millas <i class="fa fa-plane" aria-hidden="true"></i>
                             <input type="checkbox" value="Millas" class="beneficio-tdc"
                             ';
                             if (in_array("Millas", $beneficios)){
@@ -198,7 +198,7 @@
                             } echo'>
                         </li>
                         <li>
-                            Puntos
+                            Puntos <i class="fa fa-plus-circle" aria-hidden="true"></i>
                             <input type="checkbox" value="Puntos" class="beneficio-tdc"
                             ';
                             if (in_array("Puntos", $beneficios)){
@@ -208,7 +208,7 @@
                             } echo'>
                         </li>
                         <li>
-                            Descuentos
+                            Descuentos <i class="fa fa-tags" aria-hidden="true"></i>
                             <input type="checkbox" value="Descuentos" class="beneficio-tdc"
                             ';
                             if (in_array("Descuentos", $beneficios)){
@@ -218,7 +218,7 @@
                             } echo'>
                         </li>
                         <li>
-                            Reembolsos
+                            Reembolsos <i class="fa fa-money" aria-hidden="true"></i>
                             <input type="checkbox" value="Reembolsos" class="beneficio-tdc"
                             ';
                             if (in_array("Reembolsos", $beneficios)){
