@@ -54,7 +54,7 @@
 					<div class="col-md-8">
                         <div class="card">
                             <div class="content" style="">
-								<form action="compty-admin-modificar_usuario.php" method="post"
+								<form action="comparador-enviar_formulario.php" method="post"
 									enctype="multipart/form-data">
 
 									<div class="row">
@@ -64,7 +64,7 @@
 											<div class="form-group" style="">
 												<label>Nombre(s)</label>
 												<input type="text" class="form-control" placeholder="Introduzca su nombre"
-													value="" name="nombre-perfil">
+													value="" name="nombres">
 											</div>
 										</div>
 
@@ -73,7 +73,7 @@
 											<div class="form-group" style="">
 												<label>Apellidos</label>
 												<input type="text" class="form-control" placeholder="Introduzca sus apellidos"
-													value="" name="nombre-perfil">
+													value="" name="apellidos">
 											</div>
 										</div>
 
@@ -86,7 +86,7 @@
 												<label>Teléfono de Contacto</label>
 												<input type="text" class="form-control" id="telefono-perfil"
 													placeholder="Teléfono de contacto"
-													value="" name="telefono-perfil"
+													value="" name="telefono"
 													oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)"
 													oninvalid="setCustomValidity('Debe contener únicamente caracteres numéricos, no puede contener letras. \nEj: +507 111-1111.')"
 													pattern="^[+ -.()0-9]+$"
@@ -100,7 +100,7 @@
 												<label>Correo de Contacto</label>
 												<input type="text" class="form-control" id="correo-perfil"
 													placeholder="Correo electrónico de contacto"
-													value="" name="correo-perfil"
+													value="" name="correo"
 													oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)"
 													oninvalid="setCustomValidity('Debe introducir un correo válido.\nEj: ejemplo@dominio.com')"
 													pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$"
@@ -145,4 +145,10 @@
 	foreach ($_POST["solicitar"] as $producto) {
 		echo $producto.'<br>';
 	}
+
+	session_start();
+	$_SESSION["email"] = $_SESSION["email"];
+
+	$_SESSION["solicitar"] = $_POST["solicitar"];
+
  ?>

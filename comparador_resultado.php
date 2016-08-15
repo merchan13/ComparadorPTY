@@ -1,7 +1,3 @@
-<?php
-	session_start();
-	$_SESSION["email"] = $_POST["email"];
- ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -99,6 +95,9 @@
 
 <?php
 
+	session_start();
+	$_SESSION["email"] = $_POST["email"];
+	
 	//
 	//Informacion de los Productos
 	//
