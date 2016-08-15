@@ -95,57 +95,60 @@
                 <img src="'.$imagenUrl.'" alt="" />
             </div>
             <div class="info-descripcion">
-                <h3><strong>'.$nombre.'</strong></h2>
-                <p>
+                <h3><strong>'.$nombre.'</strong></h3>
+                <p align="justify">
                     '.$descripcion.'
                 </p>
                 <hr>
             </div>
             <div class="info-secundaria">
                 <div class="info-fila1">
-                    <div class="info-fila1-elemento">
-                        <strong>Institución Bancaria:</strong>
-                        <p>
-                            '.$banco.'
-                        </p>
+                    <div class="info-fila1-elemento-line">
+                        <div class="info-fila1-elemento">
+                            <strong>Institución Bancaria:</strong>
+                            <p>
+                                '.$banco.'
+                            </p>
+                        </div>
+                        <div class="info-fila1-elemento">
+                            <strong>Marca:</strong>
+                            <img src="'.$marca[1].'" alt="" />
+                        </div>
+                        <div class="info-fila1-elemento">
+                            <strong>Ingreso Mínimo:</strong>
+                            <p>
+                                $'.$ingresoMin.'
+                            </p>
+                        </div>
                     </div>
-                    <div class="info-fila1-elemento">
-                        <strong>Marca:</strong>
-                        <img src="'.$marca[1].'" alt="" />
-                    </div>
-                    <div class="info-fila1-elemento">
-                        <strong>Ingreso Mínimo:</strong>
-                        <p>
-                            $'.$ingresoMin.'
-                        </p>
-                    </div>
-                    <div class="info-fila1-elemento">
-                        <strong>Beneficios:</strong>
-                        <ul>';
-                        foreach ($beneficios as &$beneficio) {
-                            switch ($beneficio) {
-                                case 'Millas':
-                                    echo '<li>'.$beneficio.'<i class="fa fa-plane" aria-hidden="true"></i></li>';
-                                    break;
-                                case 'Puntos':
-                                    echo '<li>'.$beneficio.'<i class="fa fa-plus-circle" aria-hidden="true"></i></li>';
-                                    break;
-                                case 'Descuentos':
-                                    echo '<li>'.$beneficio.'<i class="fa fa-tags" aria-hidden="true"></i></li>';
-                                    break;
-                                case 'Reembolsos':
-                                    echo '<li>'.$beneficio.'<i class="fa fa-money" aria-hidden="true"></i></li>';
-                                    break;
-                                default:
-                                    echo '<li>'.$beneficio.'<i class="fa fa-code" aria-hidden="true"></i></li>';
-                                    break;
+                    <div class="info-fila1-elemento-line">
+                        <div class="info-fila1-elemento">
+                            <strong>Beneficios:</strong>
+                            <ul>';
+                            foreach ($beneficios as &$beneficio) {
+                                switch ($beneficio) {
+                                    case 'Millas':
+                                        echo '<li>'.$beneficio.'<i class="fa fa-plane" aria-hidden="true"></i></li>';
+                                        break;
+                                    case 'Puntos':
+                                        echo '<li>'.$beneficio.'<i class="fa fa-plus-circle" aria-hidden="true"></i></li>';
+                                        break;
+                                    case 'Descuentos':
+                                        echo '<li>'.$beneficio.'<i class="fa fa-tags" aria-hidden="true"></i></li>';
+                                        break;
+                                    case 'Reembolsos':
+                                        echo '<li>'.$beneficio.'<i class="fa fa-money" aria-hidden="true"></i></li>';
+                                        break;
+                                    default:
+                                        echo '<li>'.$beneficio.'<i class="fa fa-code" aria-hidden="true"></i></li>';
+                                        break;
+                                }
                             }
-                        }
 
-            echo '
-                        </ul>
+                echo '
+                            </ul>
+                        </div>
                     </div>
-                    <hr>
                 </div>
                 <div class="info-fila2">
                     <div class="info-fila2-elemento">
@@ -174,8 +177,7 @@
                     </div>
                 </div>
                 <div class="info-requisitos">
-                    <hr>
-                    <h5><strong>Requisitos:</strong></h5>
+                    <strong>Requisitos:</strong>
                     <ul>';
 
                     foreach ($requisitos as $requisito) {

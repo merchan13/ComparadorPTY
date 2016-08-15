@@ -93,9 +93,10 @@
 
 									<!--LOGO-->
 									<div class="imagen-perfil" style="margin-left: 33%; margin-bottom: 5%;">
-										<img src="<?php echo $imagenUrl; ?>" alt=""
+										<img src="<?php echo $imagenUrl; ?>" alt="choose an image" id="preview-foto"
 											style="max-width:200px; max-height: 200px;"/>
-										<input type="file" name="imagen-perfil" value="">
+										<input type="file" name="imagen-perfil" id="imagen-perfilb" value=""
+											onchange="readURL(this)">
 									</div>
 									<div class="row">
 

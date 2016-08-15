@@ -18,3 +18,38 @@ $(document).on("click", ".borrar-req", function () {
     child.parentNode.removeChild(child);
 
 });
+
+
+//RANGES
+//compty-admin-producto_modificar.php
+//
+//tasa interes
+function outputUpdate2(vol) {
+	document.querySelector('#volume2').value = vol;
+}
+//tasa mora
+function outputUpdate3(vol) {
+	document.querySelector('#volume3').value = vol;
+}
+//seguro vida
+function outputUpdate4(vol) {
+	document.querySelector('#volume4').value = vol;
+}
+
+
+function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#preview-foto').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#imagen-tdc").change(function(){
+    readURL(this);
+});

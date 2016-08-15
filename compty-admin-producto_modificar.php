@@ -267,11 +267,11 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Tasa de Interés: <label for="income-number" style="">
-                        <output for="income" id="volume" style="display: inline">'.$tasaInteres.'</output>
+                        <output for="income" id="volume2" style="display: inline">'.$tasaInteres.'</output>
                         %
                     </label></label>
-                    <input type="range"  id="income" min =600 max="20000" step ="100" value ="'.$tasaInteres.'"
-                        onchange="prueba.value = income.value" oninput="outputUpdate(value)"
+                    <input type="range"  id="income" min="20" max="35" step ="0.01" value ="'.$tasaInteres.'"
+                        onchange="prueba.value = income.value" oninput="outputUpdate2(value)"
                         class="range-pct" name="tinteres-tdc">
                 </div>
             </div>
@@ -280,11 +280,11 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Tasa de Mora: <label for="income-number" style="">
-                        <output for="income" id="volume" style="display: inline">'.$tasaMora.'</output>
+                        <output for="income" id="volume3" style="display: inline">'.$tasaMora.'</output>
                         %
                     </label></label>
-                    <input type="range"  id="income" min =600 max="20000" step ="100" value ="'.$tasaMora.'"
-                        onchange="prueba.value = income.value" oninput="outputUpdate(value)"
+                    <input type="range"  id="income" min="20" max="35" step ="0.01" value ="'.$tasaMora.'"
+                        onchange="prueba.value = income.value" oninput="outputUpdate3(value)"
                         class="range-pct" name="tmora-tdc">
                 </div>
             </div>
@@ -293,11 +293,11 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Seguro de Vida: <label for="income-number" style="">
-                        <output for="income" id="volume" style="display: inline">'.$seguroVida.'</output>
+                        <output for="income" id="volume4" style="display: inline">'.$seguroVida.'</output>
                         %
                     </label></label>
-                    <input type="range"  id="income" min =600 max="20000" step ="100" value ="'.$seguroVida.'"
-                        onchange="prueba.value = income.value" oninput="outputUpdate(value)"
+                    <input type="range"  id="income" min="0" max="10" step ="0.01" value ="'.$seguroVida.'"
+                        onchange="prueba.value = income.value" oninput="outputUpdate4(value)"
                         class="range-pct" name="segurovida-tdc">
                 </div>
             </div>

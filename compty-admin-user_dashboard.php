@@ -60,7 +60,7 @@
 		      		<div class="modal-body info-modal" name="modal-body info">
 						<!-- compty-admin-producto_mas_info.php -->
 		      		</div>
-		      		<div class="modal-footer">
+		      		<div class="modal-footer majinfo">
 		        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 		      		</div>
 		    	</div>

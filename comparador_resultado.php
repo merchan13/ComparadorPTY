@@ -97,7 +97,7 @@
 
 	session_start();
 	$_SESSION["email"] = $_POST["email"];
-	
+
 	//
 	//Informacion de los Productos
 	//
@@ -289,7 +289,9 @@
 			<!--CHECKBOX-->
 			<td>
 				<div class="elemento-check">
-					<input type="checkbox" name="solicitar[]" value="'.$id.'">
+					<span class="label label-primary">
+						<input type="checkbox" name="solicitar[]" value="'.$id.'">
+					</span>
 				</div>
 			</td>
 

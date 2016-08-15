@@ -66,9 +66,9 @@
 
 							        <!--IMAGEN-->
 							        <div class="imagen-perfil" style="margin-left: 33%; margin-bottom: 5%;">
-							            <img src="" alt=""
+							            <img src="#" alt="Choose an image" id="preview-foto" 
 							                style="width:300px; height: 200px;"/>
-							            <input type="file" name="imagen-tdc" value="">
+							            <input type="file" name="imagen-tdc" id="imagen-tdc" value="">
 							        </div>
 
 							        <div class="row">
@@ -188,11 +188,11 @@
 							            <div class="col-md-4">
 							                <div class="form-group">
 							                    <label>Tasa de Interés: <label for="income-number" style="">
-							                        <output for="income" id="volume" style="display: inline">0,00</output>
+							                        <output for="income" id="volume2" style="display: inline">20</output>
 							                        %
 							                    </label></label>
-							                    <input type="range"  id="income" min =600 max="20000" step ="100" value ="0"
-							                        onchange="prueba.value = income.value" oninput="outputUpdate(value)"
+							                    <input type="range"  id="income" min =20 max="35" step ="0.01" value ="0"
+							                        onchange="prueba.value = income.value" oninput="outputUpdate2(value)"
 							                        class="range-pct" name="tinteres-tdc">
 							                </div>
 							            </div>
@@ -201,11 +201,11 @@
 							            <div class="col-md-4">
 							                <div class="form-group">
 							                    <label>Tasa de Mora: <label for="income-number" style="">
-							                        <output for="income" id="volume" style="display: inline">0,00</output>
+							                        <output for="income" id="volume3" style="display: inline">20</output>
 							                        %
 							                    </label></label>
-							                    <input type="range"  id="income" min =600 max="20000" step ="100" value ="0"
-							                        onchange="prueba.value = income.value" oninput="outputUpdate(value)"
+							                    <input type="range"  id="income" min =20 max="35" step ="0.01" value ="0"
+							                        onchange="prueba.value = income.value" oninput="outputUpdate3(value)"
 							                        class="range-pct" name="tmora-tdc">
 							                </div>
 							            </div>
@@ -214,11 +214,11 @@
 							            <div class="col-md-4">
 							                <div class="form-group">
 							                    <label>Seguro de Vida: <label for="income-number" style="">
-							                        <output for="income" id="volume" style="display: inline">0,00</output>
+							                        <output for="income" id="volume4" style="display: inline">0</output>
 							                        %
 							                    </label></label>
-							                    <input type="range"  id="income" min =600 max="20000" step ="100" value ="0"
-							                        onchange="prueba.value = income.value" oninput="outputUpdate(value)"
+							                    <input type="range"  id="income" min =0 max="10" step ="0.01" value ="0"
+							                        onchange="prueba.value = income.value" oninput="outputUpdate4(value)"
 							                        class="range-pct" name="segurovida-tdc">
 							                </div>
 							            </div>
