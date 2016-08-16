@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="google-signin-scope" content="profile email">
+	    <meta name="google-signin-client_id" content="677597205141-jjbf1bud8nqbb7k22rfj3k4qbdj7fnom.apps.googleusercontent.com">
 		<title>ComparadorPty - Datos</title>
 
 		<!-- Bootstrap core CSS -->
@@ -18,7 +20,10 @@
 		<!--JavaScript-->
 		<script src="resources/js/range_value.js" type="text/javascript"></script>
 		<script src="resources/js/fb.js" type="text/javascript"></script>
+		<script src="resources/js/google.js" type="text/javascript"></script>
 		<!--/JavaScript-->
+
+	    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 	</head>
 	<body>
@@ -36,8 +41,8 @@
 			</header>
 
 			<div class="comparator">
-                <div class="comparator-product-image">
-                    <img src="resources/images/credit_card.png" alt="" />
+				<div class="comparator-product-image-top">
+                    <img src="resources/images/credit_card.png" alt=""/>
                 </div>
                 <div class="comparator-form">
                     <form class="form-horizontal" role="form" action="comparador_resultado.php" method="post">
@@ -49,7 +54,7 @@
                             <input type="range"  id="income" name="income" min =600 max="10000" step ="200" value ="1000"
 								onchange="prueba.value = income.value" oninput="outputUpdate(value)">
                           </div>
-						  <label for="income-number" style="margin-left: -45%;">
+						  <label class="label-blanco" for="income-number" style="margin-left: -45%;">
 							  $
 							  <output for="income" id="volume" style="display: inline">1000</output>
 						  </label>
@@ -69,26 +74,15 @@
 						  the JavaScript SDK to present a graphical Login button that triggers
 						  the FB.login() function when clicked.
 						-->
-						<div class="form-group">
-                        	<div class="col-sm-8">
+						<div class="form-group logredes ">
+                        	<div class="col-sm-6">
 								<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"
 									data-max-rows="1" data-size="xlarge">
   								</fb:login-button>
-
-								<div id="status">
-
-								</div>
                           	</div>
-                        </div>
-
-
-                        <!--Remember Me-->
-                        <div class="form-group" style="display: none">
-                          <div class="col-sm-offset-2 col-sm-3">
-                            <div class="checkbox">
-                              <label><input type="checkbox">Recordarme</label>
-                            </div>
-                          </div>
+							<div class="col-sm-4 googlebtn">
+								<div class="g-signin2" data-onsuccess="onSignIn" data-theme="light"></div>
+                          	</div>
                         </div>
 
                         <!--Submit Button-->
@@ -104,10 +98,10 @@
 
                     </form>
                 </div>
+				<br><br><br><br><br>
 			</div>
 
 			<footer>
-				<hr>
 				<p style="float: left;">© Javier Merchán - UCAB 2016</p>
 				<p style="float: right;"><a href="#">Back to top</a></p>
 			</footer>

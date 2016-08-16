@@ -19,6 +19,7 @@
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="resources/js/resultado.js" type="text/javascript"></script>
 		<script src="resources/js/fb.js" type="text/javascript"></script>
+		<script src="resources/js/google.js" type="text/javascript"></script>
 		<!--/JavaScript-->
 
 	</head>
@@ -63,7 +64,7 @@
 				<form class="tabla-comparador" action="comparador_formulario.php" method="post">
 	                <div class="comparator-result-table">
 						<div class="content table-responsive table-full-width">
-							<table class="table table-hover table-striped">
+							<table class="table table-hover">
 								<thead>
 									<th>Banco</th>
 									<th>Producto</th>
@@ -92,7 +93,6 @@
 			</div>
 
 			<footer>
-				<hr>
 				<p style="float: left;">© Javier Merchán - UCAB 2016</p>
 				<p style="float: right;"><a href="#">Back to top</a></p>
 			</footer>
@@ -298,7 +298,7 @@
 			<td>
 				<div class="elemento-check">
 					<span class="label label-primary">
-						<input type="checkbox" name="solicitar[]" value="'.$id.'">
+						Haz click! <input type="checkbox" name="solicitar[]" value="'.$id.'">
 					</span>
 				</div>
 			</td>

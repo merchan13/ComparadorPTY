@@ -21,6 +21,7 @@
 
     <!--  Light Bootstrap Table core CSS    -->
     <link href="resources/assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+	<link href="resources/css/agregar_producto.css" rel="stylesheet">
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -66,7 +67,7 @@
 
 							        <!--IMAGEN-->
 							        <div class="imagen-perfil" style="margin-left: 33%; margin-bottom: 5%;">
-							            <img src="#" alt="Choose an image" id="preview-foto" 
+							            <img src="#" alt="Choose an image" id="preview-foto"
 							                style="width:300px; height: 200px;"/>
 							            <input type="file" name="imagen-tdc" id="imagen-tdc" value="">
 							        </div>

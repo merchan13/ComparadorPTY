@@ -92,10 +92,10 @@
                         </fieldset>
                     </form>
                 </div>
+				<br><br>
 			</div>
 
 			<footer>
-				<hr>
 				<p style="float: left;">© Javier Merchán - UCAB 2016</p>
 				<p style="float: right;"><a href="#">Back to top</a></p>
 			</footer>

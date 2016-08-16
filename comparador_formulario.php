@@ -8,7 +8,7 @@
 	    <link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link href="vendors/bootstrap/css/bootstrap.css" rel="stylesheet">
 		<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'>
-
+	
 		<!--Styles-->
 		<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 		<!--/Styles-->
@@ -44,8 +44,8 @@
 			</header>
 
 			<div class="comparator-result">
-                <div class="comparator-product-image">
-                    <img src="resources/images/credit_card.png" alt="" />
+				<div class="comparator-product-image-top">
+                    <img src="resources/images/credit_card.png" alt=""/>
                 </div>
 			</div>
 
@@ -132,7 +132,6 @@
             </div>
 
 			<footer>
-				<hr>
 				<p style="float: left;">© Javier Merchán - UCAB 2016</p>
 				<p style="float: right;"><a href="#">Back to top</a></p>
 			</footer>

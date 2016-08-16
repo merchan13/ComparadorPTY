@@ -20,6 +20,7 @@
 
     <!--  Light Bootstrap Table core CSS    -->
     <link href="resources/assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+	<link href="resources/css/agregar_producto.css" rel="stylesheet">
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">

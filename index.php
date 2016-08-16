@@ -31,12 +31,13 @@
 			<div class="products">
 					<div class="title">
 							<h1>Elija un producto para comparar</h1>
+							<br>
 					</div>
 
 					<div class="product-images">
 						<div class="credit-cards">
 							<a href="comparador.php?tipo-producto='tdc'">
-								<img src="resources/images/credit_card.png" alt="" />
+								<img src="resources/images/credit_card.png" alt=""/>
 								<p><strong>Tarjetas de Crédito</strong></p>
 							</a>
 						</div>
@@ -53,10 +54,10 @@
 
 						</div>
 					</div>
+					<br><br><br><br>
 			</div>
 
 			<footer>
-				<hr>
 				<p style="float: left;">© Javier Merchán - UCAB 2016</p>
 				<p style="float: right;"><a href="#">Back to top</a></p>
 			</footer>

@@ -112,3 +112,7 @@ div.majinfo{
 div.info-fila1-elemento p, div.info-fila2-elemento p{
     margin: 0;
 }
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+}

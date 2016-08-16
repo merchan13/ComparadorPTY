@@ -13,13 +13,14 @@
     <!-- Bootstrap core CSS     -->
     <link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="vendors/bootstrap/css/bootstrap.css" rel="stylesheet">
-	<link href="resources/css/dashboard.css" rel="stylesheet">
+
 
     <!-- Animation library for notifications   -->
     <link href="resources/assets/css/animate.min.css" rel="stylesheet"/>
 
     <!--  Light Bootstrap Table core CSS -->
     <link href="resources/assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+	<link href="resources/css/dashboard.css" rel="stylesheet">
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
