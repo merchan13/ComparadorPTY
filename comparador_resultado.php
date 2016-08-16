@@ -18,10 +18,12 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="resources/js/resultado.js" type="text/javascript"></script>
+		<script src="resources/js/fb.js" type="text/javascript"></script>
 		<!--/JavaScript-->
 
 	</head>
 	<body>
+
 		<div class="flex-container">
 			<header>
 				<a href="index.php"><img class="logo" src="resources/images/logo.png" alt=""/></a>
@@ -73,7 +75,13 @@
 									<th>Solicitar</th>
 								</thead>
 								<tbody>
-									<?php getInfoProductos($_POST["income"]);?>
+									<?php
+										if (isset($_POST["income"])){
+											getInfoProductos($_POST["income"]);
+										} else if (isset($_GET["income"])){
+											getInfoProductos($_GET["income"]);
+										}
+									?>
 								</tbody>
 							</table>
 						</div>

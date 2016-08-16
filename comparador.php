@@ -16,11 +16,13 @@
 		<!--/Styles-->
 
 		<!--JavaScript-->
-		<script type="text/javascript" src="resources/js/range_value.js"></script>
+		<script src="resources/js/range_value.js" type="text/javascript"></script>
+		<script src="resources/js/fb.js" type="text/javascript"></script>
 		<!--/JavaScript-->
 
 	</head>
 	<body>
+
 		<div class="flex-container">
 			<header>
 				<a href="index.php"><img class="logo" src="resources/images/logo.png" alt=""/></a>
@@ -61,6 +63,24 @@
 								placeholder="Ingrese correo electrónico" required>
                           </div>
                         </div>
+
+						<!--
+						  Below we include the Login Button social plugin. This button uses
+						  the JavaScript SDK to present a graphical Login button that triggers
+						  the FB.login() function when clicked.
+						-->
+						<div class="form-group">
+                        	<div class="col-sm-8">
+								<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"
+									data-max-rows="1" data-size="xlarge">
+  								</fb:login-button>
+
+								<div id="status">
+
+								</div>
+                          	</div>
+                        </div>
+
 
                         <!--Remember Me-->
                         <div class="form-group" style="display: none">
