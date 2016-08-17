@@ -83,3 +83,58 @@
   color: #fff;
   outline: 0;
 }
+
+/*-----------*/
+/*-----------*/
+/* RESPONSIVE*/
+/*-----------*/
+/*-----------*/
+
+@media only screen and (max-device-width: 360px) {
+    h1{
+        font-size: 20px;
+    }
+    .logo{
+        float: none;
+    }
+    .alert{
+        font-size: 12px;
+        width: 100%;
+        margin: auto;
+        margin-top: 2%;
+        margin-bottom: -30%;
+    }
+}
+
+@media only screen and (max-device-width: 320px) {
+    h1{
+        font-size: 14px;
+    }
+    .logo{
+        float: none;
+    }
+    .login{
+        font-size: 11px;
+    }
+    .admin-form{
+        max-height: 100px;
+    }
+    .legend{
+        font-size: 16px;
+        max-height: 50px;
+    }
+    fieldset{
+        max-height: 200px;
+    }
+    div.input{
+        margin: auto;
+        margin-bottom: 4%;
+    }
+    .alert{
+        font-size: 10px;
+        width: 100%;
+        margin: auto;
+        margin-top: 2%;
+        margin-bottom: -30%;
+    }
+}

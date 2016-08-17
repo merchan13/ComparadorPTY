@@ -116,3 +116,18 @@ div.info-fila1-elemento p, div.info-fila2-elemento p{
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #ffffff;
 }
+
+
+/*-----------*/
+/*-----------*/
+/* RESPONSIVE*/
+/*-----------*/
+/*-----------*/
+
+@media only screen and (max-width: 360px) {
+    .logo > img{
+        max-width: 250px;
+        max-height: 150px;
+        margin-left: 18%;
+    }
+}
