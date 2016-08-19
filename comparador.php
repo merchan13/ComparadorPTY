@@ -53,11 +53,11 @@
                         <!--Income-->
                         <div class="form-group">
                           <label class="control-label col-sm-2" for="income" style="padding-top: 0;">Salario</label>
-                          <div class="col-sm-4">
+                          <div class="col-sm-4 range-input">
                             <input type="range"  id="income" name="income" min =600 max="10000" step ="200" value ="1000"
 								onchange="prueba.value = income.value" oninput="outputUpdate(value)">
                           </div>
-						  <label class="label-blanco" for="income-number" style="margin-left: -45%;">
+						  <label class="label-blanco" for="income-number">
 							  $
 							  <output for="income" id="volume" style="display: inline">1000</output>
 						  </label>
@@ -66,7 +66,7 @@
                         <!--Email-->
                         <div class="form-group">
                           <label class="control-label col-sm-2" for="email">Email</label>
-                          <div class="col-sm-4">
+                          <div class="col-sm-4 email-input">
                             <input type="email" class="form-control" id="email" name="email" value=""
 								placeholder="Ingrese correo electrónico" required>
                           </div>
