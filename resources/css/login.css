@@ -90,7 +90,7 @@
 /*-----------*/
 /*-----------*/
 
-@media only screen and (max-device-width: 360px) {
+@media only screen and (max-device-width: 375px) {
     h1{
         font-size: 20px;
     }

@@ -88,16 +88,10 @@ div.product-images > div {
 div.product-images > div:hover{
     background-color: #FF6C2F;
     border-radius: 100px 100px 40px 40px;
-
 }
 div.product-images > div > a > img{
     background-color: white;
     padding: 10px 10px 10px 10px;
-    border-radius: 100px 100px 100px 100px;
-    max-width: 220px;
-	max-height: 220px;
-}
-div.product-images > div > a > img:hover{
     border-radius: 100px 100px 100px 100px;
     max-width: 220px;
 	max-height: 220px;
@@ -403,4 +397,37 @@ div.form-group > label {
 }
 div.form-group > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #C7C7CD;
+}
+
+
+
+/*-----------*/
+/*-----------*/
+/* RESPONSIVE*/
+/*-----------*/
+/*-----------*/
+
+@media only screen and (max-device-width: 375px) {
+
+    h1{
+        font-size: 20px;
+    }
+    div.product-images > div.credit{
+        margin-left: 13%;
+    }
+    div.product-images > div.insurance{
+        margin-left: 14%;
+    }
+    div.product-images > div > a > img{
+        max-width: 100px;
+    	max-height: 100px;
+    }
+    div.product-images > div:hover{
+        background-color: transparent;
+        border-radius: 0px 0px 0px 0px;
+    }
+    div.product-images > div > a:hover{
+        color: #e5e5e5;
+        font-size: 18px;
+    }
 }

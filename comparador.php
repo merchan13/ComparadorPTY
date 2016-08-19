@@ -6,6 +6,9 @@
 	    <meta name="google-signin-client_id" content="677597205141-jjbf1bud8nqbb7k22rfj3k4qbdj7fnom.apps.googleusercontent.com">
 		<title>ComparadorPty - Datos</title>
 
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	    <meta name="viewport" content="width=device-width" />
+
 		<!-- Bootstrap core CSS -->
 		<link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link href="vendors/bootstrap/css/bootstrap.css" rel="stylesheet">
