@@ -9,12 +9,12 @@
 }
 
 body{
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/panama1.jpg");
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/panama1.jpg");
-    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/panama1.jpg");
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/panama1.jpg");
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.5))), url("../images/panama1.jpg");
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/panama1.jpg");
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/panama5.jpg");
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/panama5.jpg");
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/panama5.jpg");
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/panama5.jpg");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.5))), url("../images/panama5.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/panama5.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 1280px 800px;
@@ -55,6 +55,7 @@ header {
 header img{
 	max-width: 150px;
 	max-height: 150px;
+    border-radius: 20px 20px 20px 20px;
 	float: left;
 	margin: auto;
 }
@@ -78,12 +79,30 @@ a {
 	color: #428BCA;
 	text-decoration: none;
 }
-div.product-images > div.credit-cards > a > img{
+div.product-images > div {
+    float: left;
+    margin-left: 6%;
+    margin-top: 3%;
+    margin-bottom: 4%;
+}
+div.product-images > div:hover{
+    background-color: #FF6C2F;
+    border-radius: 100px 100px 40px 40px;
+
+}
+div.product-images > div > a > img{
     background-color: white;
     padding: 10px 10px 10px 10px;
-    border-radius: 100px 100px 30px 100px;
+    border-radius: 100px 100px 100px 100px;
+    max-width: 220px;
+	max-height: 220px;
 }
-div.product-images > div.credit-cards > a{
+div.product-images > div > a > img:hover{
+    border-radius: 100px 100px 100px 100px;
+    max-width: 220px;
+	max-height: 220px;
+}
+div.product-images > div > a{
     text-decoration: none;
     color: #e5e5ff;
     font-size: 18px;
@@ -91,17 +110,18 @@ div.product-images > div.credit-cards > a{
 div.comparator > div.comparator-product-image-top > img{
     background-color: white;
     padding: 10px 10px 10px 10px;
-    border-radius: 100px 100px 30px 100px;
+    border-radius: 100px 100px 100px 100px;
     margin-bottom: 2%;
 }
+
 div.comparator-result > div.comparator-product-image-top > img{
     background-color: white;
     padding: 10px 10px 10px 10px;
-    border-radius: 100px 100px 30px 100px;
+    border-radius: 100px 100px 100px 100px;
     margin-bottom: 2%;
 }
-div.product-images > div.credit-cards > a:hover{
-    color: #9999ff;
+div.product-images > div > a:hover{
+    color: #e5e5e5;
     font-size: 20px;
 }
 p {

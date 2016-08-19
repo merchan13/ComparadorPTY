@@ -8,7 +8,7 @@
 	    <link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link href="vendors/bootstrap/css/bootstrap.css" rel="stylesheet">
 		<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'>
-	
+
 		<!--Styles-->
 		<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 		<!--/Styles-->
@@ -33,7 +33,7 @@
 	<body>
 		<div class="flex-container">
 			<header>
-				<a href="index.php"><img class="logo" src="resources/images/logo.png" alt=""/></a>
+				<a href="index.php"><img class="logo" src="resources/images/logo2.png" alt=""/></a>
 				<ul>
 					<li><a href="#"><img src="resources/images/banesco-icon.png" alt="" /></a></li>
 					<li><a href="#"><img src="resources/images/facebook-icon.png" alt="" /></a></li>

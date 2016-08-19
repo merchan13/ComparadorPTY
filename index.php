@@ -18,7 +18,7 @@
 	<body>
 		<div class="flex-container">
 			<header>
-				<a href="index.php"><img class="logo" src="resources/images/logo.png" alt=""/></a>
+				<a href="index.php"><img class="logo" src="resources/images/logo2.png" alt=""/></a>
 				<ul>
 					<li><a href="#"><img src="resources/images/banesco-icon.png" alt="" /></a></li>
 					<li><a href="#"><img src="resources/images/facebook-icon.png" alt="" /></a></li>
@@ -35,26 +35,35 @@
 					</div>
 
 					<div class="product-images">
+
 						<div class="credit-cards">
 							<a href="comparador.php?tipo-producto='tdc'">
 								<img src="resources/images/credit_card.png" alt=""/>
-								<p><strong>Tarjetas de Crédito</strong></p>
+								<p><strong>Tarjeta de Crédito</strong></p>
 							</a>
 						</div>
 
 						<div class="savings">
-
+							<a href="#">
+								<img src="resources/images/savings.png" alt=""/>
+								<p><strong>Ahorro</strong></p>
+							</a>
 						</div>
 
 						<div class="credit">
-
+							<a href="#">
+								<img src="resources/images/credit.png" alt=""/>
+								<p><strong>Créditos</strong></p>
+							</a>
 						</div>
 
 						<div class="insurance">
-
+							<a href="#">
+								<img src="resources/images/insurance.png" alt=""/>
+								<p><strong>Seguros</strong></p>
+							</a>
 						</div>
 					</div>
-					<br><br><br><br>
 			</div>
 
 			<footer>

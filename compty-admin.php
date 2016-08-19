@@ -26,7 +26,7 @@
 	<body>
 		<div class="flex-container">
 			<header>
-				<a href="index.php"><img class="logo" src="resources/images/logo.png" alt=""/></a>
+				<a href="index.php"><img class="logo" src="resources/images/logo2.png" alt=""/></a>
 			</header>
 
 			<div class="admin-login">
