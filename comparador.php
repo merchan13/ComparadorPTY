@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="google-signin-scope" content="profile email">
-	    <meta name="google-signin-client_id" content="677597205141-jjbf1bud8nqbb7k22rfj3k4qbdj7fnom.apps.googleusercontent.com">
+	    <meta name="google-signin-client_id" content="327793721287-8ic67uguuaf516i7e9ntkfuruthn9la0.apps.googleusercontent.com">
 		<title>ComparadorPty - Datos</title>
 
 		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -82,6 +82,9 @@
 								<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"
 									data-max-rows="1" data-size="xlarge">
   								</fb:login-button>
+								<div id="status">
+
+								</div>
                           	</div>
 							<div class="col-sm-4 googlebtn">
 								<div class="g-signin2" data-onsuccess="onSignIn" data-theme="light"></div>
