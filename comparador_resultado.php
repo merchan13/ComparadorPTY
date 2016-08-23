@@ -226,6 +226,7 @@
 			<!--PRODUCTO-->
 			<td>
 				<div class="elemento-producto">
+					<img src="'.$banco[0].'" alt="" class="imagen-banco" />
 					<p>'.$nombre.'</p>
 					<img src="'.$imagenUrl.'" alt="" class="imagen-producto" />
 				</div>

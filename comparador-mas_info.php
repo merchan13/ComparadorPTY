@@ -29,7 +29,7 @@
         //[...] beneficio1, beneficio2, ...
         $beneficios = getBeneficiosProducto($id);
         $requisitos = getRequisitosProducto($id);
-        $banco = $_SESSION["user"];
+        $banco = getDuenoProducto($row["usuario_admin_id"]);
 
         imprimirMasInfo($nombre,$descripcion,$ingresoMin,$tasaInteres,$cargosMes,$seguroVida,$tasaMora,$imagenUrl,
             $marca,$beneficios,$requisitos,$banco);
@@ -45,6 +45,18 @@
         $row = mysqli_fetch_array($result);
 
         return array($row["marca_tdc_nombre"], $row["marca_tdc_imagenUrl"]);
+    }
+
+    //Banco dueño del producto
+    //Recibe el id del banco.
+    function getDuenoProducto($banco_id){
+
+        include ("conexion.php");
+        $sql = "SELECT * FROM comparador_usuario_admin WHERE usuario_admin_id = $banco_id";
+        $result = mysqli_query($mysqli, $sql);
+        $row = mysqli_fetch_array($result);
+
+        return $row["usuario_admin_nombre"];
     }
 
 

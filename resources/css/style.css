@@ -194,6 +194,9 @@ th{
 div table tbody tr td .elemento-banco{
 	margin-top: 18%;
 }
+div table tbody tr td .elemento-producto img.imagen-banco{
+    display: none;
+}
 div table tbody tr td .elemento-producto{
 	margin-top: -5%;
 }
@@ -483,6 +486,68 @@ div.form-group > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     div.googlebtn{
         margin-top: 2%;
         margin-left: 30.5%;
+    }
+
+
+    /*--- RESULTADO ---*/
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr { border: 1px solid #ccc; }
+
+	td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+	/*
+	Label the data
+	*/
+    td:nth-of-type(1) { display: none;}
+    td:nth-of-type(3) { display: none;}
+    td:nth-of-type(4) { display: none;}
+    td:nth-of-type(5) { display: none;}
+    td:nth-of-type(6) { display: none;}
+
+    div table tbody tr td .elemento-producto img.imagen-banco{
+        display: block;
+        max-width: 65px;
+        max-height: 65px;
+        min-width: 65px;
+        min-height: 65px;
+    }
+    div table tbody tr td img.imagen-producto{
+    	max-width: 100px;
+    	max-height: 65px;
+        min-width: 100px;
+        min-height: 65px;
+    }
+    div table tbody tr td div.elemento-producto p {
+    	font-size: 9.5px;
+    }
+    div table tbody tr td div.elemento-masinfo-padre p {
+    	font-size: 10px;
+    }
+    div table tbody tr td button.elemento-masinfo,
+    div table tbody tr td a button {
+        width: 100%;
     }
 
 }

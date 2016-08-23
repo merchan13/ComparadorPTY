@@ -82,9 +82,6 @@
 								<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"
 									data-max-rows="1" data-size="xlarge">
   								</fb:login-button>
-								<div id="status">
-
-								</div>
                           	</div>
 							<div class="col-sm-4 googlebtn">
 								<div class="g-signin2" data-onsuccess="onSignIn" data-theme="light"></div>
