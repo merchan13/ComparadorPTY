@@ -268,6 +268,9 @@ div table tbody tr td button.elemento-masinfo,
 div table tbody tr td a button{
 	width: 80%;
 }
+div table tbody tr td .elemento-check span.responsive-span{
+    display: none;
+}
 
 /*--- FOOTER ---*/
 footer {
@@ -567,6 +570,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a300', end
     div table tbody tr td div.elemento-masinfo-padre p:nth-of-type(1) {
     	font-size: 14px;
         font-weight: 500;
+        width: 100%;
     }
     div table tbody tr td div.elemento-masinfo-padre p:nth-of-type(2) {
     	font-size: 12px;
@@ -591,5 +595,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a300', end
     div table tbody tr td .elemento-masinfo-padre p{
         float: left;
     }
-
+    div table tbody tr td .elemento-check span{
+        display: none;
+    }
+    div table tbody tr td .elemento-check span.responsive-span{
+        display: block;
+    }
 }

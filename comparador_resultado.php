@@ -306,6 +306,9 @@
 					<span class="label label-primary">
 						Haz click! <input type="checkbox" name="solicitar[]" value="'.$id.'">
 					</span>
+					<span class="label label-primary responsive-span">
+						Solicitar <input type="checkbox" name="solicitar[]" value="'.$id.'">
+					</span>
 				</div>
 			</td>
 
