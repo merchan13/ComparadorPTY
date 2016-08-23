@@ -286,7 +286,7 @@
 					<p>'.$nombre.'</p>
 					<img src="'.$banco[0].'" alt="" class="imagen-banco" />
 					<img src="'.$imagenUrl.'" alt="" class="imagen-producto" />
-					<p class="elemento-masinfo">'.$banco[1].'<p/>
+					<p class="elemento-masinfo">'.$banco[1].'</p>
 					<a href="'.$banco[2].'" target="_blank">
 						<button type="button" title="Ir a sitio" id="prueba"
 							class="btn btn-success btn-fill elemento-masinfo">

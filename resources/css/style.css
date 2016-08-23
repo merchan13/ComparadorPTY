@@ -17,7 +17,7 @@ body{
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/panama5.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 1280px 800px;
+    background-size: cover;
 }
 .flex-container {
     display: -webkit-flex;
@@ -526,9 +526,6 @@ div.form-group > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 		white-space: nowrap;
 	}
 
-	/*
-	Label the data
-	*/
     td:nth-of-type(1) { display: none;}
     td:nth-of-type(2) { display: none;}
     td:nth-of-type(3) { display: none;}
@@ -536,6 +533,17 @@ div.form-group > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     td:nth-of-type(5) { display: none;}
     td:nth-of-type(6) { display: none;}
 
+    .table-hover>tbody>tr:hover {
+        background: rgba(0,163,0,0.71);
+background: -moz-radial-gradient(center, ellipse cover, rgba(0,163,0,0.71) 0%, rgba(0,163,0,0.7) 0%, rgba(0,163,0,0.7) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,163,0,0.71)), color-stop(0%, rgba(0,163,0,0.7)), color-stop(100%, rgba(0,163,0,0.7)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(0,163,0,0.71) 0%, rgba(0,163,0,0.7) 0%, rgba(0,163,0,0.7) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(0,163,0,0.71) 0%, rgba(0,163,0,0.7) 0%, rgba(0,163,0,0.7) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(0,163,0,0.71) 0%, rgba(0,163,0,0.7) 0%, rgba(0,163,0,0.7) 100%);
+background: radial-gradient(ellipse at center, rgba(0,163,0,0.71) 0%, rgba(0,163,0,0.7) 0%, rgba(0,163,0,0.7) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a300', endColorstr='#00a300', GradientType=1 );
+        color: #e5e5e5;
+    }
     div table tbody tr td .elemento-masinfo-padre img.imagen-banco,
     div table tbody tr td .elemento-masinfo-padre img.imagen-producto,
     div table tbody tr td .elemento-masinfo-padre p:nth-of-type(1){
@@ -556,8 +564,13 @@ div.form-group > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     div table tbody tr td .elemento-masinfo-padre p:nth-of-type(1){
 
     }
-    div table tbody tr td div.elemento-masinfo-padre p {
-    	font-size: 10px;
+    div table tbody tr td div.elemento-masinfo-padre p:nth-of-type(1) {
+    	font-size: 14px;
+        font-weight: 500;
+    }
+    div table tbody tr td div.elemento-masinfo-padre p:nth-of-type(2) {
+    	font-size: 12px;
+        font-weight: 400;
     }
     div table tbody tr td div.elemento-masinfo-padre p:hover {
     	color: #e5e5e5;
@@ -566,14 +579,17 @@ div.form-group > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     div table tbody tr td a button {
         width: 100%;
     }
-    div table tbody tr td div.elemento-masinfo-padre {
-    	margin-top: 20%;
+    div table tbody tr td .elemento-masinfo-padre img.imagen-banco,
+    div table tbody tr td .elemento-masinfo-padre img.imagen-producto,
+    div table tbody tr td .elemento-masinfo-padre p,
+    div table tbody tr td .elemento-masinfo-padre a,
+    div table tbody tr td .elemento-masinfo-padre button{
+        margin: auto;
+    }
+    div table tbody tr td .elemento-masinfo-padre img.imagen-banco,
+    div table tbody tr td .elemento-masinfo-padre img.imagen-producto,
+    div table tbody tr td .elemento-masinfo-padre p{
+        float: left;
     }
 
-}
-
-@media only screen and (min-device-width: 1281px) and (min-device-height: 801px) {
-    body{
-        background-size: auto;
-    }
 }
