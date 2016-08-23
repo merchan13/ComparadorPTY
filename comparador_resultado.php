@@ -226,7 +226,6 @@
 			<!--PRODUCTO-->
 			<td>
 				<div class="elemento-producto">
-					<img src="'.$banco[0].'" alt="" class="imagen-banco" />
 					<p>'.$nombre.'</p>
 					<img src="'.$imagenUrl.'" alt="" class="imagen-producto" />
 				</div>
@@ -284,15 +283,18 @@
 			<!--MAS INFO-->
 			<td>
 				<div class="elemento-masinfo-padre">
+					<p>'.$nombre.'</p>
+					<img src="'.$banco[0].'" alt="" class="imagen-banco" />
+					<img src="'.$imagenUrl.'" alt="" class="imagen-producto" />
 					<p class="elemento-masinfo">'.$banco[1].'<p/>
-					<a href="'.$banco[2].'" target="_blank" style="display:block">
+					<a href="'.$banco[2].'" target="_blank">
 						<button type="button" title="Ir a sitio" id="prueba"
 							class="btn btn-success btn-fill elemento-masinfo">
 							Ir a sitio
 						</button>
 					</a>
 					<button type="button" title="Más Info" id="prueba" data-toggle="modal" data-target="#infoModal"
-						data-id="'.$id.'" class="btn btn-primary btn-fill open-Info elemento-masinfo" style="display:block">
+						data-id="'.$id.'" class="btn btn-primary btn-fill open-Info elemento-masinfo">
 						Ver más
 					</button>
 				</div>

@@ -194,9 +194,6 @@ th{
 div table tbody tr td .elemento-banco{
 	margin-top: 18%;
 }
-div table tbody tr td .elemento-producto img.imagen-banco{
-    display: none;
-}
 div table tbody tr td .elemento-producto{
 	margin-top: -5%;
 }
@@ -250,6 +247,18 @@ div table tbody tr td div ul li i{
 }
 div table tbody tr td div i{
 	margin-left: 10%;
+}
+div table tbody tr td .elemento-masinfo-padre img.imagen-banco,
+div table tbody tr td .elemento-masinfo-padre img.imagen-producto,
+div table tbody tr td .elemento-masinfo-padre p:nth-of-type(1){
+    display: none;
+}
+div table tbody tr td .elemento-masinfo-padre a,
+div table tbody tr td .elemento-masinfo-padre button{
+    display: block;
+}
+div table tbody tr td .elemento-masinfo-padre a:hover{
+    text-decoration: none;
 }
 div table tbody tr td .elemento-masinfo{
 	margin-top: 5%;
@@ -521,27 +530,31 @@ div.form-group > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 	Label the data
 	*/
     td:nth-of-type(1) { display: none;}
+    td:nth-of-type(2) { display: none;}
     td:nth-of-type(3) { display: none;}
     td:nth-of-type(4) { display: none;}
     td:nth-of-type(5) { display: none;}
     td:nth-of-type(6) { display: none;}
 
-    div table tbody tr td .elemento-producto img.imagen-banco{
+    div table tbody tr td .elemento-masinfo-padre img.imagen-banco,
+    div table tbody tr td .elemento-masinfo-padre img.imagen-producto,
+    div table tbody tr td .elemento-masinfo-padre p:nth-of-type(1){
         display: block;
+    }
+    div table tbody tr td .elemento-masinfo-padre img.imagen-banco{
         max-width: 65px;
         max-height: 65px;
         min-width: 65px;
         min-height: 65px;
     }
-    div table tbody tr td img.imagen-producto{
+    div table tbody tr td .elemento-masinfo-padre img.imagen-producto{
     	max-width: 100px;
     	max-height: 65px;
         min-width: 100px;
         min-height: 65px;
     }
-    div table tbody tr td div.elemento-producto p {
-    	font-size: 9.5px;
-        max-width: 50%;
+    div table tbody tr td .elemento-masinfo-padre p:nth-of-type(1){
+
     }
     div table tbody tr td div.elemento-masinfo-padre p {
     	font-size: 10px;
@@ -557,4 +570,10 @@ div.form-group > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     	margin-top: 20%;
     }
 
+}
+
+@media only screen and (min-device-width: 1281px) and (min-device-height: 801px) {
+    body{
+        background-size: auto;
+    }
 }
