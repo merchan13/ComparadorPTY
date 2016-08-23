@@ -541,13 +541,20 @@ div.form-group > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     }
     div table tbody tr td div.elemento-producto p {
     	font-size: 9.5px;
+        max-width: 50%;
     }
     div table tbody tr td div.elemento-masinfo-padre p {
     	font-size: 10px;
     }
+    div table tbody tr td div.elemento-masinfo-padre p:hover {
+    	color: #e5e5e5;
+    }
     div table tbody tr td button.elemento-masinfo,
     div table tbody tr td a button {
         width: 100%;
+    }
+    div table tbody tr td div.elemento-masinfo-padre {
+    	margin-top: 20%;
     }
 
 }
