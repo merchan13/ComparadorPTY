@@ -82,6 +82,61 @@
 
 									</div>
 									<div class="row">
+										<!--ESTADO CIVIL-->
+										<div class="col-md-12">
+											<div class="form-group">
+												<label>Estado Civil</label>
+												<input type="radio" class="edocivil" value="soltero" name="edocivil" checked="true">
+												<label>Soltero</label>
+
+												<input type="radio" class="edocivil" value="casado" name="edocivil">
+												<label>Casado</label>
+
+												<input type="radio" class="edocivil" value="unido" name="edocivil">
+												<label>Unido</label>
+
+												<input type="radio" class="edocivil" value="viudo" name="edocivil">
+												<label>Viudo</label>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<!--NRO DEPENDIENTES-->
+										<div class="col-md-12">
+											<div class="form-group">
+												<label>Cantidad de Dependientes</label>
+												<input type="number" class="form-control dependdientes" value="0" name="dependdientes">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<!-- NIVEL ACADEMICO -->
+										<div class="col-md-12">
+											<div class="form-group">
+												<label>NIVEL ACADÉMICO</label>
+												<input type="radio" class="nivelacademico" value="primaria"
+													name="nivelacademico" checked="true">
+												<label>Primaria</label>
+
+												<input type="radio" class="nivelacademico" value="secundaria"
+													name="nivelacademico">
+												<label>Secundaria</label>
+
+												<input type="radio" class="nivelacademico" value="licenciatura"
+													name="nivelacademico">
+												<label>Licenciatura</label>
+
+												<input type="radio" class="nivelacademico" value="maestria"
+													name="nivelacademico">
+												<label>Maestría</label>
+
+												<input type="radio" class="nivelacademico" value="doctorado"
+													name="nivelacademico">
+												<label>Doctorado</label>
+											</div>
+										</div>
+									</div>
+									<div class="row">
 
 										<!--TELÉFONO-->
 										<div class="col-md-6">

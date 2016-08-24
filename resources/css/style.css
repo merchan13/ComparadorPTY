@@ -295,35 +295,6 @@ footer p{
 footer p a{
 	color: white;
 }
-div.col-md-8{
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-div.row div div button.btn{
-    width: 120px;
-    display: inline;
-    float: right;
-    margin-right: 2%;
-}
-div.row div div button.btn-primary{
-    width: 200px;
-    height: 40px;
-    font-size: 14px;
-    background-color: #3EA055;
-    border-color: #3EA055;
-    -webkit-transition: height 1s, background-color 0.2s, border-color 0.2s, font-size 1s; /* For Safari 3.1 to 6.0 */
-    transition: height 1s, background-color 0.2s, border-color 0.2s, font-size 1s;
-}
-
-div.row div div button.btn-primary:hover{
-    height: 80px;
-    background-color: #ffb732;
-    border-color: #ffb732;
-    font-size: 20px;
-}
-
 div.empujar-izq{
     margin-right: 22.5%;
 }
@@ -416,6 +387,65 @@ div.form-group > label {
 }
 div.form-group > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #C7C7CD;
+}
+
+/*--- FORMULARIO ---*/
+div.col-md-8{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+div.row div div button.btn{
+    width: 120px;
+    display: inline;
+    float: right;
+    margin-right: 2%;
+}
+div.row div div button.btn-primary{
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+    background-color: #3EA055;
+    border-color: #3EA055;
+    -webkit-transition: height 1s, background-color 0.2s, border-color 0.2s, font-size 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s, background-color 0.2s, border-color 0.2s, font-size 1s;
+}
+div.row:nth-of-type(2) div div label:nth-of-type(1){
+    width: 100%;
+}
+div.row:nth-of-type(2) div div label{
+    margin-right: 16%;
+}
+div.row:nth-of-type(2) div div label:nth-of-type(5){
+    margin-right: 3%;
+}
+div.row:nth-of-type(2) div div label:nth-of-type(2),
+div.row:nth-of-type(2) div div label:nth-of-type(3),
+div.row:nth-of-type(2) div div label:nth-of-type(4),
+div.row:nth-of-type(2) div div label:nth-of-type(5){
+    font-weight: 600;
+    text-transform: none;
+}
+div.row:nth-of-type(3) div div input{
+    width: 10%;
+    display: inline;
+}
+div.row:nth-of-type(4) div div label:nth-of-type(1){
+    width: 100%;
+}
+div.row:nth-of-type(4) div div label{
+    margin-right: 16%;
+}
+div.row:nth-of-type(4) div div label:nth-of-type(6){
+    margin-right: 0%;
+}
+div.row:nth-of-type(4) div div label:nth-of-type(2),
+div.row:nth-of-type(4) div div label:nth-of-type(3),
+div.row:nth-of-type(4) div div label:nth-of-type(4),
+div.row:nth-of-type(4) div div label:nth-of-type(5),
+div.row:nth-of-type(4) div div label:nth-of-type(6){
+    font-weight: 600;
+    text-transform: none;
 }
 
 
