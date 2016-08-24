@@ -10,11 +10,37 @@
         $telefono_form = $_POST["telefono"];
         $correo_form = $_POST["correo"];
 
+        $id_bancos = array("0");
         foreach ($productos as $producto) {
-            $correo_banco = getCorreoBanco($producto);
-            $nombre = getProducto($producto);
+            $aux = explode("@",$producto);
+            array_push($id_bancos, $aux[1]);
+        }
+
+        $bancos = array_unique($id_bancos);
+        unset($bancos[0]);
+
+        foreach ($bancos as $banco) {
+
+            $productos_banco = array("0");
+
+            foreach ($productos as $producto) {
+                $aux = explode("@",$producto);
+                if ($aux[1] == $banco){
+                    array_push($productos_banco, getProducto($aux[0]));
+                }
+            }
+
+            unset($productos_banco[0]);
+
+            $correo_banco = getCorreoBanco($banco);
+
+            $productos_string = "";
+            foreach ($productos_banco as $producto) {
+                $productos_string.= $producto;
+            }
+
             enviarCorreo($correo_banco, $correo_usuario, $apellidos_form, $nombres_form, $telefono_form,
-                $correo_form, $nombre);
+                $correo_form, $productos_string);
         }
 
         header("Location: index.php");
@@ -26,14 +52,13 @@
     //
     //Correo del banco
     //
-    function getCorreoBanco($producto){
+    function getCorreoBanco($banco){
 
         include ("conexion.php");
 
-        $sql = "SELECT U.usuario_admin_correo
-                FROM comparador_usuario_admin U, comparador_producto_tdc P
-                WHERE U.usuario_admin_id = P.usuario_admin_id
-                AND P.producto_tdc_id = $producto";
+        $sql = "SELECT usuario_admin_correo
+                FROM comparador_usuario_admin
+                WHERE usuario_admin_id = $banco";
 
         $result = mysqli_query($mysqli, $sql);
 
@@ -72,7 +97,7 @@
     //Enviar correo al banco
     //
     function enviarCorreo($correo_banco, $correo_usuario, $apellidos_form, $nombres_form, $telefono_form,
-        $correo_form, $producto){
+        $correo_form, $productos_string){
 
         $to = $correo_banco;
         $subject = "Solicitud de TDC";
@@ -91,10 +116,12 @@
             <p>".$telefono_form."</p><br>
             <strong><p>Correo electrónico:</p></strong>
             <p>".$correo_form."</p><br>
-            <h4>Producto: <strong>".$producto."</strong></h4>
+            <h4>Productos: <strong>".$productos_string."</strong></h4>
         </body>
         </html>
         ";
+
+        $message = wordwrap($message, 70, "\r\n");
 
         // Always set content-type when sending HTML email
         $headers = "MIME-Version: 1.0" . "\r\n";
@@ -105,5 +132,4 @@
 
         $enviado = mail($to,$subject,$message,$headers);
     }
-
  ?>

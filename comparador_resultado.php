@@ -204,7 +204,7 @@
 		$result = mysqli_query($mysqli, $sql);
 		$row = mysqli_fetch_array($result);
 
-		return array($row["usuario_admin_imagenUrl"], $row["usuario_admin_telefono"], $row["usuario_admin_pagina"]);
+		return array($row["usuario_admin_imagenUrl"], $row["usuario_admin_telefono"], $row["usuario_admin_pagina"], $bancoId);
 	}
 
 
@@ -304,10 +304,10 @@
 			<td>
 				<div class="elemento-check">
 					<span class="label label-primary">
-						Haz click! <input type="checkbox" name="solicitar[]" value="'.$id.'">
+						Haz click! <input type="checkbox" name="solicitar[]" value="'.$id.'@'.$banco[3].'">
 					</span>
 					<span class="label label-primary responsive-span">
-						Solicitar <input type="checkbox" name="solicitar[]" value="'.$id.'">
+						Solicitar <input type="checkbox" name="solicitar[]" value="'.$id.'@'.$banco[3].'">
 					</span>
 				</div>
 			</td>
