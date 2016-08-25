@@ -5,12 +5,47 @@
         $correo_usuario = $_SESSION["email"];
         $productos = $_SESSION["solicitar"];
 
-        $nombres_form = $_POST["nombres"];
-        $apellidos_form = $_POST["apellidos"];
-        $telefono_form = $_POST["telefono"];
-        $correo_form = $_POST["correo"];
+        $nombres = $_POST["nombres"];
+        $apellidos = $_POST["apellidos"];
+        $edocivil = $_POST["edocivil"];
+        $dependientes = $_POST["dependientes"];
+        $nivelacademico = $_POST["nivelacademico"];
+        $residencia = $_POST["residencia"];
+        $correo = $_POST["correo"];
+        $telefono = $_POST["telefono"];
+        $celular = $_POST["celular"];
+        $vivienda = $_POST["vivienda"];
+        $ciudad = $_POST["ciudad"];
+        $provincia = $_POST["provincia"];
+        $distrito = $_POST["distrito"];
+        $corregimiento = $_POST["corregimiento"];
+        $barriada = $_POST["barriada"];
+        $calleav = $_POST["calleav"];
+        $edificio = $_POST["edificio"];
+        $nrocasaapt = $_POST["nrocasaapt"];
+        $familiarexpuesto = $_POST["familiarexpuesto"];
+
+        $tipocontrato = $_POST["tipocontrato"];
+        $profesion = $_POST["profesion"];
+        $lugartrabajo = $_POST["lugartrabajo"];
+        $ciudadtrabajo = $_POST["ciudad-trabajo"];
+        $provinciatrabajo = $_POST["provincia-trabajo"];
+        $distritotrabajo = $_POST["distrito-trabajo"];
+        $corregimientotrabajo = $_POST["corregimiento-trabajo"];
+        $barriadatrabajo = $_POST["barriada-trabajo"];
+        $calleavtrabajo = $_POST["calleav-trabajo"];
+        $edificiotrabajo = $_POST["edificio-trabajo"];
+        $nrocasaapttrabajo = $_POST["nrocasaapt-trabajo"];
+        $telefonooficina = $_POST["telefonooficina"];
+        $salario = $_POST["salario"];
+
+        $nombrereferencia = $_POST["nombre-referencia"];
+        $parentescoreferencia = $_POST["parentesco-referencia"];
+        $telefonoreferencia = $_POST["telefono-referencia"];
+        $celularreferencia = $_POST["celular-referencia"];
 
         $id_bancos = array("0");
+
         foreach ($productos as $producto) {
             $aux = explode("@",$producto);
             array_push($id_bancos, $aux[1]);
@@ -36,18 +71,28 @@
 
             $productos_string = "";
             foreach ($productos_banco as $producto) {
-                $productos_string.= $producto;
+                $productos_string.= $producto."<br>";
             }
 
-            enviarCorreo($correo_banco, $correo_usuario, $apellidos_form, $nombres_form, $telefono_form,
-                $correo_form, $productos_string);
+            $x = enviarCorreo($correo_banco, $correo_usuario, $productos_string, $nombres, $apellidos, $edocivil, $dependientes,
+                    $nivelacademico, $residencia, $correo, $telefono, $celular, $vivienda, $ciudad, $provincia,
+                    $distrito, $corregimiento, $barriada, $calleav, $edificio, $nrocasaapt, $familiarexpuesto,
+                    $tipocontrato, $profesion, $lugartrabajo, $ciudadtrabajo, $provinciatrabajo, $distritotrabajo,
+                    $corregimientotrabajo, $barriadatrabajo, $calleavtrabajo, $edificiotrabajo, $nrocasaapttrabajo,
+                    $telefonooficina, $salario, $nombrereferencia, $parentescoreferencia, $telefonoreferencia,
+                    $celularreferencia);
         }
 
-        header("Location: index.php");
-        exit;
+        //print_r(error_get_last());
+
+        if ($x == 1){
+            header("Location: index.php?send=666");
+            exit;
+        } else{
+            header("Location: index.php?send=999");
+            exit;
+        }
     }
-
-
 
     //
     //Correo del banco
@@ -69,8 +114,6 @@
         return $correo;
     }
 
-
-
     //
     //Nombre del producto
     //
@@ -91,13 +134,16 @@
         return $nombre;
     }
 
-
-
     //
     //Enviar correo al banco
     //
-    function enviarCorreo($correo_banco, $correo_usuario, $apellidos_form, $nombres_form, $telefono_form,
-        $correo_form, $productos_string){
+    function enviarCorreo($correo_banco, $correo_usuario, $productos_string, $nombres, $apellidos, $edocivil, $dependientes,
+            $nivelacademico, $residencia, $correo, $telefono, $celular, $vivienda, $ciudad, $provincia,
+            $distrito, $corregimiento, $barriada, $calleav, $edificio, $nrocasaapt, $familiarexpuesto,
+            $tipocontrato, $profesion, $lugartrabajo, $ciudadtrabajo, $provinciatrabajo, $distritotrabajo,
+            $corregimientotrabajo, $barriadatrabajo, $calleavtrabajo, $edificiotrabajo, $nrocasaapttrabajo,
+            $telefonooficina, $salario, $nombrereferencia, $parentescoreferencia, $telefonoreferencia,
+            $celularreferencia){
 
         $to = $correo_banco;
         $subject = "Solicitud de TDC";
@@ -109,14 +155,49 @@
         </head>
 
         <body>
-            <h3>Datos del solicitante</h3>
-            <strong><p>Nombre:</p></strong>
-            <p>".$apellidos_form." ".$nombres_form."</p><br>
-            <strong><p>Teléfono de contacto:</p></strong>
-            <p>".$telefono_form."</p><br>
-            <strong><p>Correo electrónico:</p></strong>
-            <p>".$correo_form."</p><br>
-            <h4>Productos: <strong>".$productos_string."</strong></h4>
+            <h2>Solicitud de Producto</h2>
+            <h3>Productos: <strong><br>".$productos_string."</strong></h3>
+
+            <h3>Información básica</h3>
+            <p><strong>Nombre: </strong>".$apellidos." ".$nombres."</p><br>
+
+            <p><strong>Estado civil: </strong>".$edocivil."</p><br>
+
+            <p><strong>Dependientes: </strong>".$dependientes."</p><br>
+
+            <p><strong>Nivel académico: </strong>".$nivelacademico."</p><br>
+
+            <p><strong>Reside en Panamá: </strong>".$residencia."</p><br>
+
+            <p><strong>Correo electrónico: </strong>".$correo."</p><br>
+
+            <p><strong>Teléfonos de contacto</strong></p>
+            <p>Principal: ".$telefono."</p>
+            <p>Celular: ".$celular."</p><br>
+
+            <strong><p>Vivienda</p></strong>
+            <p>".$vivienda."</p>
+            <p>".$ciudad.", ".$provincia.", ".$distrito.", ".$corregimiento.", ".$barriada."</p>
+            <p> Calle: ".$calleav.", Edificio: ".$edificio.", nro ".$nrocasaapt."</p><br>
+
+            <strong><p>Algún familiar, allegado o yo mismo, es considerado persona políticamente expuesta</p></strong>
+            <p>".$familiarexpuesto."</p><br>
+
+            <hr>
+            <h3>Información laboral</h3>
+            <p>".$tipocontrato."</p>
+            <p><strong>Profesion: </strong>".$profesion." - <strong>Lugar de trabajo:</strong> ".$lugartrabajo."</p>
+            <p>".$ciudadtrabajo.", ".$provinciatrabajo.", ".$distritotrabajo.", ".$corregimientotrabajo.", ".$barriadatrabajo."</p>
+            <p> Calle: ".$calleavtrabajo.", Edificio: ".$edificiotrabajo.", nro ".$nrocasaapttrabajo."</p><br>
+            <p><strong>Teléfono de oficina: </strong>".$telefonooficina."</p>
+            <p><strong>Salario: </strong>$".$salario."</p>
+
+            <hr>
+            <h4>Referencias personales</h4>
+            <p>".$nombrereferencia." (".$parentescoreferencia.")</p>
+            <p>Principal: ".$telefonoreferencia."</p>
+            <p>Celular: ".$celularreferencia."</p><br>
+
         </body>
         </html>
         ";
@@ -131,5 +212,7 @@
         //$headers .= 'Cc: '.$correo_usuario."\r\n";
 
         $enviado = mail($to,$subject,$message,$headers);
+
+        return $enviado;
     }
  ?>

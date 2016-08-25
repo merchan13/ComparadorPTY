@@ -60,12 +60,6 @@
 							</a>
 						</div>
 
-						<div class="insurance">
-							<a href="#">
-								<img src="resources/images/insurance.png" alt=""/>
-								<p><strong>Seguros</strong></p>
-							</a>
-						</div>
 					</div>
 			</div>
 

@@ -35,6 +35,13 @@
 	</head>
 	<body>
 
+<?php
+	session_start();
+	$_SESSION["email"] = $_SESSION["email"];
+
+	$_SESSION["solicitar"] = $_POST["solicitar"];
+?>
+
 		<div class="flex-container">
 			<header>
 				<a href="index.php"><img class="logo" src="resources/images/logo2.png" alt=""/></a>
@@ -85,16 +92,16 @@
 										<div class="col-md-12">
 											<div class="form-group">
 												<label>Estado Civil</label>
-												<input type="radio" class="edocivil" value="soltero" name="edocivil" checked="true">
+												<input type="radio" class="edocivil" value="Soltero" name="edocivil" checked="true">
 												<label>Soltero</label>
 
-												<input type="radio" class="edocivil" value="casado" name="edocivil">
+												<input type="radio" class="edocivil" value="Casado" name="edocivil">
 												<label>Casado</label>
 
-												<input type="radio" class="edocivil" value="unido" name="edocivil">
+												<input type="radio" class="edocivil" value="Unido" name="edocivil">
 												<label>Unido</label>
 
-												<input type="radio" class="edocivil" value="viudo" name="edocivil">
+												<input type="radio" class="edocivil" value="Viudo" name="edocivil">
 												<label>Viudo</label>
 											</div>
 										</div>
@@ -104,7 +111,7 @@
 										<div class="col-md-12">
 											<div class="form-group">
 												<label>Cantidad de Dependientes</label>
-												<input type="number" class="form-control dependdientes" value="0" name="dependdientes">
+												<input type="number" class="form-control dependdientes" value="0" name="dependientes">
 											</div>
 										</div>
 									</div>
@@ -114,23 +121,23 @@
 										<div class="col-md-12">
 											<div class="form-group">
 												<label>NIVEL ACADÉMICO</label>
-												<input type="radio" class="nivelacademico" value="primaria"
+												<input type="radio" class="nivelacademico" value="Primaria"
 													name="nivelacademico" checked="true">
 												<label>Primaria</label>
 
-												<input type="radio" class="nivelacademico" value="secundaria"
+												<input type="radio" class="nivelacademico" value="Secundaria"
 													name="nivelacademico">
 												<label>Secundaria</label>
 
-												<input type="radio" class="nivelacademico" value="licenciatura"
+												<input type="radio" class="nivelacademico" value="Licenciatura"
 													name="nivelacademico">
 												<label>Licenciatura</label>
 
-												<input type="radio" class="nivelacademico" value="maestria"
+												<input type="radio" class="nivelacademico" value="Maestria"
 													name="nivelacademico">
 												<label>Maestría</label>
 
-												<input type="radio" class="nivelacademico" value="doctorado"
+												<input type="radio" class="nivelacademico" value="Doctorado"
 													name="nivelacademico">
 												<label>Doctorado</label>
 											</div>
@@ -142,11 +149,11 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Reside en Panamá?</label>
-												<input type="radio" class="residencia" value="si"
+												<input type="radio" class="residencia" value="Si"
 													name="residencia" checked="true">
 												<label>Si</label>
 
-												<input type="radio" class="residencia" value="no"
+												<input type="radio" class="residencia" value="No"
 													name="residencia">
 												<label>No</label>
 											</div>
@@ -198,11 +205,11 @@
 										<div class="col-md-12">
 											<div class="form-group">
 												<label>Tipo de vivienda</label>
-												<input type="radio" class="vivienda" value="propia"
+												<input type="radio" class="vivienda" value="Propia"
 													name="vivienda" checked="true">
 												<label>Propia</label>
 
-												<input type="radio" class="vivienda" value="alquilada"
+												<input type="radio" class="vivienda" value="Alquilada"
 													name="vivienda">
 												<label>Alquilada</label>
 											</div>
@@ -284,11 +291,11 @@
 										<div class="col-md-12">
 											<div class="form-group" style="">
 												<label>Algún familiar, allegado o yo mismo, es considerado persona políticamente expuesta</label>
-												<input type="radio" class="familiarexpuesto" value="no"
+												<input type="radio" class="familiarexpuesto" value="No"
 													name="familiarexpuesto" checked="true">
 												<label>No</label>
 
-												<input type="radio" class="familiarexpuesto" value="si"
+												<input type="radio" class="familiarexpuesto" value="Si"
 													name="familiarexpuesto">
 												<label>Si</label>
 											</div>
@@ -300,16 +307,16 @@
 										<div class="col-md-12">
 											<div class="form-group" style="">
 												<label>Tipo de contrato actual</label>
-												<input type="radio" class="tipo de contrato actual" value="asalariado"
-													name="tipo de contrato actual" checked="true">
+												<input type="radio" class="tipocontrato" value="Asalariado"
+													name="tipocontrato" checked="true">
 												<label>Asalariado</label>
 
-												<input type="radio" class="tipo de contrato actual" value="independiente"
-													name="tipo de contrato actual">
+												<input type="radio" class="tipocontrato" value="Independiente"
+													name="tipocontrato">
 												<label>Independiente</label>
 
-												<input type="radio" class="tipo de contrato actual" value="jubilado"
-													name="tipo de contrato actual">
+												<input type="radio" class="tipocontrato" value="Jubilado"
+													name="tipocontrato">
 												<label>Jubilado</label>
 
 											</div>
@@ -505,16 +512,3 @@
 		</div>
 	</body>
 </html>
-
-
-<?php
-	foreach ($_POST["solicitar"] as $producto) {
-		echo $producto.'<br>';
-	}
-
-	session_start();
-	$_SESSION["email"] = $_SESSION["email"];
-
-	$_SESSION["solicitar"] = $_POST["solicitar"];
-
- ?>
