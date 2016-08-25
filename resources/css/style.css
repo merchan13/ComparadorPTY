@@ -114,6 +114,17 @@ div.product-images > div > a{
     color: #e5e5ff;
     font-size: 18px;
 }
+.login-alert-error{
+        margin-top: -1%;
+        font-size: 15px;
+}
+.alert-success,
+.alert-danger{
+    border-radius: 100px 100px 100px 100px;
+}
+.fa-ex {
+    font-size: 1.5em;
+}
 
 /*--- COMPARADOR, RESULTADO, FORMULARIO ---*/
 .comparator-product-image-top img{
@@ -392,7 +403,6 @@ div.container-fluid > div.row > div.col-md-8 > div.card > div.content {
     background: #ffffff;
     border-radius: 10px 10px 10px 10px;
 }
-
 form > h4{
     width: 104%;
     margin-left: -2%;
@@ -509,15 +519,6 @@ div.row:nth-of-type(12) div div label:nth-of-type(4){
     font-weight: 600;
     text-transform: none;
 }
-
-
-
-
-
-
-
-
-
 div.empujar-izq{
     margin-right: 22.5%;
 }
