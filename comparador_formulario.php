@@ -34,6 +34,7 @@
 
 	</head>
 	<body>
+
 		<div class="flex-container">
 			<header>
 				<a href="index.php"><img class="logo" src="resources/images/logo2.png" alt=""/></a>
@@ -59,9 +60,8 @@
                             <div class="content" style="">
 								<form action="comparador-enviar_formulario.php" method="post"
 									enctype="multipart/form-data">
-
+									<h4>Información básica</h4>
 									<div class="row">
-
 										<!--NOMBRE(S)-->
 										<div class="col-md-6">
 											<div class="form-group" style="">
@@ -70,7 +70,6 @@
 													value="" name="nombres">
 											</div>
 										</div>
-
 										<!--APELLIDOS-->
 										<div class="col-md-6">
 											<div class="form-group" style="">
@@ -79,8 +78,8 @@
 													value="" name="apellidos">
 											</div>
 										</div>
-
 									</div>
+									<hr>
 									<div class="row">
 										<!--ESTADO CIVIL-->
 										<div class="col-md-12">
@@ -109,6 +108,7 @@
 											</div>
 										</div>
 									</div>
+									<hr>
 									<div class="row">
 										<!-- NIVEL ACADEMICO -->
 										<div class="col-md-12">
@@ -136,22 +136,21 @@
 											</div>
 										</div>
 									</div>
+									<hr>
 									<div class="row">
-
-										<!--TELÉFONO-->
+										<!--RESIDE EN PANAMA-->
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>Teléfono de Contacto</label>
-												<input type="text" class="form-control" id="telefono-perfil"
-													placeholder="Teléfono de contacto"
-													value="" name="telefono"
-													oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)"
-													oninvalid="setCustomValidity('Debe contener únicamente caracteres numéricos, no puede contener letras. \nEj: +507 111-1111.')"
-													pattern="^[+ -.()0-9]+$"
-													maxlength="14" required>
+												<label>Reside en Panamá?</label>
+												<input type="radio" class="residencia" value="si"
+													name="residencia" checked="true">
+												<label>Si</label>
+
+												<input type="radio" class="residencia" value="no"
+													name="residencia">
+												<label>No</label>
 											</div>
 										</div>
-
 										<!--CORREO-->
 										<div class="col-md-6">
 											<div class="form-group">
@@ -166,6 +165,316 @@
 											</div>
 										</div>
 									</div>
+									<div class="row">
+										<!--TELÉFONO-->
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Teléfono principal</label>
+												<input type="text" class="form-control" id="telefono-perfil"
+													placeholder="Teléfono de contacto"
+													value="" name="telefono"
+													oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)"
+													oninvalid="setCustomValidity('Debe contener únicamente caracteres numéricos, no puede contener letras. \nEj: +507 111-1111.')"
+													pattern="^[+ -.()0-9]+$"
+													maxlength="14" required>
+											</div>
+										</div>
+										<!--CELULAR-->
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Celular</label>
+												<input type="text" class="form-control" id="celular-perfil"
+													placeholder="Teléfono de contacto"
+													value="" name="celular"
+													oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)"
+													oninvalid="setCustomValidity('Debe contener únicamente caracteres numéricos, no puede contener letras. \nEj: +507 111-1111.')"
+													pattern="^[+ -.()0-9]+$"
+													maxlength="14" required>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<!--TIPO DE VIVIENDA-->
+										<div class="col-md-12">
+											<div class="form-group">
+												<label>Tipo de vivienda</label>
+												<input type="radio" class="vivienda" value="propia"
+													name="vivienda" checked="true">
+												<label>Propia</label>
+
+												<input type="radio" class="vivienda" value="alquilada"
+													name="vivienda">
+												<label>Alquilada</label>
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<!--CIUDAD-->
+										<div class="col-md-6">
+											<div class="form-group" style="">
+												<label>Ciudad</label>
+												<input type="text" class="form-control" placeholder="Ciudad de residencia"
+													value="" name="ciudad">
+											</div>
+										</div>
+										<!--PROVINCIA-->
+										<div class="col-md-6">
+											<div class="form-group" style="">
+												<label>Provincia</label>
+												<input type="text" class="form-control" placeholder="Provincia"
+													value="" name="provincia">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<!--DISTRITO-->
+										<div class="col-md-4">
+											<div class="form-group" style="">
+												<label>Distrito</label>
+												<input type="text" class="form-control" placeholder="Distrito"
+													value="" name="distrito">
+											</div>
+										</div>
+										<!--CORREGIMIENTO-->
+										<div class="col-md-4">
+											<div class="form-group" style="">
+												<label>Corregimiento</label>
+												<input type="text" class="form-control" placeholder="Corregimiento"
+													value="" name="corregimiento">
+											</div>
+										</div>
+										<!--BARRIADA-->
+										<div class="col-md-4">
+											<div class="form-group" style="">
+												<label>Barriada/Urbanización</label>
+												<input type="text" class="form-control" placeholder="Barriada"
+													value="" name="barriada">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<!--CALLE-->
+										<div class="col-md-4">
+											<div class="form-group" style="">
+												<label>Calle/Ave</label>
+												<input type="text" class="form-control" placeholder="Calle o Avenida"
+													value="" name="calleav">
+											</div>
+										</div>
+										<!--EDIFICIO-->
+										<div class="col-md-4">
+											<div class="form-group" style="">
+												<label>Edificio</label>
+												<input type="text" class="form-control" placeholder="Edificio"
+													value="" name="edificio">
+											</div>
+										</div>
+										<!--NRO CASA O APTO-->
+										<div class="col-md-4">
+											<div class="form-group" style="">
+												<label>№ de Casa/Apartamento</label>
+												<input type="text" class="form-control" placeholder="Nro de Casa/Apartamento"
+													value="" name="nrocasaapt">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<!--FAMILIAR EXPUESTO-->
+										<div class="col-md-12">
+											<div class="form-group" style="">
+												<label>Algún familiar, allegado o yo mismo, es considerado persona políticamente expuesta</label>
+												<input type="radio" class="familiarexpuesto" value="no"
+													name="familiarexpuesto" checked="true">
+												<label>No</label>
+
+												<input type="radio" class="familiarexpuesto" value="si"
+													name="familiarexpuesto">
+												<label>Si</label>
+											</div>
+										</div>
+									</div>
+									<h4>Información laboral</h4>
+									<div class="row">
+										<!--TIPO DE CONTRATO-->
+										<div class="col-md-12">
+											<div class="form-group" style="">
+												<label>Tipo de contrato actual</label>
+												<input type="radio" class="tipo de contrato actual" value="asalariado"
+													name="tipo de contrato actual" checked="true">
+												<label>Asalariado</label>
+
+												<input type="radio" class="tipo de contrato actual" value="independiente"
+													name="tipo de contrato actual">
+												<label>Independiente</label>
+
+												<input type="radio" class="tipo de contrato actual" value="jubilado"
+													name="tipo de contrato actual">
+												<label>Jubilado</label>
+
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<!--PROFESION-->
+										<div class="col-md-6">
+											<div class="form-group" style="">
+												<label>Profesión</label>
+												<input type="text" class="form-control" placeholder="Profesión"
+													value="" name="profesion">
+											</div>
+										</div>
+										<!--LUGAR DE TRABAJO-->
+										<div class="col-md-6">
+											<div class="form-group" style="">
+												<label>Lugar de trabajo</label>
+												<input type="text" class="form-control" placeholder="Lugar de trabajo"
+													value="" name="lugartrabajo">
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<!--(TRABAJO) CIUDAD-->
+										<div class="col-md-6">
+											<div class="form-group" style="">
+												<label>Ciudad</label>
+												<input type="text" class="form-control" placeholder="Ciudad"
+													value="" name="ciudad-trabajo">
+											</div>
+										</div>
+										<!--(TRABAJO) PROVINCIA-->
+										<div class="col-md-6">
+											<div class="form-group" style="">
+												<label>Provincia</label>
+												<input type="text" class="form-control" placeholder="Provincia"
+													value="" name="provincia-trabajo">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<!--(TRABAJO) DISTRITO-->
+										<div class="col-md-4">
+											<div class="form-group" style="">
+												<label>Distrito</label>
+												<input type="text" class="form-control" placeholder="Distrito"
+													value="" name="distrito-trabajo">
+											</div>
+										</div>
+										<!--(TRABAJO) CORREGIMIENTO-->
+										<div class="col-md-4">
+											<div class="form-group" style="">
+												<label>Corregimiento</label>
+												<input type="text" class="form-control" placeholder="Corregimiento"
+													value="" name="corregimiento-trabajo">
+											</div>
+										</div>
+										<!--(TRABAJO) BARRIADA-->
+										<div class="col-md-4">
+											<div class="form-group" style="">
+												<label>Barriada/Urbanización</label>
+												<input type="text" class="form-control" placeholder="Barriada"
+													value="" name="barriada-trabajo">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<!--(TRABAJO) CALLE-->
+										<div class="col-md-4">
+											<div class="form-group" style="">
+												<label>Calle/Ave</label>
+												<input type="text" class="form-control" placeholder="Calle o Avenida"
+													value="" name="calleav-trabajo">
+											</div>
+										</div>
+										<!--(TRABAJO) EDIFICIO-->
+										<div class="col-md-4">
+											<div class="form-group" style="">
+												<label>Edificio</label>
+												<input type="text" class="form-control" placeholder="Edificio"
+													value="" name="edificio-trabajo">
+											</div>
+										</div>
+										<!--(TRABAJO) NRO CASA O APTO-->
+										<div class="col-md-4">
+											<div class="form-group" style="">
+												<label>№ de Casa/Apartamento</label>
+												<input type="text" class="form-control" placeholder="Nro de Casa/Apartamento"
+													value="" name="nrocasaapt-trabajo">
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="row">
+										<!--(TRABAJO) TELEFONO OFICINA-->
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Teléfono de oficina</label>
+												<input type="text" class="form-control" id="telefonooficina"
+													placeholder="Teléfono de oficina"
+													value="" name="telefonooficina"
+													oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)"
+													oninvalid="setCustomValidity('Debe contener únicamente caracteres numéricos, no puede contener letras. \nEj: +507 111-1111.')"
+													pattern="^[+ -.()0-9]+$"
+													maxlength="14" required>
+											</div>
+										</div>
+										<!--(TRABAJO) SALARIO-->
+										<div class="col-md-6">
+											<div class="form-group" style="">
+												<label>Salario mensual ($)</label>
+												<input type="number" class="form-control" value="0" name="salario">
+											</div>
+										</div>
+									</div>
+									<h4>Referencias personales</h4>
+									<div class="row">
+										<!--(REFERENCIA) NOMBRE-->
+										<div class="col-md-6">
+											<div class="form-group" style="">
+												<label>Nombre del referido</label>
+												<input type="text" class="form-control" placeholder="Nombre"
+													value="" name="nombre-referencia">
+											</div>
+										</div>
+										<!--(REFERENCIA) PARENTESCO-->
+										<div class="col-md-6">
+											<div class="form-group" style="">
+												<label>Parentesco</label>
+												<input type="text" class="form-control" placeholder="Parentesco"
+													value="" name="parentesco-referencia">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<!--(REFERENCIA) TELÉFONO-->
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Teléfono principal</label>
+												<input type="text" class="form-control" id="telefono-referencia"
+													placeholder="Teléfono de contacto"
+													value="" name="telefono-referencia"
+													oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)"
+													oninvalid="setCustomValidity('Debe contener únicamente caracteres numéricos, no puede contener letras. \nEj: +507 111-1111.')"
+													pattern="^[+ -.()0-9]+$"
+													maxlength="14" required>
+											</div>
+										</div>
+										<!--(REFERENCIA) CELULAR-->
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Celular</label>
+												<input type="text" class="form-control" id="celular-refencia"
+													placeholder="Celular"
+													value="" name="celular-referencia"
+													oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)"
+													oninvalid="setCustomValidity('Debe contener únicamente caracteres numéricos, no puede contener letras. \nEj: +507 111-1111.')"
+													pattern="^[+ -.()0-9]+$"
+													maxlength="14" required>
+											</div>
+										</div>
+									</div>
+									<hr>
 									<div class="row">
 										<div class="col-md-12">
 											<div class="form-group empujar-izq">

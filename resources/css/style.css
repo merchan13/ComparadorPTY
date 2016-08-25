@@ -295,9 +295,6 @@ footer p{
 footer p a{
 	color: white;
 }
-div.empujar-izq{
-    margin-right: 22.5%;
-}
 .modal{
     margin-top: 0;
     padding-top: 0;
@@ -390,25 +387,21 @@ div.form-group > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 }
 
 /*--- FORMULARIO ---*/
+form > h4{
+    width: 110%;
+    margin-left: -5%;
+    background: #ffb732;
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 100px 100px 100px 100px;
+}
+form > h4:nth-of-type(1){
+    margin-top: -3%;
+}
 div.col-md-8{
     float: none;
     margin-left: auto;
     margin-right: auto;
-}
-div.row div div button.btn{
-    width: 120px;
-    display: inline;
-    float: right;
-    margin-right: 2%;
-}
-div.row div div button.btn-primary{
-    width: 200px;
-    height: 40px;
-    font-size: 14px;
-    background-color: #3EA055;
-    border-color: #3EA055;
-    -webkit-transition: height 1s, background-color 0.2s, border-color 0.2s, font-size 1s; /* For Safari 3.1 to 6.0 */
-    transition: height 1s, background-color 0.2s, border-color 0.2s, font-size 1s;
 }
 div.row:nth-of-type(2) div div label:nth-of-type(1){
     width: 100%;
@@ -434,7 +427,7 @@ div.row:nth-of-type(4) div div label:nth-of-type(1){
     width: 100%;
 }
 div.row:nth-of-type(4) div div label{
-    margin-right: 16%;
+    margin-right: 12%;
 }
 div.row:nth-of-type(4) div div label:nth-of-type(6){
     margin-right: 0%;
@@ -447,12 +440,114 @@ div.row:nth-of-type(4) div div label:nth-of-type(6){
     font-weight: 600;
     text-transform: none;
 }
+div.row:nth-of-type(5) div div label:nth-of-type(1){
+    width: 100%;
+}
+div.row:nth-of-type(5) div div label{
+    margin-right: 12%;
+}
+div.row:nth-of-type(5) div div label:nth-of-type(3){
+    margin-right: 0%;
+}
+div.row:nth-of-type(5) div div label:nth-of-type(2),
+div.row:nth-of-type(5) div div label:nth-of-type(3){
+    font-weight: 600;
+    text-transform: none;
+}
+div.row:nth-of-type(7) div div label:nth-of-type(1){
+    width: 100%;
+}
+div.row:nth-of-type(7) div div label{
+    margin-right: 12%;
+}
+div.row:nth-of-type(7) div div label:nth-of-type(3){
+    margin-right: 0%;
+}
+div.row:nth-of-type(7) div div label:nth-of-type(2),
+div.row:nth-of-type(7) div div label:nth-of-type(3){
+    font-weight: 600;
+    text-transform: none;
+}
+div.row:nth-of-type(11) div div label:nth-of-type(1){
+    width: 100%;
+}
+div.row:nth-of-type(11) div div label{
+    margin-right: 12%;
+}
+div.row:nth-of-type(11) div div label:nth-of-type(3){
+    margin-right: 0%;
+}
+div.row:nth-of-type(11) div div label:nth-of-type(2),
+div.row:nth-of-type(11) div div label:nth-of-type(3){
+    font-weight: 600;
+    text-transform: none;
+}
+div.row:nth-of-type(12) div div label:nth-of-type(1){
+    width: 100%;
+}
+div.row:nth-of-type(12) div div label{
+    margin-right: 16%;
+}
+div.row:nth-of-type(12) div div label:nth-of-type(4){
+    margin-right: 3%;
+}
+div.row:nth-of-type(12) div div label:nth-of-type(2),
+div.row:nth-of-type(12) div div label:nth-of-type(3),
+div.row:nth-of-type(12) div div label:nth-of-type(4){
+    font-weight: 600;
+    text-transform: none;
+}
+
+
+
+
+
+
+
+
+
+div.empujar-izq{
+    margin-right: 22.5%;
+}
+div.row div div button.btn{
+    width: 120px;
+    display: inline;
+    float: right;
+    margin-right: 2%;
+}
+div.row div div button.btn-primary{
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+    background-color: #3EA055;
+    border-color: #3EA055;
+    -webkit-transition: height 1s, background-color 0.2s, border-color 0.2s, font-size 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s, background-color 0.2s, border-color 0.2s, font-size 1s;
+}
+div.row div div button.btn-primary:hover{
+    height: 80px;
+    background-color: #ffb732;
+    border-color: #ffb732;
+    font-size: 20px;
+}
+
+
+
 
 
 
 /*-----------*/
 /*-----------*/
+
+
+
+
+
 /* RESPONSIVE*/
+
+
+
+
 /*-----------*/
 /*-----------*/
 
