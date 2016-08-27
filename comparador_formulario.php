@@ -111,7 +111,7 @@
 										<div class="col-md-12">
 											<div class="form-group">
 												<label>Cantidad de Dependientes</label>
-												<input type="number" class="form-control dependdientes" value="0" name="dependientes">
+												<input type="number" class="form-control dependientes" value="0" name="dependientes">
 											</div>
 										</div>
 									</div>
