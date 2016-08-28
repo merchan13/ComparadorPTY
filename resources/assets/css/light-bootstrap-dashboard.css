@@ -3484,9 +3484,23 @@ table > tbody > tr > td .imagen-producto{
 
     /*  DASHBOARD  */
     table > tbody > tr > td:nth-of-type(6) .imagen-producto{
-        
+        max-width: 120px;
+    	max-height: 75px;
+        min-width: 120px;
+        min-height: 75px;
+        margin: auto;
+        margin-bottom: 4%;
     }
     table > tbody > tr > td:nth-of-type(6) p{
-
+        font-size: 14px;
+        font-weight: 500;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3%;
+        max-width: 200px;
     }
+    /*Modal mas info*/
+    
+    /*Modal modificar*/
+    /*Modal eliminar*/
 }

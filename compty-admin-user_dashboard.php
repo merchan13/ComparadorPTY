@@ -147,7 +147,7 @@
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Productos</h4>
-                                <p class="category">Tarjetas de Créditos</p>
+                                <p class="category">Tarjetas de Crédito</p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">

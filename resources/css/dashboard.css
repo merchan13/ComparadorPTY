@@ -144,6 +144,10 @@ div.info-fila1-elemento p, div.info-fila2-elemento p{
     }
 
     /*  DASHBOARD  */
+    .row{
+        width: 120%;
+        margin-left: -10%;
+    }
     thead tr {
 		position: absolute;
 		top: -9999px;
@@ -156,6 +160,7 @@ div.info-fila1-elemento p, div.info-fila2-elemento p{
 		border-bottom: 1px solid #eee;
 		position: relative;
 		padding-left: 50%;
+        text-align: center;
 	}
 	td:before {
 		/* Now like a table header */
@@ -172,6 +177,10 @@ div.info-fila1-elemento p, div.info-fila2-elemento p{
     td:nth-of-type(3) { display: none;}
     td:nth-of-type(4) { display: none;}
     td:nth-of-type(5) { display: none;}
+
+    div table tbody tr td:nth-of-type(6){
+        width: 70%;
+    }
 
     table > tbody > tr > td:nth-of-type(6) .imagen-producto,
     table > tbody > tr > td:nth-of-type(6) p{
