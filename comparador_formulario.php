@@ -93,16 +93,16 @@
 											<div class="form-group">
 												<label>Estado Civil</label>
 												<input type="radio" class="edocivil" value="Soltero" name="edocivil" checked="true">
-												<label>Soltero</label>
+												<label>Soltero</label><br>
 
 												<input type="radio" class="edocivil" value="Casado" name="edocivil">
-												<label>Casado</label>
+												<label>Casado</label><br>
 
 												<input type="radio" class="edocivil" value="Unido" name="edocivil">
-												<label>Unido</label>
+												<label>Unido</label><br>
 
 												<input type="radio" class="edocivil" value="Viudo" name="edocivil">
-												<label>Viudo</label>
+												<label>Viudo</label><br>
 											</div>
 										</div>
 									</div>
@@ -123,23 +123,23 @@
 												<label>NIVEL ACADÉMICO</label>
 												<input type="radio" class="nivelacademico" value="Primaria"
 													name="nivelacademico" checked="true">
-												<label>Primaria</label>
+												<label>Primaria</label><br>
 
 												<input type="radio" class="nivelacademico" value="Secundaria"
 													name="nivelacademico">
-												<label>Secundaria</label>
+												<label>Secundaria</label><br>
 
 												<input type="radio" class="nivelacademico" value="Licenciatura"
 													name="nivelacademico">
-												<label>Licenciatura</label>
+												<label>Licenciatura</label><br>
 
 												<input type="radio" class="nivelacademico" value="Maestria"
 													name="nivelacademico">
-												<label>Maestría</label>
+												<label>Maestría</label><br>
 
 												<input type="radio" class="nivelacademico" value="Doctorado"
 													name="nivelacademico">
-												<label>Doctorado</label>
+												<label>Doctorado</label><br>
 											</div>
 										</div>
 									</div>
@@ -309,15 +309,15 @@
 												<label>Tipo de contrato actual</label>
 												<input type="radio" class="tipocontrato" value="Asalariado"
 													name="tipocontrato" checked="true">
-												<label>Asalariado</label>
+												<label>Asalariado</label><br>
 
 												<input type="radio" class="tipocontrato" value="Independiente"
 													name="tipocontrato">
-												<label>Independiente</label>
+												<label>Independiente</label><br>
 
 												<input type="radio" class="tipocontrato" value="Jubilado"
 													name="tipocontrato">
-												<label>Jubilado</label>
+												<label>Jubilado</label><br>
 
 											</div>
 										</div>
