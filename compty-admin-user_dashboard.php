@@ -195,7 +195,7 @@
 </body>
 
 	<!--JavaScript-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="resources/js/dashboard.js" type="text/javascript"></script>
 	<!--/JavaScript-->
@@ -342,6 +342,8 @@
 				</ul>
 			</td>
 			<td>
+				<p>'.$nombre.'</p>
+				<img src="'.$imagenUrl.'" alt="" class="imagen-producto" />
 				<button type="button" title="Más Info" id="prueba" data-toggle="modal" data-target="#infoModal"
 					data-id="'.$id.'"
 					class="btn btn-info btn-block btn-fill open-Info">
