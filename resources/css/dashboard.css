@@ -14,7 +14,22 @@ table > tbody > tr > td:nth-of-type(6) p{
     margin-left: 25%;
     margin-top: 0;
 }
-
+/*modificar*/
+.imagen-perfil{
+    margin-left: 33%;
+    margin-bottom: 5%;
+}
+.imagen-perfil img{
+    width:300px; height: 200px;
+}
+.nombre{
+    margin-left:35%;
+}
+.form-group .btn-info{
+    width: 300px;
+    height: 50px;
+    margin-left:70%;
+}
 ul {
     list-style: none;
     padding: 0;
@@ -39,6 +54,12 @@ input.range-pct{
 button.agregar-mas-req{
     margin-left: 1.5%;
     padding: 1px 20px 1px 20px;
+}
+/*fin-modificar*/
+.eliminarbtn{
+    width: 300px;
+    height: 50px;
+    margin-left:67%;
 }
 
 div.info-img img{
@@ -186,4 +207,95 @@ div.info-fila1-elemento p, div.info-fila2-elemento p{
     table > tbody > tr > td:nth-of-type(6) p{
         display: block;
     }
+    /*modal mas info*/
+    .modal-dialog{
+        width: 70%;
+        font-size: 10px;
+    }
+    .modal-content{
+        margin-left: -28%;
+    }
+    div.info-img{
+        text-align: center;
+    }
+    div.info-img img {
+        max-width: 150px;
+        max-height: 90px;
+        min-width: 150px;
+        min-height: 90px;
+        float: none;
+        margin-right: 0%;
+    }
+    div.info-descripcion h3 {
+        float: none;
+        margin-left: 0%;
+        margin-bottom: 2%;
+        margin-right: 0%;
+        font-size: 16px;
+        text-align: center;
+    }
+    div.info-descripcion p {
+        font-size: 10px;
+        text-align: justify;
+    }
+    div.info-fila1-elemento strong,
+    div.info-fila2-elemento strong,
+    div.info-fila1-elemento p,
+    div.info-fila2-elemento p,
+    div.info-requisitos ul li p{
+        font-size: 10px;
+    }
+    div.info-fila1{
+        margin-right: 20%;
+    }
+    div.modal-footer{
+        margin-top: auto;
+    }
+    /*modal modificar*/
+    .imagen-perfil{
+        text-align: center;
+        margin: auto;
+        margin-bottom: 5%;
+    }
+    .imagen-perfil img{
+        width:150px;
+        height: 90px;
+    }
+    .imagen-perfil input{
+        margin: auto;
+    }
+    .nombre{
+        margin: auto;
+    }
+    .form-group .btn-info{
+        width: 150px;
+        height: 50px;
+        margin: auto;
+        margin-left: 20%;
+    }
+    .col-md-14{
+        width: 90%;
+        margin: auto;
+        margin-top: 5%;
+    }
+    input.requisito {
+        max-width: 79%;
+    }
+    .row:nth-of-type(4) .col-md-6{
+        width: 50%;
+        float: left;
+    }
+    ul > li > img.tdc-icon {
+        max-width: 60px;
+    	max-height: 40px;
+    }
+    output{
+        font-size: 10px;
+    }
+    /*modal eliminar*/
+    .eliminarbtn{
+        width: 250px;
+        margin-left: auto;
+    }
+
 }

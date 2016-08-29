@@ -32,8 +32,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <br>
-                        <button type="submit" class="btn btn-danger btn-fill"
-                            style="width: 300px; height: 50px; margin-left:67%;">
+                        <button type="submit" class="btn btn-danger btn-fill eliminarbtn">
                             ELIMINAR
                         </button>
                     </div>

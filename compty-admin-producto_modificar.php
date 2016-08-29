@@ -111,16 +111,15 @@
         <input type="hidden" name="piopiopio" value="'.$usuario.'">
 
         <!--IMAGEN-->
-        <div class="imagen-perfil" style="margin-left: 33%; margin-bottom: 5%;">
-            <img src="'.$imagenUrl.'" alt=""
-                style="width:300px; height: 200px;"/>
+        <div class="imagen-perfil">
+            <img src="'.$imagenUrl.'" alt=""/>
             <input type="file" name="imagen-tdc" value="">
         </div>
 
         <div class="row">
             <!--NOMBRE-->
             <div class="col-md-9">
-                <div class="form-group" style="margin-left:35%;">
+                <div class="form-group nombre">
                     <label>Nombre del Producto</label>
                     <input type="text" class="form-control" id="nombre-tdc"
                         placeholder="Nombre del producto"
@@ -266,7 +265,7 @@
             <!--TASA DE INTERES-->
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>Tasa de Interés: <label for="income-number" style="">
+                    <label>Tasa de Interés: <label for="income-number">
                         <output for="income" id="volume2" style="display: inline">'.$tasaInteres.'</output>
                         %
                     </label></label>
@@ -279,7 +278,7 @@
             <!--TASA DE MORA-->
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>Tasa de Mora: <label for="income-number" style="">
+                    <label>Tasa de Mora: <label for="income-number">
                         <output for="income" id="volume3" style="display: inline">'.$tasaMora.'</output>
                         %
                     </label></label>
@@ -292,7 +291,7 @@
             <!--SEGURO DE VIDA-->
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>Seguro de Vida: <label for="income-number" style="">
+                    <label>Seguro de Vida: <label for="income-number">
                         <output for="income" id="volume4" style="display: inline">'.$seguroVida.'</output>
                         %
                     </label></label>
@@ -349,8 +348,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <br>
-                    <button type="submit" class="btn btn-info btn-fill"
-                        style="width: 300px; height: 50px; margin-left:70%;">
+                    <button type="submit" class="btn btn-info btn-fill">
                         Modificar
                     </button>
                 </div>
