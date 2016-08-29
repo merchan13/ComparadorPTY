@@ -3499,18 +3499,17 @@ table > tbody > tr > td .imagen-producto{
         margin-bottom: 3%;
         max-width: 200px;
     }
-    /*Modal mas info*/
-
     /*Modal modificar*/
     .modal .card .content {
       padding: 15px 30px 10px 30px;
     }
-    .modal .card label{
+    .modal .card label,
+    .form-agregar .row label{
         font-size: 10px;
     }
 
-    .modal .form-control {
+    .modal .form-control,
+    .form-agregar .row .form-control {
         font-size: 10px;
     }
-    /*Modal eliminar*/
 }

@@ -166,8 +166,11 @@ div.info-fila1-elemento p, div.info-fila2-elemento p{
 
     /*  DASHBOARD  */
     .row{
-        width: 120%;
+        width: 100%;
         margin-left: -10%;
+    }
+    .row > .col-md-12 > .card{
+        width: 122%;
     }
     thead tr {
 		position: absolute;
@@ -249,9 +252,16 @@ div.info-fila1-elemento p, div.info-fila2-elemento p{
         margin-right: 20%;
     }
     div.modal-footer{
+        margin-top: 110%;
+    }
+    .modal:nth-of-type(2) div.modal-footer,
+    .modal:nth-of-type(3) div.modal-footer{
         margin-top: auto;
     }
     /*modal modificar*/
+    .modificar-modal .content .container-fluid .row{
+        width: 120%;
+    }
     .imagen-perfil{
         text-align: center;
         margin: auto;
@@ -293,9 +303,11 @@ div.info-fila1-elemento p, div.info-fila2-elemento p{
         font-size: 10px;
     }
     /*modal eliminar*/
+    .eliminar-modal .content .container-fluid .row{
+        width: 120%;
+    }
     .eliminarbtn{
         width: 250px;
         margin-left: auto;
     }
-
 }
