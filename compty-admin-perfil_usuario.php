@@ -61,8 +61,8 @@
                 <div class="row">
 					<div class="col-md-8">
                         <div class="card">
-                            <div class="content" style="">
-								<form action="compty-admin-modificar_usuario.php" method="post"
+                            <div class="content">
+								<form action="compty-admin-modificar_usuario.php" method="post" class="form-perfil"
 									enctype="multipart/form-data">
 
 									<?php
@@ -93,9 +93,8 @@
 									?>
 
 									<!--LOGO-->
-									<div class="imagen-perfil" style="margin-left: 33%; margin-bottom: 5%;">
-										<img src="<?php echo $imagenUrl; ?>" alt="choose an image" id="preview-foto"
-											style="max-width:200px; max-height: 200px;"/>
+									<div class="imagen-perfil enperfil">
+										<img src="<?php echo $imagenUrl; ?>" alt="choose an image" id="preview-foto"/>
 										<input type="file" name="imagen-perfil" id="imagen-perfilb" value=""
 											onchange="readURL(this)">
 									</div>
@@ -103,7 +102,7 @@
 
 										<!--NOMBRE-->
 										<div class="col-md-6">
-											<div class="form-group" style="">
+											<div class="form-group">
 												<label>Nombre del Banco</label>
 												<input type="text" class="form-control" placeholder="Nombre del producto"
 													value="<?php echo $nombre; ?>"
@@ -159,8 +158,7 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<br>
-												<button type="submit" class="btn btn-info btn-fill"
-													style="width: 200px; margin-left:70%; margin-top: -10%;">
+												<button type="submit" class="btn btn-info btn-fill guardarp">
 													Guardar
 												</button>
 											</div>

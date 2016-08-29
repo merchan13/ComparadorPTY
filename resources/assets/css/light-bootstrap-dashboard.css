@@ -3504,12 +3504,14 @@ table > tbody > tr > td .imagen-producto{
       padding: 15px 30px 10px 30px;
     }
     .modal .card label,
-    .form-agregar .row label{
+    .form-agregar .row label,
+    .form-perfil .row label{
         font-size: 10px;
     }
 
     .modal .form-control,
-    .form-agregar .row .form-control {
+    .form-agregar .row .form-control,
+    .form-perfil .row .form-control{
         font-size: 10px;
     }
 }
