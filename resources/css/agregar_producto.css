@@ -97,10 +97,10 @@ button.agregar-mas-req{
     output{
         font-size: 10px;
     }
-
     .btn-info{
         width: 200px;
         height: 50px;
         margin: auto;
+        margin-left: 14%;
     }
 }
