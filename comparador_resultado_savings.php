@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+        <meta charset="utf-8">
+        
 		<title>ComparadorPty - Resultado Ahorros</title>
 
 		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
