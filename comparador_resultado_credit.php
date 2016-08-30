@@ -230,10 +230,10 @@
 			<td>
 				<div class="elemento-check">
 					<span class="label label-primary">
-						Haz click! <input type="checkbox" name="solicitar[]" value="'.$id.'@'.$banco[3].'">
+						Haz click! <input type="checkbox" name="solicitar[]" value="'.$id.'@'.$banco[3].'@cred">
 					</span>
 					<span class="label label-primary responsive-span">
-						Solicitar <input type="checkbox" name="solicitar[]" value="'.$id.'@'.$banco[3].'">
+						Solicitar <input type="checkbox" name="solicitar[]" value="'.$id.'@'.$banco[3].'@cred">
 					</span>
 				</div>
 			</td>

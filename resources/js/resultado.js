@@ -24,3 +24,16 @@ $(document).on("click", ".open-Info-Cred", function () {
         }
     });
 });
+
+$(document).on("click", ".open-Info-Save", function () {
+     var Id = $(this).data('id');
+
+    $.ajax({
+        type:'POST',
+        url:'comparador-mas_info_save.php',
+        data: { varname: Id},
+        success:function(response){
+           $('.info-modal').html(response);
+        }
+    });
+});
