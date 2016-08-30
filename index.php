@@ -77,21 +77,21 @@
 					<div class="product-images">
 
 						<div class="credit-cards">
-							<a href="comparador.php?tipo-producto='tdc'">
+							<a href="comparador.php?tipo-producto=tdc">
 								<img src="resources/images/credit_card.png" alt=""/>
 								<p><strong>Tarjeta de Crédito</strong></p>
 							</a>
 						</div>
 
 						<div class="savings">
-							<a href="#">
+							<a href="comparador.php?tipo-producto=save">
 								<img src="resources/images/savings.png" alt=""/>
 								<p><strong>Ahorro</strong></p>
 							</a>
 						</div>
 
 						<div class="credit">
-							<a href="#">
+							<a href="comparador.php?tipo-producto=cred">
 								<img src="resources/images/credit.png" alt=""/>
 								<p><strong>Créditos</strong></p>
 							</a>

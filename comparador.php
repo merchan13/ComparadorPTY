@@ -45,10 +45,27 @@
 
 			<div class="comparator">
 				<div class="comparator-product-image-top">
-                    <img src="resources/images/credit_card.png" alt=""/>
+					<?php
+						$tipo = $_GET["tipo-producto"];
+						session_start();
+						$_SESSION['tipo-producto'] = $tipo;
+						if($tipo == 'tdc'){
+							echo '<img src="resources/images/credit_card.png" alt=""/>';
+						} elseif ($tipo == 'save'){
+							echo '<img src="resources/images/savings.png" alt=""/>';
+						} elseif ($tipo == 'cred'){
+							echo '<img src="resources/images/credit.png" alt=""/>';
+						}
+					 ?>
                 </div>
                 <div class="comparator-form">
+					<?php if ($tipo == 'tdc'){ ?>
                     <form class="form-horizontal" role="form" action="comparador_resultado.php" method="post">
+					<?php }elseif($tipo == 'save'){ ?>	
+					<form class="form-horizontal" role="form" action="comparador_resultado_savings.php" method="post">
+					<?php }elseif($tipo == 'cred'){ ?>
+					<form class="form-horizontal" role="form" action="comparador_resultado_credit.php" method="post">
+					<?php } ?>
 
                         <!--Income-->
                         <div class="form-group">
