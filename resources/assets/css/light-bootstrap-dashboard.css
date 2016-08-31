@@ -233,7 +233,7 @@ input:focus {
 .sidebar .sidebar-background {
   position: absolute;
   z-index: 1;
-  height: 100%;
+  height: 120%;
   width: 100%;
   display: block;
   top: 0;
@@ -362,7 +362,7 @@ body > .navbar-collapse:before {
   content: "";
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 120%;
   top: 0;
   left: 0;
   z-index: 2;
@@ -3532,6 +3532,14 @@ table > tbody > tr > td .imagen-producto{
         text-align: center;
         margin-bottom: 3%;
         max-width: 200px;
+    }
+    .sidebar .sidebar-background {
+      height: 130%;
+    }
+    .sidebar:after, .sidebar:before,
+    body > .navbar-collapse:after,
+    body > .navbar-collapse:before {
+      height: 130%;
     }
     /*Modal modificar*/
     .modal .card .content {
