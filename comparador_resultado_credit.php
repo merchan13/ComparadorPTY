@@ -186,15 +186,15 @@
 			<!--SEGURO VIDA-->
 			<td>
 				<div class="elemento-segurovida">
-					<p>'.$seguroVida.'</p>
+					<p>'.$seguroVida.'%</p>
 				</div>
 			</td>
 
 			<!--MONTO-->
 			<td>
 				<div class="elemento-montos">
-					<p>Desde: '.$montodesde.'</p>
-					<p>Hasta: '.$montohasta.'</p>
+					<p>Desde: $'.$montodesde.'</p>
+					<p>Hasta: $'.$montohasta.'</p>
 				</div>
 			</td>
 
@@ -202,8 +202,8 @@
 			<td>
 				<div class="elemento-teaxplazos">
 					<p>'.$plazodesde.' a '.$plazohasta.' meses</p>
-					<p>Desde: '.$tasadesde.'</p>
-					<p>Hasta: '.$tasahasta.'</p>
+					<p>Desde: '.$tasadesde.'%</p>
+					<p>Hasta: '.$tasahasta.'%</p>
 				</div>
 			</td>
 
