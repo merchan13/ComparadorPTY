@@ -20,9 +20,10 @@
             ?>
         </div>
 
-        <ul class="nav">
+        <ul class="nav" id="menusidebar">
             <li class="active">
-				<a data-toggle="collapse" href="#componentsExamples" class="collapsed" aria-expanded="false">
+				<a data-toggle="collapse" href="#componentsExamples" class="collapsed" aria-expanded="false"
+					data-parent="#menusidebar">
 					<i class="pe-7s-diamond"></i>
 					<p>Productos
 					   <b class="caret"></b>
@@ -61,13 +62,44 @@
 				</div>
             </li>
             <li class="active">
-				<?php
-	                echo '
-						<a href="compty-admin-agregar_producto.php?id='.$id.'&password='.$password.'">
-							<i class="pe-7s-plugin"></i>
-							<p>Agregar Nuevo</p>
-						</a>';
-	            ?>
+				<a data-toggle="collapse" href="#componentsExamples2" class="collapsed" aria-expanded="false"
+					data-parent="#menusidebar">
+					<i class="pe-7s-plugin"></i>
+					<p>Agregar nuevo
+					   <b class="caret"></b>
+					</p>
+				</a>
+				<div class="collapse" id="componentsExamples2" aria-expanded="false" style="height: 0px;">
+					<ul class="nav">
+						<li>
+							<?php
+				                echo '
+									<a href="compty-admin-agregar_producto.php?id='.$id.'&password='.$password.'">
+										<i class="pe-7s-credit"></i>
+										<p>Nuevo TDC</p>
+									</a>';
+				            ?>
+						</li>
+						<li>
+							<?php
+				                echo '
+									<a href="compty-admin-agregar_producto_save.php?id='.$id.'&password='.$password.'">
+										<i class="pe-7s-piggy"></i>
+										<p>Nuevo Ahorros</p>
+									</a>';
+				            ?>
+						</li>
+						<li>
+							<?php
+				                echo '
+									<a href="compty-admin-agregar_producto_cred.php?id='.$id.'&password='.$password.'">
+										<i class="pe-7s-cash"></i>
+										<p>Nuevo Créditos</p>
+									</a>';
+				            ?>
+						</li>
+					</ul>
+				</div>
             </li>
             <li class="active">
 				<?php

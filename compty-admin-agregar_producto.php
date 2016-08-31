@@ -10,7 +10,6 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-
     <!-- Bootstrap core CSS     -->
     <link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="vendors/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -304,10 +303,6 @@
 	<script src="resources/js/agregar_producto.js" type="text/javascript"></script>
 	<!--/JavaScript-->
 
-    <!--   Core JS Files   -->
-    <script src="resources/assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="resources/assets/js/bootstrap.min.js" type="text/javascript"></script>
-
 	<!--  Checkbox, Radio & Switch Plugins -->
 	<script src="resources/assets/js/bootstrap-checkbox-radio-switch.js"></script>
 
@@ -325,6 +320,5 @@
 
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="resources/assets/js/demo.js"></script>
-
 
 </html>
