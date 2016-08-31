@@ -2,7 +2,7 @@
 <html>
 	<head>
         <meta charset="utf-8">
-        
+
 		<title>ComparadorPty - Resultado Ahorros</title>
 
 		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -65,7 +65,7 @@
                 <div class="comparator-product-image-top">
                     <img src="resources/images/savings.png" alt=""/>
                 </div>
-				<form class="tabla-comparador credit-table" action="comparador_formulario_credit.php" method="post">
+				<form class="tabla-comparador credit-table" action="comparador_formulario.php" method="post">
 	                <div class="comparator-result-table">
 						<div class="content table-responsive table-full-width">
 							<table class="table table-hover">

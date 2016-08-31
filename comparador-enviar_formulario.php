@@ -61,7 +61,8 @@
             foreach ($productos as $producto) {
                 $aux = explode("@",$producto);
                 if ($aux[1] == $banco){
-                    array_push($productos_banco, getProducto($aux[0]));
+                    $tipoProducto = $aux[2];
+                    array_push($productos_banco, getProducto($aux[0],$tipoProducto));
                 }
             }
 
@@ -117,19 +118,30 @@
     //
     //Nombre del producto
     //
-    function getProducto($producto){
+    function getProducto($producto, $tipo){
 
         include ("conexion.php");
+        $nombre = "";
 
-        $sql = "SELECT producto_tdc_nombre
-                FROM comparador_producto_tdc
-                WHERE producto_tdc_id = $producto";
-
-        $result = mysqli_query($mysqli, $sql);
-
-        $row = mysqli_fetch_array($result);
-
-        $nombre = $row["producto_tdc_nombre"];
+        if($tipo == 'tdc'){
+            //TDC
+            $sql = "SELECT producto_tdc_nombre FROM comparador_producto_tdc WHERE producto_tdc_id = $producto";
+            $result = mysqli_query($mysqli, $sql);
+            $row = mysqli_fetch_array($result);
+            $nombre = $row["producto_tdc_nombre"];
+        }elseif ($tipo == 'save') {
+            //AHORROS
+            $sql = "SELECT producto_save_nombre FROM comparador_producto_save WHERE producto_save_id = $producto";
+            $result = mysqli_query($mysqli, $sql);
+            $row = mysqli_fetch_array($result);
+            $nombre = $row["producto_save_nombre"];
+        } elseif ($tipo == 'cred') {
+            //CREDITOS
+            $sql = "SELECT producto_cred_nombre FROM comparador_producto_cred WHERE producto_cred_id = $producto";
+            $result = mysqli_query($mysqli, $sql);
+            $row = mysqli_fetch_array($result);
+            $nombre = $row["producto_cred_nombre"];
+        }
 
         return $nombre;
     }
@@ -146,7 +158,7 @@
             $celularreferencia){
 
         $to = $correo_banco;
-        $subject = "Solicitud de TDC";
+        $subject = "ComparadorPTY - Solicitud de producto";
 
         $message = "
         <html>

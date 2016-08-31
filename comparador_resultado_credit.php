@@ -64,7 +64,7 @@
                 <div class="comparator-product-image-top">
                     <img src="resources/images/credit.png" alt=""/>
                 </div>
-				<form class="tabla-comparador credit-table" action="comparador_formulario_credit.php" method="post">
+				<form class="tabla-comparador credit-table" action="comparador_formulario.php" method="post">
 	                <div class="comparator-result-table">
 						<div class="content table-responsive table-full-width">
 							<table class="table table-hover">

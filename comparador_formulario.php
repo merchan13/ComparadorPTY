@@ -56,7 +56,7 @@
 
 			<div class="comparator-result">
 				<div class="comparator-product-image-top">
-                    <img src="resources/images/credit_card.png" alt=""/>
+                    <img src="resources/images/request-icon.png" alt=""/>
                 </div>
 			</div>
 
