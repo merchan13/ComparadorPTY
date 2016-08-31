@@ -20,7 +20,7 @@
 
     <!--  Light Bootstrap Table core CSS -->
     <link href="resources/assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
-	<link href="resources/css/dashboard.css" rel="stylesheet">
+	<link href="resources/css/dashboard_save.css" rel="stylesheet">
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -56,7 +56,7 @@
 		    	<div class="modal-content">
 		      		<div class="modal-header">
 		        		<button type="button" class="close" data-dismiss="modal">&times;</button>
-		        		<h4 class="modal-title">Tarjeta de Crédito</h4>
+		        		<h4 class="modal-title">Ahorros</h4>
 		      		</div>
 		      		<div class="modal-body info-modal" name="modal-body info">
 						<!-- compty-admin-producto_mas_info.php -->
@@ -76,7 +76,7 @@
 		    	<div class="modal-content">
 		      		<div class="modal-header">
 		        		<button type="button" class="close" data-dismiss="modal">&times;</button>
-		        		<h4 class="modal-title">Modificar Tarjeta de Crédito</h4>
+		        		<h4 class="modal-title">Modificar producto Ahorro</h4>
 		      		</div>
 		      		<div class="modal-body modificar-modal" name="modal-body modificar">
 						<!-- compty-admin-producto_modificar.php -->
@@ -112,7 +112,7 @@
 		    	<div class="modal-content">
 		      		<div class="modal-header">
 		        		<button type="button" class="close" data-dismiss="modal">&times;</button>
-		        		<h4 class="modal-title">Eliminar Tarjeta de Crédito</h4>
+		        		<h4 class="modal-title">Eliminar producto Ahorro</h4>
 		      		</div>
 		      		<div class="modal-body eliminar-modal" name="modal-body eliminarmodal">
 						<!-- compty-admin-producto_eliminar.php -->
@@ -147,16 +147,14 @@
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Productos</h4>
-                                <p class="category">Tarjetas de Crédito</p>
+                                <p class="category">Ahorros</p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
                                     <thead>
-                                        <th>Producto</th>
-                                    	<th>Marca</th>
-                                    	<th>Tasa</th>
-                                    	<th>Cargos X Mes</th>
-                                    	<th>Beneficios</th>
+										<th>Producto</th>
+										<th>Costo por mes</th>
+										<th>Monto apertura</th>
 										<th>Mas Información</th>
 										<th>Acciones</th>
                                     </thead>
@@ -228,35 +226,23 @@
 
 		include ("conexion.php");
 
-		$sql = "SELECT * FROM comparador_producto_tdc WHERE usuario_admin_id = '$usuario_id'";
+		$sql = "SELECT * FROM comparador_producto_save WHERE usuario_admin_id <= $usuario_id";
 		$result = mysqli_query($mysqli, $sql);
 
 		while($row = mysqli_fetch_array($result))
 		{
-
 			//Atributos
-			$id = $row["producto_tdc_id"];
-			$nombre = $row["producto_tdc_nombre"];
-			$descripcion = $row["producto_tdc_descripcion"];
-			$ingresoMin = $row["producto_tdc_ingresoMin"];
-			$tasaInteres = $row["producto_tdc_tasaInteres"];
-			$cargosMes = $row["producto_tdc_cargosMes"];
-			$seguroVida = $row["producto_tdc_seguroVida"];
-			$tasaMora = $row["producto_tdc_tasaMora"];
-			$imagenUrl = $row["producto_tdc_imagenUrl"];
-			//Foreign Keys
-			$marca_id = $row["fk_marca_tdc_id"];
-
-			//[0]: nombre
-			//[1]: imagenUrl
-			$marca = getMarcaProducto($marca_id);
-
-			//[...] beneficio1, beneficio2, ...
-			$beneficios = getBeneficiosProducto($id);
+			$id = $row["producto_save_id"];
+			$bancoId = $row["usuario_admin_id"];
+			$nombre = $row["producto_save_nombre"];
+			$descripcion = $row["producto_save_descripcion"];
+			$ingresoMin = $row["producto_save_ingresomin"];
+            $tipocuenta = $row["producto_save_tipocuenta"];
+            $tasainteres = $row["producto_save_tasainteres"];
+            $costo = $row["producto_save_costo"];
 
 			//Imprimir tabla
-			printInformacionProducto($id,$nombre,$descripcion,$ingresoMin,$tasaInteres,$cargosMes,$seguroVida,$tasaMora,
-			$imagenUrl,$marca,$beneficios);
+			printInformacionProducto($id,$nombre,$descripcion,$ingresoMin,$tipocuenta,$tasainteres,$costo);
 		}
 
 		mysqli_close($mysqli);
@@ -264,106 +250,64 @@
 		return true;
 	}
 
-
-	//Marca de la TDC
-	//Recibe el id de la marca.
-	function getMarcaProducto($marca_id){
-
-		include ("conexion.php");
-		$sql = "SELECT * FROM comparador_marca_tdc WHERE marca_tdc_id = $marca_id";
-		$result = mysqli_query($mysqli, $sql);
-		$row = mysqli_fetch_array($result);
-
-		return array($row["marca_tdc_nombre"], $row["marca_tdc_imagenUrl"]);
-	}
-
-
-	//Beneficios de la TDC
-	//Recibe el id del producto.
-	function getBeneficiosProducto($producto_id){
-
-		include ("conexion.php");
-		$sql = "SELECT B.beneficio_tdc_nombre
-				FROM comparador_beneficio_tdc B, comparador_producto_beneficio PB
-				WHERE B.beneficio_tdc_id = PB.beneficio_tdc_id AND PB.producto_tdc_id = '$producto_id'";
-		$result = mysqli_query($mysqli, $sql);
-
-		$beneficios = array();
-
-		while($row = mysqli_fetch_array($result))
-		{
-			$beneficios[] = $row["beneficio_tdc_nombre"];
-		}
-
-		return $beneficios;
-	}
-
-
 	//Imprimir HTML
 	//Recibe toda la informacion de la tarjeta
-	function printInformacionProducto($id,$nombre,$descripcion,$ingresoMin,$tasaInteres,$cargosMes,$seguroVida,$tasaMora,
-	$imagenUrl,$marca,$beneficios){
+	function printInformacionProducto($id,$nombre,$descripcion,$ingresoMin,$tipocuenta,$tasainteres,$costo){
 		echo'
 		<tr>
+			<!--PRODUCTO-->
 			<td>
-				<p>'.$nombre.'</p>
-				<img src="'.$imagenUrl.'"
-					alt="" class="imagen-producto" />
+				<div class="elemento-producto">
+					<p>'.$nombre.'</p>
+				</div>
 			</td>
-			<td><img src="'.$marca[1].'" alt="" /></td>
-			<td>'.$tasaInteres.'%</td>
-			<td><i class="fa fa-usd" aria-hidden="true"></i>'.$cargosMes.'</td>
+
+			<!--COSTO POR MES-->
 			<td>
-				<ul>';
-				foreach ($beneficios as &$beneficio) {
-					switch ($beneficio) {
-						case 'Millas':
-							echo '<li>'.$beneficio.'<i class="fa fa-plane" aria-hidden="true"></i></li>';
-							break;
-						case 'Puntos':
-							echo '<li>'.$beneficio.'<i class="fa fa-plus-circle" aria-hidden="true"></i></li>';
-							break;
-						case 'Descuentos':
-							echo '<li>'.$beneficio.'<i class="fa fa-tags" aria-hidden="true"></i></li>';
-							break;
-						case 'Reembolsos':
-							echo '<li>'.$beneficio.'<i class="fa fa-money" aria-hidden="true"></i></li>';
-							break;
-						default:
-							echo '<li>'.$beneficio.'<i class="fa fa-code" aria-hidden="true"></i></li>';
-							break;
-					}
-				}
-		echo'
-				</ul>
+				<div class="elemento-segurovida">
+					<p>$'.$costo.'</p>
+				</div>
 			</td>
+
+			<!--MONTO APERTURA-->
 			<td>
-				<p>'.$nombre.'</p>
-				<img src="'.$imagenUrl.'" alt="" class="imagen-producto" />
-				<button type="button" title="Más Info" id="prueba" data-toggle="modal" data-target="#infoModal"
-					data-id="'.$id.'"
-					class="btn btn-info btn-block btn-fill open-Info">
-					Ver más
-				</button>
+				<div class="elemento-montos">
+					<p>$'.$ingresoMin.'</p>
+				</div>
 			</td>
+
+			<!--MAS INFO-->
 			<td>
-				<ul class="actions">
-					<li>
-						<a href="#">
-							<button type="button" title="Más Info" id="prueba" data-toggle="modal" data-target="#modifModal"
-								title="Modificar" class="btn btn-primary btn-fill glyphicon glyphicon-pencil open-Modif"
-								data-id="'.$id.'"></button>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<button type="button" title="Más Info" id="prueba" data-toggle="modal" data-target="#elimModal"
-								title="Eliminar" class="btn btn-danger btn-fill glyphicon glyphicon-trash open-Eliminar"
-								data-id="'.$id.'"></button>
-						</a>
-					</li>
-				</ul>
+				<div class="elemento-masinfo-padre">
+					<p>'.$nombre.'</p>
+					<button type="button" title="Más Info" id="prueba" data-toggle="modal" data-target="#infoModal"
+						data-id="'.$id.'"
+						class="btn btn-info btn-block btn-fill open-Info">
+						Ver más
+					</button>
+				</div>
 			</td>
+
+			<!--ACCIONES-->
+			<td>
+		   	 <ul class="actions">
+		   		 <li>
+		   			 <a href="#">
+		   				 <button type="button" title="Más Info" id="prueba" data-toggle="modal" data-target="#modifModal"
+		   					 title="Modificar" class="btn btn-primary btn-fill glyphicon glyphicon-pencil open-Modif"
+		   					 data-id="'.$id.'"></button>
+		   			 </a>
+		   		 </li>
+		   		 <li>
+		   			 <a href="#">
+		   				 <button type="button" title="Más Info" id="prueba" data-toggle="modal" data-target="#elimModal"
+		   					 title="Eliminar" class="btn btn-danger btn-fill glyphicon glyphicon-trash open-Eliminar"
+		   					 data-id="'.$id.'"></button>
+		   			 </a>
+		   		 </li>
+		   	 </ul>
+		    </td>
+
 		</tr>';
 	}
  ?>

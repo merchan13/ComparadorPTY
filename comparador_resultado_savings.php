@@ -180,14 +180,14 @@
 			<!--COSTO POR MES-->
 			<td>
 				<div class="elemento-segurovida">
-					<p>'.$costo.'</p>
+					<p>$'.$costo.'</p>
 				</div>
 			</td>
 
 			<!--MONTO APERTURA-->
 			<td>
 				<div class="elemento-montos">
-					<p>'.$ingresoMin.'</p>
+					<p>$'.$ingresoMin.'</p>
 				</div>
 			</td>
 
