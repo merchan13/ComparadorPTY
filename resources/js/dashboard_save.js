@@ -4,7 +4,7 @@ $(document).on("click", ".open-Info", function () {
 
     $.ajax({
         type:'POST',
-        url:'compty-admin-producto_mas_info.php',
+        url:'compty-admin-producto_mas_info_save.php',
         data: { varname: Id},
         success:function(response){
            $('.info-modal').html(response);
@@ -40,23 +40,6 @@ $(document).on("click", ".open-Eliminar", function () {
             $('.form-eliminar').html(response);
         }
     });
-});
-
-//Radio button Marca
-$(document).on("click", ".marca-tdc", function () {
-    var selAnterior = document.getElementsByName("marca-selec");
-    selAnterior[0].setAttribute("name","name");
-    $(this).attr("name","marca-selec");
-});
-
-//Checkbox Beneficios
-$(document).on("click", ".beneficio-tdc", function () {
-
-    if ($(this).attr("name") == "benef-selec" ){
-        $(this).attr("name","name");
-    } else if ($(this).attr("name") == "name") {
-        $(this).attr("name","benef-selec[]");
-    }
 });
 
 //+ Requerimientos

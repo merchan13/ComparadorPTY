@@ -227,7 +227,7 @@
 
 		include ("conexion.php");
 
-		$sql = "SELECT * FROM comparador_producto_cred WHERE usuario_admin_id <= $usuario_id";
+		$sql = "SELECT * FROM comparador_producto_cred WHERE usuario_admin_id = $usuario_id";
 		$result = mysqli_query($mysqli, $sql);
 
 		while($row = mysqli_fetch_array($result))
