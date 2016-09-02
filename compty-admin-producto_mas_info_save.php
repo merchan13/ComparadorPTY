@@ -75,7 +75,7 @@
                 <div class="info-fila2-elemento">
                     <strong>Tipo de cuenta:</strong>
                     <p>
-                        '.$tipocuenta.'%
+                        '.$tipocuenta.'
                     </p>
                 </div>
                 <div class="info-fila2-elemento">
