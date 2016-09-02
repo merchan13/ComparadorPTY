@@ -15,6 +15,7 @@
 
 		<!--Styles-->
 		<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+		<link rel="stylesheet" type="text/css" href="resources/css/style_cred.css">
 		<!--/Styles-->
 
 		<!--JavaScript-->

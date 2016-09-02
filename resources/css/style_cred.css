@@ -1,0 +1,9 @@
+@media only screen and (max-device-width: 375px) {
+    td:nth-of-type(6) { display: table-cell;}
+    div table tbody tr td:nth-of-type(7){
+        width: auto;
+    }
+    div table tbody tr td:nth-of-type(6){
+        width: 70%;
+    }
+}
