@@ -18,7 +18,7 @@ $(document).on("click", ".open-Modif", function () {
 
     $.ajax({
         type:'POST',
-        url:'compty-admin-producto_modificar.php',
+        url:'compty-admin-producto_modificar_save.php',
         data: { varname: Id},
         success:function(response){
             $('.form-modif').empty();
@@ -33,7 +33,7 @@ $(document).on("click", ".open-Eliminar", function () {
 
     $.ajax({
         type:'POST',
-        url:'compty-admin-producto_eliminar.php',
+        url:'compty-admin-producto_eliminar_save.php',
         data: { varname: Id},
         success:function(response){
             $('.form-eliminar').empty();
