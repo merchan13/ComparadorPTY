@@ -51,11 +51,11 @@
                     header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=666");
                     exit;
                 } else {
-                    header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=999");
+                    header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=9991");
                     exit;
                 }
             } else {
-                header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=999");
+                header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=9991");
                 exit;
             }
         }
@@ -95,10 +95,55 @@
             header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=666");
             exit;
         } else {
-            header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=999");
+            header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=9992");
             exit;
         }
     } elseif (isset($_POST["lospollitosdicencred"])) {
+
+        $usuarioId = $_POST["lospollitosdicencred"];
+        $usuarioPass = $_POST["piopiopio"];
+        $nombre = $_POST["nombre-cred"];
+        $descripcion = $_POST["descripcion-cred"];
+        $ingresoMin = $_POST["ingmin-cred"];
+        $seguroVida = $_POST["segurovida-cred"];
+        $montodesde = $_POST["montodesde-cred"];
+        $montohasta = $_POST["montohasta-cred"];
+        $plazodesde = $_POST["plazodesde-cred"];
+        $plazohasta = $_POST["plazohasta-cred"];
+        $teadesde = $_POST["teadesde-cred"];
+        $teahasta = $_POST["teahasta-cred"];
+        $requisitos = $_POST["requisito"];
+
+        include("conexion.php");
+
+        $sql = "INSERT INTO comparador_producto_cred (usuario_admin_id, producto_cred_nombre, producto_cred_descripcion,
+            producto_cred_ingresomin, producto_cred_segurovida, producto_cred_montodesde, producto_cred_montohasta,
+            producto_cred_plazodesde, producto_cred_plazohasta, producto_cred_tasadesde, producto_cred_tasahasta)
+            VALUES ($usuarioId, '$nombre', '$descripcion', $ingresoMin, $seguroVida, $montodesde, $montohasta,
+                $plazodesde, $plazohasta, $teadesde, $teahasta)";
+
+        echo $sql;
+
+        if ($stmt = mysqli_prepare($mysqli, $sql)) {
+            mysqli_stmt_execute($stmt);
+            $error_sql = mysqli_stmt_error($stmt);
+            mysqli_stmt_close($stmt);
+
+            $sql = "SELECT MAX(producto_cred_id) FROM comparador_producto_cred";
+            $result = mysqli_query($mysqli, $sql);
+            $row = mysqli_fetch_array($result);
+
+            $idNuevoProducto = $row["MAX(producto_cred_id)"];
+
+            //Insertar requisitos
+            insertarRequisitosCred($idNuevoProducto, $usuarioId, $requisitos);
+
+            header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=666");
+            exit;
+        } else {
+            header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=9993");
+            exit;
+        }
 
     } else {
         //Do nothing

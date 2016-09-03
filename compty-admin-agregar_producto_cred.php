@@ -55,29 +55,23 @@
                     <div class="col-md-11">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Agregar Nuevo Producto</h4>
+                                <h4 class="title">Agregar nuevo producto Crédito</h4>
                             </div>
                             <div class="content">
 								<form action="compty-admin-agregar_producto_back.php" method="post"
 									enctype="multipart/form-data" class="form-agregar">
 
-							        <input type="hidden" name="lospollitosdicen" value="<?php echo $id; ?>">
+							        <input type="hidden" name="lospollitosdicencred" value="<?php echo $id; ?>">
 							        <input type="hidden" name="piopiopio" value="<?php echo $password; ?>">
-
-							        <!--IMAGEN-->
-							        <div class="imagen-perfil">
-							            <img src="#" alt="Choose an image" id="preview-foto"/>
-							            <input type="file" name="imagen-tdc" id="imagen-tdc" value="">
-							        </div>
 
 							        <div class="row">
 							            <!--NOMBRE-->
 							            <div class="col-md-9">
 							                <div class="form-group">
 							                    <label>Nombre del Producto</label>
-							                    <input type="text" class="form-control" id="nombre-tdc"
+							                    <input type="text" class="form-control" id="nombre-cred"
 							                        placeholder="Nombre del producto"
-							                        value="" name="nombre-tdc"
+							                        value="" name="nombre-cred"
 							                        oninput="setCustomValidity(\'\')" onblur="onBlurDeInputs(this.id)"
 							                        oninvalid="setCustomValidity(\'Debe introducir una dirección de portal web válido.\nEj: https://tupaginaweb.com\')"
 
@@ -93,8 +87,8 @@
 							                    <label>Descripción</label>
 							                    <textarea rows="10" cols="400" type="text" class="form-control"
 							                        style="resize: none;"
-							                        id="descripcion-tdc" placeholder="Descripción del producto"
-							                        name="descripcion-tdc" oninput="setCustomValidity(\'\')" onblur="onBlurDeInputs(this.id)"
+							                        id="descripcion-cred" placeholder="Descripción del producto"
+							                        name="descripcion-cred" oninput="setCustomValidity(\'\')" onblur="onBlurDeInputs(this.id)"
 							                        oninvalid="setCustomValidity(\'Debe introducir una dirección de portal web válido.\nEj: https://tupaginaweb.com\')"
 
 							                        required></textarea>
@@ -103,63 +97,13 @@
 							        </div>
 
 							        <div class="row">
-							            <!--MARCA-->
-							            <div class="col-md-6">
-							                <div class="form-group">
-							                    <label>Marca</label>
-							                    <ul>
-							                        <li>
-							                            <img src="resources/images/visa-icon.gif" alt=""
-							                            class="tdc-icon"/>
-							                            <input type="radio" class="marca-tdc" value="1" name="marca-tdc">
-							                        </li>
-							                        <li>
-							                            <img src="resources/images/mastercard-icon.gif" alt=""
-							                            class="tdc-icon"/>
-							                            <input type="radio" class="marca-tdc" value="2" name="marca-tdc">
-							                        </li>
-							                    </ul>
-							                </div>
-							            </div>
-
-							            <!--BENEFICIOS-->
-							            <div class="col-md-6">
-							                <div class="form-group">
-							                    <label>Beneficios</label>
-							                    <ul>
-							                        <li>
-							                            Millas <i class="fa fa-plane" aria-hidden="true"></i>
-							                            <input type="checkbox" value="Millas"
-															class="beneficio-tdc" name="beneficio-tdc[]">
-							                        </li>
-							                        <li>
-							                            Puntos <i class="fa fa-plus-circle" aria-hidden="true"></i>
-							                            <input type="checkbox" value="Puntos"
-															class="beneficio-tdc" name="beneficio-tdc[]">
-							                        </li>
-							                        <li>
-							                            Descuentos <i class="fa fa-tags" aria-hidden="true"></i>
-							                            <input type="checkbox" value="Descuentos"
-															class="beneficio-tdc" name="beneficio-tdc[]">
-							                        </li>
-							                        <li>
-							                            Reembolsos <i class="fa fa-money" aria-hidden="true"></i>
-							                            <input type="checkbox" value="Reembolsos"
-															class="beneficio-tdc" name="beneficio-tdc[]">
-							                        </li>
-							                    </ul>
-							                </div>
-							            </div>
-							        </div>
-
-							        <div class="row">
 							            <!--INGRESO MINIMO-->
 							            <div class="col-md-6">
 							                <div class="form-group">
-							                    <label>Ingreso Mínimo</label>
-							                    <input type="text" class="form-control" id="ingmin-tdc"
-							                        placeholder="Ingreso mínimo o salario mínimo"
-							                        value="" name="ingmin-tdc"
+							                    <label>Ingreso mínimo</label>
+							                    <input type="text" class="form-control" id="ingmin-cred"
+							                        placeholder="Ingreso mínimo para el crédito"
+							                        value="" name="ingmin-cred"
 							                        oninput="setCustomValidity(\'\')" onblur="onBlurDeInputs(this.id)"
 							                        oninvalid="setCustomValidity(\'Debe introducir una dirección de portal web válido.\nEj: https://tupaginaweb.com\')"
 
@@ -167,13 +111,27 @@
 							                </div>
 							            </div>
 
-							            <!--CARGOS MENSUALES-->
-							            <div class="col-md-6">
+							            <!--MONTO DESDE-->
+							            <div class="col-md-3">
 							                <div class="form-group">
-							                    <label>Cargos Mensuales</label>
-							                    <input type="text" class="form-control" id="cargmens-tdc"
-							                        placeholder="Cargos mensuales cobrados"
-							                        value="" name="cargmens-tdc"
+							                    <label>Montos</label>
+							                    <input type="text" class="form-control" id="montodesde-cred"
+							                        placeholder="Desde"
+							                        value="" name="montodesde-cred"
+							                        oninput="setCustomValidity(\'\')" onblur="onBlurDeInputs(this.id)"
+							                        oninvalid="setCustomValidity(\'Debe introducir un correo válido.\nEj: ejemplo@dominio.com\')"
+
+							                        maxlength="30" required>
+							                </div>
+							            </div>
+
+										<!--MONTO HASTA-->
+							            <div class="col-md-3">
+							                <div class="form-group">
+							                    <label></label>
+							                    <input type="text" class="form-control" id="montohasta-cred"
+							                        placeholder="Hasta"
+							                        value="" name="montohasta-cred"
 							                        oninput="setCustomValidity(\'\')" onblur="onBlurDeInputs(this.id)"
 							                        oninvalid="setCustomValidity(\'Debe introducir un correo válido.\nEj: ejemplo@dominio.com\')"
 
@@ -183,33 +141,63 @@
 							        </div>
 
 							        <div class="row">
-							            <!--TASA DE INTERES-->
-							            <div class="col-md-4">
+										<!--PLAZO DESDE-->
+							            <div class="col-md-3">
 							                <div class="form-group">
-							                    <label>Tasa de Interés: <label for="income-number">
+							                    <label>Plazos de pago (meses)</label>
+							                    <input type="text" class="form-control" id="plazodesde-cred"
+							                        placeholder="Desde"
+							                        value="" name="plazodesde-cred"
+							                        oninput="setCustomValidity(\'\')" onblur="onBlurDeInputs(this.id)"
+							                        oninvalid="setCustomValidity(\'Debe introducir un correo válido.\nEj: ejemplo@dominio.com\')"
+
+							                        maxlength="30" required>
+							                </div>
+							            </div>
+
+										<!--PLAZO HASTA-->
+							            <div class="col-md-3">
+							                <div class="form-group">
+							                    <label></label>
+							                    <input type="text" class="form-control" id="plazohasta-cred"
+							                        placeholder="Hasta"
+							                        value="" name="plazohasta-cred"
+							                        oninput="setCustomValidity(\'\')" onblur="onBlurDeInputs(this.id)"
+							                        oninvalid="setCustomValidity(\'Debe introducir un correo válido.\nEj: ejemplo@dominio.com\')"
+
+							                        maxlength="30" required>
+							                </div>
+							            </div>
+
+										<!--TEA DESDE-->
+										<div class="col-md-3">
+							                <div class="form-group">
+							                    <label>TEA desde <label for="income-number">
 							                        <output for="income" id="volume2" style="display: inline">20</output>
 							                        %
 							                    </label></label>
 							                    <input type="range"  id="income" min =20 max="35" step ="0.01" value ="0"
 							                        onchange="prueba.value = income.value" oninput="outputUpdate2(value)"
-							                        class="range-pct" name="tinteres-tdc">
+							                        class="range-pct" name="teadesde-cred">
 							                </div>
 							            </div>
 
-							            <!--TASA DE MORA-->
-							            <div class="col-md-4">
+										<!--TEA HASTA-->
+										<div class="col-md-3">
 							                <div class="form-group">
-							                    <label>Tasa de Mora: <label for="income-number">
+							                    <label>TEA hasta <label for="income-number">
 							                        <output for="income" id="volume3" style="display: inline">20</output>
 							                        %
 							                    </label></label>
 							                    <input type="range"  id="income" min =20 max="35" step ="0.01" value ="0"
 							                        onchange="prueba.value = income.value" oninput="outputUpdate3(value)"
-							                        class="range-pct" name="tmora-tdc">
+							                        class="range-pct" name="teahasta-cred">
 							                </div>
 							            </div>
+							        </div>
 
-							            <!--SEGURO DE VIDA-->
+									<div class="row">
+										<!--SEGURO DE VIDA-->
 							            <div class="col-md-4">
 							                <div class="form-group">
 							                    <label>Seguro de Vida: <label for="income-number">
@@ -218,7 +206,7 @@
 							                    </label></label>
 							                    <input type="range"  id="income" min =0 max="10" step ="0.01" value ="0"
 							                        onchange="prueba.value = income.value" oninput="outputUpdate4(value)"
-							                        class="range-pct" name="segurovida-tdc">
+							                        class="range-pct" name="segurovida-cred">
 							                </div>
 							            </div>
 							        </div>
