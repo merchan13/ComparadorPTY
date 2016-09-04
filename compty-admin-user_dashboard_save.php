@@ -68,7 +68,7 @@
 		  	</div>
 		</div>
 
-		<!-- Modal MODIFICARr-->
+		<!-- Modal MODIFICAR-->
 		<div id="modifModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 
@@ -86,7 +86,7 @@
 									<div class="col-md-14">
 				                        <div class="card">
 				                            <div class="content" style="">
-												<form action="compty-admin-producto_modificar.php" method="post"
+												<form action="compty-admin-producto_modificar_save.php" method="post"
 													enctype="multipart/form-data" class="form-modif">
 
 												</form>
@@ -122,7 +122,7 @@
 									<div class="col-md-14">
 				                        <div class="card">
 				                            <div class="content" style="">
-												<form action="compty-admin-producto_eliminar.php" method="post"
+												<form action="compty-admin-producto_eliminar_save.php" method="post"
 													enctype="multipart/form-data" class="form-eliminar">
 
 												</form>
