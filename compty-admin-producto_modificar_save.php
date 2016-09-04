@@ -231,8 +231,6 @@
                  producto_save_costo = $costo
                 WHERE producto_save_id = $id";
 
-        echo $sql;
-
         if ($stmt = mysqli_prepare($mysqli, $sql)) {
             mysqli_stmt_execute($stmt);
             $error_sql = mysqli_stmt_error($stmt);
