@@ -92,10 +92,10 @@
             //Insertar requisitos
             insertarRequisitosSave($idNuevoProducto, $usuarioId, $requisitos);
 
-            header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=666");
+            header("Location: compty-admin-user_dashboard_save.php?id=$idUser&password=$password&add=666");
             exit;
         } else {
-            header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=9992");
+            header("Location: compty-admin-user_dashboard_save.php?id=$idUser&password=$password&add=9992");
             exit;
         }
     } elseif (isset($_POST["lospollitosdicencred"])) {
@@ -138,10 +138,10 @@
             //Insertar requisitos
             insertarRequisitosCred($idNuevoProducto, $usuarioId, $requisitos);
 
-            header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=666");
+            header("Location: compty-admin-user_dashboard_cred.php?id=$idUser&password=$password&add=666");
             exit;
         } else {
-            header("Location: compty-admin-user_dashboard.php?id=$idUser&password=$password&add=9993");
+            header("Location: compty-admin-user_dashboard_cred.php?id=$idUser&password=$password&add=9993");
             exit;
         }
 
