@@ -1,0 +1,19 @@
+label.control-label{
+    text-transform: uppercase;
+    text-align: left;
+    width: 7%;
+}
+label.label-blanco{
+    margin-left: -55%;
+    margin-top: -1%;
+}
+
+@media only screen and (max-device-width: 375px) {
+
+    label.control-label,
+    .range-input,
+    label.label-blanco{
+        display: none;
+    }
+
+}

@@ -17,6 +17,7 @@
 		<!--Styles-->
 		<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 		<link rel="stylesheet" type="text/css" href="resources/css/style_save.css">
+		<link rel="stylesheet" type="text/css" href="resources/css/resultado.css">
 		<!--/Styles-->
 
 		<!--JavaScript-->
