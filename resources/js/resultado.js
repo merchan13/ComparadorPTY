@@ -37,3 +37,60 @@ $(document).on("click", ".open-Info-Save", function () {
         }
     });
 });
+
+
+//Range Salario
+function outputUpdate(vol) {
+	document.querySelector('#volume').value = vol;
+}
+
+$(document).on("change", ".salariodinamico", function () {
+
+    var rangesalario = document.getElementsByClassName('salariodinamico');
+    var salario = rangesalario[0].value;
+
+    $.ajax({
+        type:'POST',
+        url:'comparador_resultado_back.php',
+        data: { varname: salario},
+        success:function(response){
+            $('.tabla-comparador').empty();
+            $('.tabla-comparador').html(response);
+        }
+    });
+
+});
+
+$(document).on("change", ".salariodinamicosave", function () {
+
+    var rangesalario = document.getElementsByClassName('salariodinamicosave');
+    var salario = rangesalario[0].value;
+
+    $.ajax({
+        type:'POST',
+        url:'comparador_resultado_back_save.php',
+        data: { varname: salario},
+        success:function(response){
+            $('.tabla-comparador').empty();
+            $('.tabla-comparador').html(response);
+        }
+    });
+
+});
+
+$(document).on("change", ".salariodinamicocred", function () {
+
+    var rangesalario = document.getElementsByClassName('salariodinamicocred');
+    var salario = rangesalario[0].value;
+
+    $.ajax({
+        type:'POST',
+        url:'comparador_resultado_back_cred.php',
+        data: { varname: salario},
+        success:function(response){
+            $('.tabla-comparador').empty();
+            $('.tabla-comparador').html(response);
+        }
+    });
+
+});

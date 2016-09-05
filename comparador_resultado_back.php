@@ -1,132 +1,36 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>ComparadorPty - Resultado</title>
-
-		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-	    <meta name="viewport" content="width=device-width" />
-
-		<!-- Bootstrap core CSS -->
-		<link href="vendors/bootstrap/css/bootstrap.css" rel="stylesheet">
-		<link href="resources/assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-
-		<!--Styles-->
-		<link rel="stylesheet" type="text/css" href="resources/css/style.css">
-		<!--/Styles-->
-
-		<!--JavaScript-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="resources/js/resultado.js" type="text/javascript"></script>
-		<script src="resources/js/fb.js" type="text/javascript"></script>
-		<script src="resources/js/google.js" type="text/javascript"></script>
-		<!--/JavaScript-->
-
-	</head>
-	<body>
-
-		<div class="flex-container">
-			<header>
-				<a href="index.php"><img class="logo" src="resources/images/logo2.png" alt=""/></a>
-				<ul>
-					<li><a href="#"><img src="resources/images/banesco-icon.png" alt="" /></a></li>
-					<li><a href="#"><img src="resources/images/facebook-icon.png" alt="" /></a></li>
-					<li><a href="#"><img src="resources/images/instagram-icon.png" alt="" /></a></li>
-					<li><a href="#"><img src="resources/images/twitter-icon.jpg" alt="" /></a></li>
-					<li><a href="#"><img src="resources/images/snapchat-icon.png" alt="" /></a></li>
-				</ul>
-			</header>
-
-			<!--MODAL MAS INFO-->
-			<div id="infoModal" class="modal fade" role="dialog">
-				<div class="modal-dialog">
-
-			    	<!-- Modal content-->
-			    	<div class="modal-content">
-			      		<div class="modal-header">
-			        		<button type="button" class="close" data-dismiss="modal">&times;</button>
-			        		<h4 class="modal-title">Información detallada</h4>
-			      		</div>
-			      		<div class="modal-body info-modal" name="modal-body info">
-							<!-- comparador-mas_info.php -->
-			      		</div>
-			      		<div class="modal-footer">
-			        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      		</div>
-			    	</div>
-			  	</div>
-			</div>
-
-			<div class="comparator-result">
-                <div class="comparator-product-image-top">
-                    <img src="resources/images/credit_card.png" alt=""/>
-                </div>
-
-				<div class="form-group">
-				  <label class="control-label col-sm-2" for="income" style="padding-top: 0;">Salario</label>
-				  <div class="col-sm-4 range-input">
-					<input type="range"  id="income" name="income" min =600 max="10000" step ="200"
-						value = <?php echo $_POST["income"]; ?>
-						onchange="prueba.value = income.value" oninput="outputUpdate(value)"
-						class="salariodinamico">
-				  </div>
-				  <label class="label-blanco" for="income-number">
-					  $
-					  <output for="income" id="volume" style="display: inline">
-						  <?php echo $_POST["income"]; ?>
-					  </output>
-				  </label>
-				</div>
-
-				<form class="tabla-comparador" action="comparador_formulario.php" method="post">
-	                <div class="comparator-result-table">
-						<div class="content table-responsive table-full-width">
-							<table class="table table-hover">
-								<thead>
-									<th>Banco</th>
-									<th>Producto</th>
-									<th>Marca</th>
-									<th>Tasa</th>
-									<th>Cargos Mensuales</th>
-									<th>Beneficios</th>
-									<th>Mas Información</th>
-									<th>Solicitar</th>
-								</thead>
-								<tbody id="infomaciontabla">
-									<?php
-										if (isset($_POST["income"])){
-											getInfoProductos($_POST["income"]);
-										} else if (isset($_GET["income"])){
-											getInfoProductos($_GET["income"]);
-										}
-									?>
-								</tbody>
-							</table>
-						</div>
-	                </div>
-					<button type="submit" class="btn btn-warning btn-fill pull-right"
-						style="width: 120px; margin-right: 1%;">Solicitar</button>
-				</form>
-			</div>
-
-			<footer>
-				<p style="float: left;">© Javier Merchán - UCAB 2016</p>
-				<p style="float: right;"><a href="#">Back to top</a></p>
-			</footer>
-		</div>
-	</body>
-</html>
-
-
 <?php
 
-	session_start();
-	$_SESSION["email"] = $_POST["email"];
+    if (isset($_POST["varname"])){
+?>
 
-	//
+     <div class="comparator-result-table">
+         <div class="content table-responsive table-full-width">
+             <table class="table table-hover">
+                 <thead>
+                     <th>Banco</th>
+                     <th>Producto</th>
+                     <th>Marca</th>
+                     <th>Tasa</th>
+                     <th>Cargos Mensuales</th>
+                     <th>Beneficios</th>
+                     <th>Mas Información</th>
+                     <th>Solicitar</th>
+                 </thead>
+                 <tbody id="infomaciontabla">
+                     <?php
+                         getInfoProductos($_POST["varname"]);
+                     ?>
+                 </tbody>
+             </table>
+         </div>
+     </div>
+     <button type="submit" class="btn btn-warning btn-fill pull-right"
+         style="width: 120px; margin-right: 1%;">Solicitar</button>
+
+<?php
+    }
+
+    //
 	//Informacion de los Productos
 	//
 	function getInfoProductos($minimo){
@@ -170,7 +74,6 @@
 
 		return true;
 	}
-
 
 	//
 	//Marca de la TDC
@@ -331,4 +234,5 @@
 
 		</tr>';
 	}
- ?>
+
+?>
