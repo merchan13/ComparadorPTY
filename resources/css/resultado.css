@@ -10,10 +10,15 @@ label.label-blanco{
 
 @media only screen and (max-device-width: 375px) {
 
-    label.control-label,
-    .range-input,
+    label.control-label{
+        width: 20%;
+        margin-left: -28%;
+    }
+    .range-input{
+        display: inline-block;
+    }
     label.label-blanco{
-        display: none;
+        margin-left: 0%;
     }
 
 }
