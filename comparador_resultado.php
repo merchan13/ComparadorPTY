@@ -22,8 +22,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="resources/js/resultado.js" type="text/javascript"></script>
-		<script src="resources/js/fb.js" type="text/javascript"></script>
-		<script src="resources/js/google.js" type="text/javascript"></script>
 		<!--/JavaScript-->
 
 	</head>
