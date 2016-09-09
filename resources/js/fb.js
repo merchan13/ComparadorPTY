@@ -73,7 +73,8 @@ function testAPI() {
     FB.api('/me', function(response) {
         console.log('Successful login for: ' + response.name);
         var income = document.getElementById("income").value;
-        window.location.href = "comparador_resultado.php?income="+income;
+        var tipo = document.getElementById("arrozconleche").value;
+        window.location.href = "comparador_resultado"+tipo+".php?income="+income;
     });
 }
 

@@ -90,14 +90,27 @@
 				  <label class="control-label col-sm-2" for="income" style="padding-top: 0;">Salario</label>
 				  <div class="col-sm-4 range-input">
 					<input type="range"  id="income" name="income" min =600 max="10000" step ="200"
-						value = <?php echo $_POST["income"]; ?>
+						value =
+						<?php
+							if (isset($_POST["income"])){
+								echo $_POST["income"];
+							} else if (isset($_GET["income"])){
+								echo $_GET["income"];
+							}
+						?>
 						onchange="prueba.value = income.value" oninput="outputUpdate(value)"
 						class="salariodinamicosave">
 				  </div>
 				  <label class="label-blanco" for="income-number">
 					  $
 					  <output for="income" id="volume" style="display: inline">
-						  <?php echo $_POST["income"]; ?>
+						  <?php
+  							if (isset($_POST["income"])){
+  								echo $_POST["income"];
+  							} else if (isset($_GET["income"])){
+  								echo $_GET["income"];
+  							}
+  						?>
 					  </output>
 				  </label>
 				</div>

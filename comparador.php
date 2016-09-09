@@ -71,10 +71,13 @@
 						$_SESSION['tipo-producto'] = $tipo;
 						if($tipo == 'tdc'){
 							echo '<img src="resources/images/credit_card.png" alt=""/>';
+							echo '<input type="text" id="arrozconleche" value="" style="display:none">';
 						} elseif ($tipo == 'save'){
 							echo '<img src="resources/images/savings.png" alt=""/>';
+							echo '<input type="text" id="arrozconleche" value="_savings" style="display:none">';
 						} elseif ($tipo == 'cred'){
 							echo '<img src="resources/images/credit.png" alt=""/>';
+							echo '<input type="text" id="arrozconleche" value="_credit" style="display:none">';
 						}
 					 ?>
                 </div>
