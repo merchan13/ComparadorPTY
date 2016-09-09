@@ -145,10 +145,10 @@
 							            <div class="col-md-6">
 							                <div class="form-group">
 							                    <label>Tasa de Interés: <label for="income-number">
-							                        <output for="income" id="volume2" style="display: inline">20</output>
+							                        <output for="income" id="volume2" style="display: inline">0</output>
 							                        %
 							                    </label></label>
-							                    <input type="range"  id="income" min =20 max="35" step ="0.01" value ="0"
+							                    <input type="range"  id="income" min=0 max=5 step ="0.01" value ="0"
 							                        onchange="prueba.value = income.value" oninput="outputUpdate2(value)"
 							                        class="range-pct" name="tinteres-save">
 							                </div>

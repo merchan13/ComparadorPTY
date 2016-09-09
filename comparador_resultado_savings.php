@@ -33,11 +33,31 @@
 			<header>
 				<a href="index.php"><img class="logo" src="resources/images/logo2.png" alt=""/></a>
 				<ul>
-					<li><a href="#"><img src="resources/images/banesco-icon.png" alt="" /></a></li>
-					<li><a href="#"><img src="resources/images/facebook-icon.png" alt="" /></a></li>
-					<li><a href="#"><img src="resources/images/instagram-icon.png" alt="" /></a></li>
-					<li><a href="#"><img src="resources/images/twitter-icon.jpg" alt="" /></a></li>
-					<li><a href="#"><img src="resources/images/snapchat-icon.png" alt="" /></a></li>
+					<li>
+						<a href="https://banesco.com.pa/" target="_blank">
+							<img src="resources/images/banesco-icon.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="https://www.facebook.com/BanescoPanama/?fref=ts" target="_blank">
+							<img src="resources/images/facebook-icon.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="https://www.instagram.com/banescopanama/" target="_blank">
+							<img src="resources/images/instagram-icon.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/BanescoPanama" target="_blank">
+							<img src="resources/images/twitter-icon.jpg" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="#" target="_blank">
+							<img src="resources/images/snapchat-icon.png" alt="" />
+						</a>
+					</li>
 				</ul>
 			</header>
 

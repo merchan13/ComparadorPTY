@@ -140,7 +140,7 @@
                         <output for="income" id="volume2" style="display: inline">'.$tasainteres.'</output>
                         %
                     </label></label>
-                    <input type="range"  id="income" min =20 max="35" step ="0.01" value ="'.$tasainteres.'"
+                    <input type="range"  id="income" min=0 max=5 step ="0.01" value ="'.$tasainteres.'"
                         onchange="prueba.value = income.value" oninput="outputUpdate2(value)"
                         class="range-pct" name="tinteres-save">
                 </div>
